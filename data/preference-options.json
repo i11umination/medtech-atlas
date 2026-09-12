@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.1.0",
+  "kind": "preference_options",
+  "updated_at": "2026-09-12",
+  "items": [
+    { "id": "PRF-0001", "category": "role", "value": "public", "label": "普通公众", "description": "优先展示通俗解释、概念和研究阶段。" },
+    { "id": "PRF-0002", "category": "role", "value": "patient_family", "label": "患者及家属", "description": "优先展示通俗解释、研究边界和医学信息免责声明，不提供个体化诊疗建议。" },
+    { "id": "PRF-0003", "category": "role", "value": "undergraduate", "label": "本科生或跨学科学习者", "description": "优先展示基础概念、术语解释和入门证据。" },
+    { "id": "PRF-0004", "category": "role", "value": "researcher", "label": "研究生或科研人员", "description": "优先展示研究方法、证据局限、冲突结果和研究空白。" },
+    { "id": "PRF-0005", "category": "role", "value": "medical_professional", "label": "医学工作者", "description": "优先展示研究阶段、安全性、适用人群边界和试验信息。" },
+    { "id": "PRF-0006", "category": "role", "value": "engineering_industry_education_media", "label": "工程、产业、教育或媒体从业者", "description": "优先展示技术原理、验证指标、转化瓶颈和可解释背景。" },
+    { "id": "PRF-0007", "category": "research_interest", "value": "rehabilitation_robotics", "label": "康复机器人", "description": "关注机器人辅助运动功能训练与评估。" },
+    { "id": "PRF-0008", "category": "research_interest", "value": "surgical_robotics", "label": "手术机器人", "description": "关注机器人辅助手术、导航与精准执行。" },
+    { "id": "PRF-0009", "category": "research_interest", "value": "prosthetics_exoskeletons", "label": "假肢与外骨骼", "description": "关注功能替代、辅助运动与人机交互。" },
+    { "id": "PRF-0010", "category": "research_interest", "value": "micro_interventional_robotics", "label": "微型与介入机器人", "description": "关注微创介入、导航和远程操控。" },
+    { "id": "PRF-0011", "category": "research_interest", "value": "medical_imaging_automation", "label": "医学影像自动化", "description": "关注影像识别、分层、导航与流程自动化。" },
+    { "id": "PRF-0012", "category": "research_interest", "value": "laboratory_automation", "label": "实验室自动化", "description": "关注药物筛选、类器官、细胞治疗和实验流程自动化。" }
+  ]
+}

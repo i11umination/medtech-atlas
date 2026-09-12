@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.1.0",
+  "kind": "analysis_index",
+  "updated_at": "2026-09-12",
+  "items": [
+    {
+      "id": "FUT-0001",
+      "title": "按卒中阶段和功能表型匹配机器人训练剂量",
+      "basis_evidence_ids": ["EVD-0001", "EVD-0002", "EVD-0015", "EVD-0016"],
+      "horizon": "近期可验证",
+      "uncertainty": "现有研究的设备、剂量、卒中阶段和结局不完全一致，尚不能确定哪类患者最可能从机器人训练中获得有临床意义的改善。",
+      "risks": "亚组分析的假阳性、样本量不足、训练剂量不等价和量表变化无法代表真实生活功能。",
+      "content_ref": "analysis/FUT-0001.md",
+      "review_status": "needs-review",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "id": "FUT-0002",
+      "title": "以患者真实功能结局为目标的闭环按需辅助训练",
+      "basis_evidence_ids": ["EVD-0001", "EVD-0002", "EVD-0015", "EVD-0016"],
+      "horizon": "中期转化",
+      "uncertainty": "机器人重复训练的优势可能取决于辅助程度、任务难度、反馈方式和患者主动参与，当前证据还不能确定哪种控制策略最有效。",
+      "risks": "过度辅助可能减少主动运动，传感器误判可能造成不安全动作；算法漂移、数据偏倚和设备可及性也会影响转化。",
+      "content_ref": "analysis/FUT-0002.md",
+      "review_status": "needs-review",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "id": "FUT-0003",
+      "title": "机器人与手工神经介入的前瞻性比较和长期随访",
+      "basis_evidence_ids": ["EVD-0009", "EVD-0010", "EVD-0017", "EVD-0018"],
+      "horizon": "近期可验证",
+      "uncertainty": "现有研究主要支持技术可行性，尚缺乏按适应证分层的手工对照、长期神经功能结局和成本效果数据。",
+      "risks": "罕见严重并发症需要足够样本量才能发现；学习曲线、中心经验、设备厂商参与和病例选择可能造成偏倚。",
+      "content_ref": "analysis/FUT-0003.md",
+      "review_status": "needs-review",
+      "last_verified": "2026-09-12"
+    },
+    {
+      "id": "FUT-0004",
+      "title": "影像导航与力觉感知驱动的共享自主介入",
+      "basis_evidence_ids": ["EVD-0009", "EVD-0010", "EVD-0017", "EVD-0018"],
+      "horizon": "中期转化",
+      "uncertainty": "从机器人执行导丝和微导管动作到在复杂血管中提供安全的共享控制，需要验证力觉估计、影像配准和人工接管机制。",
+      "risks": "血管穿孔、影像配准错误、通信或系统故障以及自动化偏差可能造成严重伤害；远程操作还涉及责任和网络安全。",
+      "content_ref": "analysis/FUT-0004.md",
+      "review_status": "needs-review",
+      "last_verified": "2026-09-12"
+    }
+  ]
+}

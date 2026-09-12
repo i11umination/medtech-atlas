@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ResearcherReading from "../../components/ResearcherReading.astro";
+import ReturnPath from "../../components/ReturnPath.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import StudyDesignVisual from "../../components/StudyDesignVisual.astro";
+import {
+  evidenceItems,
+  nodeById,
+  relationById,
+  sourceById,
+} from "../../lib/data";
+import type { EvidenceItem, GraphRelation } from "../../lib/types";
+
+export function getStaticPaths() {
+  return evidenceItems.map((item) => ({ params: { id: item.id }, props: { item } }));
+}
+
+interface Props {
+  item: EvidenceItem;
+}
+
+const { item } = Astro.props as Props;
+const evidenceFiles = import.meta.glob("../../../evidence/*.md", {
+  eager: true,
+});
+const evidenceModule = evidenceFiles[`../../../evidence/${item.id}.md`] as
+  | { default: any }
+  | undefined;
+const EvidenceContent = evidenceModule?.default;
+const linkedRelations = item.relation_ids
+  .map((id) => relationById.get(id))
+  .filter((relation): relation is GraphRelation => Boolean(relation));
+const linkedSources = item.source_ids.map((id) => sourceById.get(id)).filter(Boolean);
+const primaryRelation = linkedRelations[0];
+const contextNode = primaryRelation ? nodeById.get(primaryRelation.source_id) : undefined;
+---
+
+<BaseLayout title={`${item.title}｜证据卡`} description={item.claim}>
+  <article class="evidence-page page-shell">
+    <Breadcrumbs
+      items={[
+        { label: "首页", href: "/" },
+        { label: "图谱探索", href: "/explore" },
+        ...(contextNode ? [{ label: contextNode.name, href: `/entity/${contextNode.id}` }] : []),
+        ...(primaryRelation ? [{ label: "关联详情", href: `/relation/${primaryRelation.id}` }] : []),
+        { label: `证据卡 ${item.id}` },
+      ]}
+    />
+    <header class="evidence-header">
+      <div class="entity-kicker">
+        <span>研究证据 · {item.id}</span>
+        <StatusBadge status={item.review_status} />
+      </div>
+      <h1>{item.title}</h1>
+      <p class="lead-claim">{item.claim}</p>
+      <div class="evidence-meta">
+        <span><small>研究类型</small>{item.study_type}</span>
+        <span><small>研究阶段</small>{item.research_stage}</span>
+        <span><small>样本量</small>{item.sample_size ?? "未报告"}</span>
+        <span><small>核验日期</small>{item.last_verified}</span>
+      </div>
+    </header>
+
+    {item.review_status !== "approved" && (
+      <aside class="review-banner">
+        <strong>这张证据卡仍在医学审核队列中</strong>
+        <p>页面忠实保留当前提取结果与限制，但在审核通过前不作为已确认医学结论。</p>
+      </aside>
+    )}
+
+    <StudyDesignVisual item={item} />
+
+    <div class="evidence-layout">
+      <div class="evidence-main">
+        <section><span class="eyebrow">研究对象</span><h2>研究了谁或什么模型？</h2><p>{item.population_or_model}</p></section>
+        <section><span class="eyebrow">干预与对照</span><h2>比较了什么？</h2><dl class="comparison-list"><div><dt>干预</dt><dd>{item.intervention ?? "不适用或未报告"}</dd></div><div><dt>对照</dt><dd>{item.comparator ?? "不适用或未报告"}</dd></div></dl></section>
+        <section><span class="eyebrow">结果</span><h2>研究发现</h2><p>{item.findings}</p><h3>关注的结局</h3><ul>{item.outcomes.map((outcome) => <li>{outcome}</li>)}</ul></section>
+        <section class="limitations-section"><span class="eyebrow">谨慎解释</span><h2>不能从这项研究推出什么？</h2><p>{item.limitations}</p></section>
+      </div>
+      <aside class="evidence-sidebar">
+        <section>
+          <h2>连接到图谱</h2>
+          {linkedRelations.map((relation) => relation && (
+            <a class="linked-relation" href={`/explore?focus=${relation.source_id}`}>
+              <small>{relation.label}</small>
+              <strong>{nodeById.get(relation.source_id)?.name} → {nodeById.get(relation.target_id)?.name}</strong>
+            </a>
+          ))}
+        </section>
+        <section>
+          <h2>来源</h2>
+          {linkedSources.map((source) => source && (
+            <article class="source-card">
+              <small>{source.source_type} · {source.year}</small>
+              <h3>{source.title}</h3>
+              <p>{source.authors.join("、")}</p>
+              {source.doi && <p>DOI：{source.doi}</p>}
+              <a class="text-link" href={source.url} target="_blank" rel="noreferrer">打开来源 ↗</a>
+            </article>
+          ))}
+        </section>
+      </aside>
+    </div>
+
+    <section class="evidence-full-text" aria-labelledby="evidence-full-text-title">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">完整资料卡</span>
+          <h2 id="evidence-full-text-title">研究内容与通俗解释</h2>
+        </div>
+        <span class="count-label">原始稿件 · {item.content_ref}</span>
+      </div>
+      <div class="evidence-content">
+        {EvidenceContent ? <EvidenceContent /> : <p>完整资料卡正文尚未加载。</p>}
+      </div>
+    </section>
+
+    <ResearcherReading
+      items={[item]}
+      chainLinks={linkedRelations.map((relation) => ({
+        label: `${nodeById.get(relation.source_id)?.name ?? relation.source_id} → ${nodeById.get(relation.target_id)?.name ?? relation.target_id}`,
+        href: `/relation/${relation.id}`,
+      }))}
+      description="从这张资料卡继续核对研究设计、已提取结局、原始文献和它所支持的图谱关系。"
+    />
+
+    <ReturnPath
+      title="回到这项证据所支持的关系"
+      description="一张证据卡可能连接多条关系；这里提供第一条直接关系作为稳定返回入口。"
+      links={[
+        ...(primaryRelation ? [{ label: "返回关联详情", href: `/relation/${primaryRelation.id}` }] : []),
+        ...(contextNode ? [{ label: `返回${contextNode.name}`, href: `/entity/${contextNode.id}` }] : []),
+        { label: "回到图谱定位", href: contextNode ? `/explore?focus=${contextNode.id}` : "/explore" },
+      ]}
+    />
+  </article>
+</BaseLayout>

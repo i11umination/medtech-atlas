@@ -1,0 +1,419 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/knowledge-graph.schema.json",
+  "title": "医学与先进技术知识图谱数据集合",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "kind", "updated_at", "items"],
+  "properties": {
+    "schema_version": { "const": "1.1.0" },
+    "kind": {
+      "enum": [
+        "nodes",
+        "relations",
+        "evidence_index",
+        "sources",
+        "node-summaries",
+        "analysis_index",
+        "preference_options",
+        "navigation_groups"
+      ]
+    },
+    "updated_at": { "type": "string", "format": "date" },
+    "items": { "type": "array" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "nodes" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/node" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "relations" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/relation" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "evidence_index" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/evidence" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "sources" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/source" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "node-summaries" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/nodeSummary" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "analysis_index" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/analysis" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "preference_options" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/preferenceOption" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "navigation_groups" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/navigationGroup" } } } }
+    }
+  ],
+  "$defs": {
+    "recordStatus": {
+      "enum": ["draft", "needs-review", "approved", "revise", "blocked"]
+    },
+    "researchStage": {
+      "enum": [
+        "理论或概念研究",
+        "体外研究",
+        "动物研究",
+        "临床前研究",
+        "早期人体研究",
+        "临床试验",
+        "已获监管批准",
+        "阶段信息不明确",
+        "不适用"
+      ]
+    },
+    "objectId": {
+      "type": "string",
+      "pattern": "^(DOM|CAP|CLP|DIS|TEC|RES|SRC|REL|EVD|FUT|PRF)-[0-9]{4}$"
+    },
+    "nodeId": {
+      "type": "string",
+      "pattern": "^(DOM|CAP|CLP|DIS|TEC|RES)-[0-9]{4}$"
+    },
+    "nullableDate": {
+      "oneOf": [
+        { "type": "string", "format": "date" },
+        { "type": "null" }
+      ]
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "name",
+        "slug",
+        "aliases",
+        "tags",
+        "content_ref",
+        "status",
+        "last_verified"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/nodeId" },
+        "type": {
+          "enum": ["domain", "capability", "clinical_problem", "disease", "technology", "research"]
+        },
+        "name": { "type": "string", "minLength": 1 },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "content_ref": {
+          "oneOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }]
+        },
+        "status": { "$ref": "#/$defs/recordStatus" },
+        "last_verified": { "$ref": "#/$defs/nullableDate" }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "source_id",
+        "target_id",
+        "relation_type",
+        "label",
+        "mechanism_summary",
+        "research_stage",
+        "evidence_ids",
+        "limitations",
+        "status",
+        "last_verified"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^REL-[0-9]{4}$" },
+        "source_id": { "$ref": "#/$defs/objectId" },
+        "target_id": { "$ref": "#/$defs/objectId" },
+        "relation_type": {
+          "enum": [
+            "belongs_to",
+            "has_clinical_problem",
+            "enables",
+            "applies_to",
+            "studies",
+            "supports",
+            "limited_by",
+            "suggests"
+          ]
+        },
+        "label": { "type": "string", "minLength": 1 },
+        "mechanism_summary": {
+          "oneOf": [{ "type": "string" }, { "type": "null" }]
+        },
+        "research_stage": { "$ref": "#/$defs/researchStage" },
+        "evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^EVD-[0-9]{4}$" },
+          "uniqueItems": true
+        },
+        "limitations": { "type": "string" },
+        "status": { "$ref": "#/$defs/recordStatus" },
+        "last_verified": { "$ref": "#/$defs/nullableDate" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "approved" } } },
+          "then": {
+            "properties": {
+              "evidence_ids": { "minItems": 1 },
+              "limitations": { "minLength": 1 },
+              "last_verified": { "type": "string", "format": "date" }
+            }
+          }
+        }
+      ]
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "claim",
+        "relation_ids",
+        "source_ids",
+        "study_type",
+        "research_stage",
+        "population_or_model",
+        "sample_size",
+        "intervention",
+        "comparator",
+        "outcomes",
+        "findings",
+        "limitations",
+        "confidence",
+        "content_ref",
+        "review_status",
+        "last_verified"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^EVD-[0-9]{4}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "claim": { "type": "string", "minLength": 1 },
+        "relation_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^REL-[0-9]{4}$" },
+          "uniqueItems": true
+        },
+        "source_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^SRC-[0-9]{4}$" },
+          "uniqueItems": true
+        },
+        "study_type": { "type": "string", "minLength": 1 },
+        "research_stage": { "$ref": "#/$defs/researchStage" },
+        "population_or_model": { "type": "string" },
+        "sample_size": {
+          "oneOf": [
+            { "type": "integer", "minimum": 0 },
+            { "type": "string", "minLength": 1 },
+            { "type": "null" }
+          ]
+        },
+        "intervention": { "type": "string" },
+        "comparator": { "type": "string" },
+        "outcomes": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "findings": { "type": "string" },
+        "limitations": { "type": "string" },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "content_ref": { "type": "string", "minLength": 1 },
+        "review_status": { "$ref": "#/$defs/recordStatus" },
+        "last_verified": { "$ref": "#/$defs/nullableDate" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "review_status": { "const": "approved" } } },
+          "then": {
+            "properties": {
+              "relation_ids": { "minItems": 1 },
+              "source_ids": { "minItems": 1 },
+              "findings": { "minLength": 1 },
+              "limitations": { "minLength": 1 },
+              "last_verified": { "type": "string", "format": "date" }
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "authors",
+        "institution",
+        "year",
+        "source_type",
+        "doi",
+        "registry_id",
+        "url",
+        "access_note",
+        "status",
+        "verified_at"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^SRC-[0-9]{4}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "institution": { "type": "string" },
+        "year": {
+          "oneOf": [
+            { "type": "integer", "minimum": 1800, "maximum": 2100 },
+            { "type": "null" }
+          ]
+        },
+        "source_type": {
+          "enum": [
+            "监管资料",
+            "临床试验注册",
+            "原始研究",
+            "系统综述或荟萃分析",
+            "回顾性病例系列与文献综述",
+            "权威指南",
+            "专业学会资料",
+            "预印本",
+            "会议摘要",
+            "机构资料",
+            "其他"
+          ]
+        },
+        "doi": {
+          "oneOf": [{ "type": "string" }, { "type": "null" }]
+        },
+        "registry_id": {
+          "oneOf": [{ "type": "string" }, { "type": "null" }]
+        },
+        "url": { "type": "string", "format": "uri" },
+        "access_note": { "type": "string" },
+        "status": { "$ref": "#/$defs/recordStatus" },
+        "verified_at": { "$ref": "#/$defs/nullableDate" }
+      }
+    },
+    "nodeSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["node_id", "content_ref", "source_ids", "review_status", "last_verified"],
+      "properties": {
+        "node_id": { "$ref": "#/$defs/nodeId" },
+        "content_ref": { "type": "string", "minLength": 1 },
+        "source_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^SRC-[0-9]{4}$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "review_status": { "$ref": "#/$defs/recordStatus" },
+        "last_verified": { "type": "string", "format": "date" }
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "basis_evidence_ids",
+        "horizon",
+        "uncertainty",
+        "risks",
+        "content_ref",
+        "review_status",
+        "last_verified"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^FUT-[0-9]{4}$" },
+        "title": { "type": "string", "minLength": 1 },
+        "basis_evidence_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^EVD-[0-9]{4}$" },
+          "uniqueItems": true
+        },
+        "horizon": { "enum": ["近期可验证", "中期转化", "长期前沿"] },
+        "uncertainty": { "type": "string", "minLength": 1 },
+        "risks": { "type": "string", "minLength": 1 },
+        "content_ref": { "type": "string", "minLength": 1 },
+        "review_status": { "$ref": "#/$defs/recordStatus" },
+        "last_verified": { "$ref": "#/$defs/nullableDate" }
+      }
+    },
+    "navigationGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "name", "description", "level", "axis", "parent_id", "child_group_ids",
+        "primary_node_ids", "cross_node_ids", "planned_items", "status"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^NAV-[0-9]{4}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "level": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "axis": { "enum": ["science", "medicine", "evidence"] },
+        "parent_id": {
+          "oneOf": [
+            { "type": "string", "pattern": "^NAV-[0-9]{4}$" },
+            { "type": "null" }
+          ]
+        },
+        "child_group_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^NAV-[0-9]{4}$" },
+          "uniqueItems": true
+        },
+        "primary_node_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nodeId" },
+          "uniqueItems": true
+        },
+        "cross_node_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nodeId" },
+          "uniqueItems": true
+        },
+        "planned_items": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "status": { "enum": ["active", "planned"] }
+      }
+    },
+    "preferenceOption": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "value", "label", "description"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^PRF-[0-9]{4}$" },
+        "category": { "enum": ["role", "research_interest"] },
+        "value": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "label": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

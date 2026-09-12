@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import LayeredGraphExplorer from "../components/LayeredGraphExplorer";
+import { evidenceItems, navigationGroups, nodes, relations } from "../lib/data";
+---
+
+<BaseLayout
+  title="图谱探索｜医学与先进技术图谱"
+  description="从需要解决的医学问题出发，探索先进技术、研究证据与人类健康结局之间的关系。"
+>
+  <section class="explore-intro page-shell">
+    <span class="eyebrow">从医学问题出发</span>
+    <h1>让每一条技术路径，都指向要解决的疾苦</h1>
+    <p>沿着疾病、技术与研究证据继续追问：它为谁解决问题，又还欠缺什么证明？</p>
+  </section>
+  <LayeredGraphExplorer
+    client:only="react"
+    nodes={nodes}
+    relations={relations}
+    evidenceItems={evidenceItems}
+    navigationGroups={navigationGroups}
+  />
+</BaseLayout>

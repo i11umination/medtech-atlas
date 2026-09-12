@@ -1,0 +1,229 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import MechanismPath from "../../components/MechanismPath.astro";
+import ResearcherReading from "../../components/ResearcherReading.astro";
+import ReturnPath from "../../components/ReturnPath.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import {
+  evidenceById,
+  futureDirections,
+  nodeById,
+  relations,
+  typeLabels,
+} from "../../lib/data";
+import type { EvidenceItem, GraphNode, GraphRelation } from "../../lib/types";
+
+export function getStaticPaths() {
+  return relations.map((relation) => ({
+    params: { id: relation.id },
+    props: { relation },
+  }));
+}
+
+interface Props {
+  relation: GraphRelation;
+}
+
+const { relation } = Astro.props as Props;
+const source = nodeById.get(relation.source_id);
+const target = nodeById.get(relation.target_id);
+const linkedEvidence = relation.evidence_ids
+  .map((id) => evidenceById.get(id))
+  .filter((item): item is EvidenceItem => Boolean(item));
+const linkedEvidenceIds = new Set(relation.evidence_ids);
+const relatedDirections = futureDirections.filter((direction) =>
+  direction.basis_evidence_ids.some((id) => linkedEvidenceIds.has(id)),
+);
+
+function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
+  return node?.name ?? fallbackId;
+}
+---
+
+<BaseLayout
+  title={`${nodeTitle(source, relation.source_id)} → ${nodeTitle(target, relation.target_id)}｜关联详情`}
+  description={relation.mechanism_summary ?? relation.label}
+>
+  <article class="relation-detail-page page-shell">
+    <Breadcrumbs
+      items={[
+        { label: "首页", href: "/" },
+        { label: "图谱探索", href: "/explore" },
+        ...(source ? [{ label: source.name, href: `/entity/${source.id}` }] : []),
+        { label: "关联详情" },
+      ]}
+    />
+    <header class="relation-detail-header">
+      <div class="entity-kicker">
+        <span>关联详情 · {relation.id}</span>
+        <StatusBadge status={relation.status} />
+      </div>
+      <h1>
+        {nodeTitle(source, relation.source_id)} <span aria-hidden="true">→</span> {nodeTitle(target, relation.target_id)}
+      </h1>
+      <p class="lead-claim">{relation.mechanism_summary ?? "这条关联的机制解释尚待补充，当前仅作为图谱中的待核验关系。"}</p>
+      <div class="relation-detail-meta">
+        <span><small>关联类型</small>{relation.label}</span>
+        <span><small>研究阶段</small>{relation.research_stage}</span>
+        <span><small>关联证据</small>{linkedEvidence.length} 条</span>
+        <span><small>最近核验</small>{relation.last_verified ?? "未记录"}</span>
+      </div>
+    </header>
+
+    {relation.status !== "approved" && (
+      <aside class="review-banner">
+        <strong>这条关联仍在图谱审核队列中</strong>
+        <p>页面用于展示当前知识结构与证据线索，不应被理解为临床建议或确定性疗效结论。</p>
+      </aside>
+    )}
+
+    <MechanismPath relation={relation} source={source} target={target} evidenceItems={linkedEvidence} />
+
+    <div class="relation-detail-layout">
+      <main>
+        <section class="relation-detail-section">
+          <span class="eyebrow">关系说明</span>
+          <h2>{relation.label}</h2>
+          <p>{relation.mechanism_summary ?? "当前尚未补充这条关系的机制或应用解释。后续需要通过定义来源、原始研究或专家审核进一步完善。"}</p>
+        </section>
+
+        <section class="relation-detail-section">
+          <div class="section-heading">
+            <div><span class="eyebrow">关联两端</span><h2>这条关系连接了什么？</h2></div>
+            <span class="count-label">两个图谱节点</span>
+          </div>
+          <div class="relation-endpoints">
+            {source && (
+              <article class="relation-endpoint">
+                <div class="relation-endpoint-label"><span class={`node-dot node-${source.type}`} aria-hidden="true"></span>{typeLabels[source.type]}</div>
+                <h3>{source.name}</h3>
+                <p>{source.aliases.length > 0 ? `别名：${source.aliases.join("、")}` : `节点 ID · ${source.id}`}</p>
+                <a class="text-link" href={`/entity/${source.id}`}>查看实体资料 →</a>
+              </article>
+            )}
+            <div class="relation-endpoint-arrow" aria-hidden="true">→</div>
+            {target && (
+              <article class="relation-endpoint">
+                <div class="relation-endpoint-label"><span class={`node-dot node-${target.type}`} aria-hidden="true"></span>{typeLabels[target.type]}</div>
+                <h3>{target.name}</h3>
+                <p>{target.aliases.length > 0 ? `别名：${target.aliases.join("、")}` : `节点 ID · ${target.id}`}</p>
+                <a class="text-link" href={`/entity/${target.id}`}>查看实体资料 →</a>
+              </article>
+            )}
+          </div>
+        </section>
+
+        <section class="relation-detail-section">
+          <div class="section-heading">
+            <div><span class="eyebrow">代表性证据</span><h2>研究支持与证据边界</h2></div>
+            <span class="count-label">{linkedEvidence.length} 条证据</span>
+          </div>
+          {linkedEvidence.length > 0 ? (
+            <div class="relation-evidence-list">
+              {linkedEvidence.map((item) => (
+                <article class="relation-evidence-card">
+                  <div class="relation-evidence-card-top">
+                    <div>
+                      <span class="eyebrow">{item.id} · {item.study_type}</span>
+                      <h3>{item.title}</h3>
+                    </div>
+                    <StatusBadge status={item.review_status} />
+                  </div>
+                  <p class="relation-evidence-claim">{item.claim}</p>
+                  <div class="relation-evidence-facts">
+                    <span><small>研究阶段</small>{item.research_stage}</span>
+                    <span><small>样本量</small>{item.sample_size ?? "未报告"}</span>
+                    <span><small>可信度</small>{item.confidence}</span>
+                  </div>
+                  <div class="relation-evidence-detail">
+                    <strong>主要发现</strong>
+                    <p>{item.findings}</p>
+                  </div>
+                  <div class="relation-evidence-detail relation-evidence-limitations">
+                    <strong>谨慎解释</strong>
+                    <p>{item.limitations}</p>
+                  </div>
+                  <a class="text-link" href={`/evidence/${item.id}`}>阅读完整资料卡 →</a>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div class="relation-empty-state">
+              <strong>这条关联暂时没有已挂接的研究证据。</strong>
+              <p>它可以作为后续资料征集和医学审核的候选关系。</p>
+            </div>
+          )}
+        </section>
+
+        {relatedDirections.length > 0 && (
+          <section class="relation-detail-section">
+            <div class="section-heading">
+              <div><span class="eyebrow">项目分析</span><h2>由这条关系提出的未来方向</h2></div>
+              <span class="count-label">{relatedDirections.length} 个方向</span>
+            </div>
+            <div class="direction-grid">
+              {relatedDirections.map((direction) => (
+                <article class="direction-card">
+                  <div class="direction-card-top">
+                    <span class="stage-chip">{direction.horizon}</span>
+                    <StatusBadge status={direction.review_status} />
+                  </div>
+                  <h3>{direction.title}</h3>
+                  <div class="direction-detail">
+                    <strong>不确定性</strong>
+                    <p>{direction.uncertainty}</p>
+                  </div>
+                  <div class="direction-detail risk-detail">
+                    <strong>主要风险</strong>
+                    <p>{direction.risks}</p>
+                  </div>
+                  <a class="text-link" href={`/analysis/${direction.id}`}>查看完整研究设想 →</a>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </main>
+
+      <aside class="relation-detail-sidebar">
+        <section class="relation-boundary-card">
+          <span class="eyebrow">关系边界</span>
+          <h2>需要怎样谨慎理解？</h2>
+          <p>{relation.limitations}</p>
+        </section>
+        <section>
+          <h2>记录信息</h2>
+          <dl class="detail-list">
+            <div><dt>关系 ID</dt><dd>{relation.id}</dd></div>
+            <div><dt>关系字段</dt><dd>{relation.relation_type}</dd></div>
+            <div><dt>来源节点</dt><dd>{relation.source_id}</dd></div>
+            <div><dt>目标节点</dt><dd>{relation.target_id}</dd></div>
+            <div><dt>挂接证据</dt><dd>{relation.evidence_ids.length ? relation.evidence_ids.join("、") : "暂无"}</dd></div>
+          </dl>
+        </section>
+        <a class="button button-quiet full-button" href={`/explore?focus=${relation.source_id}`}>回到图谱定位 →</a>
+      </aside>
+    </div>
+
+    <ResearcherReading
+      items={linkedEvidence}
+      chainLinks={[
+        ...(source ? [{ label: `来源实体：${source.name}`, href: `/entity/${source.id}` }] : []),
+        ...(target ? [{ label: `目标实体：${target.name}`, href: `/entity/${target.id}` }] : []),
+        { label: "在完整图谱中定位", href: `/explore?focus=${relation.source_id}` },
+      ]}
+      description="集中查看支撑这条关系的研究设计、结局、局限和原始文献。"
+    />
+
+    <ReturnPath
+      title="回到这条关系的上下文"
+      description="可以返回关系两端的实体资料，也可以回到图谱并聚焦来源节点。"
+      links={[
+        ...(source ? [{ label: `返回${source.name}`, href: `/entity/${source.id}` }] : []),
+        ...(target ? [{ label: `查看${target.name}`, href: `/entity/${target.id}` }] : []),
+        { label: "回到图谱定位", href: `/explore?focus=${relation.source_id}` },
+      ]}
+    />
+  </article>
+</BaseLayout>

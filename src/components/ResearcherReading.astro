@@ -1,0 +1,155 @@
+---
+import { sourceById } from "../lib/data";
+import type { EvidenceItem, SourceItem } from "../lib/types";
+import StatusBadge from "./StatusBadge.astro";
+
+interface ChainLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  items: EvidenceItem[];
+  chainLinks: ChainLink[];
+  description?: string;
+}
+
+const {
+  items,
+  chainLinks,
+  description = "沿着研究设计、结局指标与原始来源继续核对，不只停留在通俗结论。",
+} = Astro.props;
+
+const confidenceLabels: Record<EvidenceItem["confidence"], string> = {
+  low: "较低",
+  medium: "中等",
+  high: "较高",
+};
+const sourceIds = [...new Set(items.flatMap((item) => item.source_ids))];
+const linkedSources = sourceIds
+  .map((id) => sourceById.get(id))
+  .filter((source): source is SourceItem => Boolean(source));
+const timelineItems = items
+  .map((item) => {
+    const source = item.source_ids.map((id) => sourceById.get(id)).find(Boolean);
+    return { item, year: source?.year ?? null };
+  })
+  .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999));
+---
+
+<section class="researcher-reading" aria-labelledby="researcher-reading-title">
+  <div class="researcher-reading-header">
+    <div>
+      <span class="eyebrow">研究者继续阅读</span>
+      <h2 id="researcher-reading-title">从结论进入证据本身</h2>
+      <p>{description}</p>
+    </div>
+    <span class="count-label">{items.length} 张证据卡 · {linkedSources.length} 个来源</span>
+  </div>
+
+  {timelineItems.length > 0 && (
+    <div class="research-timeline" aria-label="相关证据发表时间线">
+      <div class="research-timeline-label">
+        <span class="eyebrow">证据时间线</span>
+        <p>按来源年份排列，年份不代表证据质量高低。</p>
+      </div>
+      <ol>
+        {timelineItems.map(({ item, year }) => (
+          <li>
+            <a href={`/evidence/${item.id}`}>
+              <strong>{year ?? "待核验"}</strong>
+              <span>{item.study_type}</span>
+              <small>{item.title}</small>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  )}
+
+  <div class="researcher-reading-layout">
+    <div class="researcher-evidence-list">
+      {items.length > 0 ? items.map((item) => (
+        <article class="researcher-evidence-item">
+          <div class="researcher-evidence-top">
+            <div>
+              <small>{item.id} · {item.study_type}</small>
+              <h3>{item.title}</h3>
+            </div>
+            <StatusBadge status={item.review_status} />
+          </div>
+          <p class="researcher-evidence-claim">{item.claim}</p>
+          <dl class="researcher-evidence-meta">
+            <div><dt>研究阶段</dt><dd>{item.research_stage}</dd></div>
+            <div><dt>样本量</dt><dd>{item.sample_size ?? "未报告"}</dd></div>
+            <div><dt>证据可信度</dt><dd>{confidenceLabels[item.confidence]}</dd></div>
+          </dl>
+          <div class="researcher-outcomes">
+            <strong>已提取结局</strong>
+            <div>
+              {item.outcomes.slice(0, 4).map((outcome) => <span>{outcome}</span>)}
+            </div>
+          </div>
+          <details class="researcher-evidence-details">
+            <summary>展开主要发现与局限</summary>
+            <div><strong>主要发现</strong><p>{item.findings}</p></div>
+            <div><strong>外推边界</strong><p>{item.limitations}</p></div>
+          </details>
+          <div class="researcher-evidence-actions">
+            <a class="text-link" href={`/evidence/${item.id}`}>打开完整证据卡 →</a>
+            {item.source_ids[0] && sourceById.get(item.source_ids[0]) && (
+              <a class="text-link secondary-link" href={sourceById.get(item.source_ids[0])?.url} target="_blank" rel="noreferrer">阅读原始来源 ↗</a>
+            )}
+          </div>
+        </article>
+      )) : (
+        <div class="researcher-reading-empty">
+          <strong>当前还没有直接挂接的研究证据。</strong>
+          <p>这表示图谱尚未建立可追溯证据链，不代表技术无效或有效。</p>
+        </div>
+      )}
+    </div>
+
+    <aside class="researcher-reading-sidebar">
+      <section>
+        <span class="eyebrow">核对清单</span>
+        <h3>阅读时建议继续追问</h3>
+        <ol>
+          <li>研究对象与目标人群是否一致？</li>
+          <li>主要终点是否预先设定，差异是否具有临床意义？</li>
+          <li>对照、盲法、失访和随访时间是否足以支持结论？</li>
+          <li>技术成功或量表变化是否真正转化为患者获益？</li>
+        </ol>
+        <p class="researcher-disclosure-note"><strong>资助与利益冲突：</strong>当前数据库尚未为所有论文完成结构化提取，请在原文的 Funding、Disclosure 或 Competing interests 章节核验。</p>
+      </section>
+
+      {linkedSources.length > 0 && (
+        <section>
+          <span class="eyebrow">来源索引</span>
+          <h3>原始文献与权威资料</h3>
+          <div class="researcher-source-list">
+            {linkedSources.map((source) => (
+              <article>
+                <small>{source.source_type}{source.year ? ` · ${source.year}` : ""}</small>
+                <h4>{source.title}</h4>
+                {source.doi && <p>DOI：{source.doi}</p>}
+                {source.registry_id && <p>注册号：{source.registry_id}</p>}
+                <a href={source.url} target="_blank" rel="noreferrer">打开来源 ↗</a>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {chainLinks.length > 0 && (
+        <section>
+          <span class="eyebrow">证据链</span>
+          <h3>回到关系中核对</h3>
+          <div class="researcher-chain-links">
+            {chainLinks.map((link) => <a href={link.href}>{link.label}<span aria-hidden="true">→</span></a>)}
+          </div>
+        </section>
+      )}
+    </aside>
+  </div>
+</section>

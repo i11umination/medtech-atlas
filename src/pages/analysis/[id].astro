@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ReturnPath from "../../components/ReturnPath.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import {
+  evidenceById,
+  futureDirections,
+  nodeById,
+  relationById,
+} from "../../lib/data";
+import type { EvidenceItem, FutureDirection, GraphRelation } from "../../lib/types";
+
+export function getStaticPaths() {
+  return futureDirections.map((direction) => ({
+    params: { id: direction.id },
+    props: { direction },
+  }));
+}
+
+interface Props {
+  direction: FutureDirection;
+}
+
+const { direction } = Astro.props as Props;
+const analysisFiles = import.meta.glob("../../../analysis/*.md", {
+  eager: true,
+});
+const analysisModule = analysisFiles[`../../../analysis/${direction.id}.md`] as
+  | { default: any }
+  | undefined;
+const AnalysisContent = analysisModule?.default;
+const basisEvidence = direction.basis_evidence_ids
+  .map((id) => evidenceById.get(id))
+  .filter((item): item is EvidenceItem => Boolean(item));
+const primaryEvidence = basisEvidence[0];
+const primaryRelation = primaryEvidence?.relation_ids
+  .map((id) => relationById.get(id))
+  .find((relation): relation is GraphRelation => Boolean(relation));
+const contextNode = primaryRelation ? nodeById.get(primaryRelation.source_id) : undefined;
+---
+
+<BaseLayout title={`${direction.title}｜未来研究方向`} description={direction.uncertainty}>
+  <article class="analysis-page page-shell">
+    <Breadcrumbs
+      items={[
+        { label: "首页", href: "/" },
+        { label: "图谱探索", href: "/explore" },
+        ...(contextNode ? [{ label: contextNode.name, href: `/entity/${contextNode.id}` }] : []),
+        ...(primaryRelation ? [{ label: "关联详情", href: `/relation/${primaryRelation.id}` }] : []),
+        { label: "未来研究方向" },
+      ]}
+    />
+    <header class="analysis-header">
+      <div class="entity-kicker">
+        <span>未来研究方向 · {direction.id}</span>
+        <StatusBadge status={direction.review_status} />
+      </div>
+      <h1>{direction.title}</h1>
+      <p class="lead-claim">这是一条基于现有证据提出的项目分析，不是已证实的临床结论或治疗建议。</p>
+      <div class="analysis-meta">
+        <span><small>时间层级</small>{direction.horizon}</span>
+        <span><small>依据证据</small>{direction.basis_evidence_ids.join("、")}</span>
+        <span><small>最近核验</small>{direction.last_verified ?? "未记录"}</span>
+      </div>
+    </header>
+
+    <aside class="review-banner">
+      <strong>请把它当作研究问题，而不是疗效承诺</strong>
+      <p>方向由现有研究中的结果、限制和证据缺口推导而来，仍需通过新的工程、动物或临床研究验证。</p>
+    </aside>
+
+    <div class="analysis-layout">
+      <div class="analysis-content">
+        {AnalysisContent ? <AnalysisContent /> : <p>完整分析文本尚未加载。</p>}
+      </div>
+      <aside class="analysis-sidebar">
+        <section>
+          <h2>证据边界</h2>
+          <p>{direction.uncertainty}</p>
+        </section>
+        <section>
+          <h2>风险提示</h2>
+          <p>{direction.risks}</p>
+        </section>
+      </aside>
+    </div>
+
+    <ReturnPath
+      title="回到提出这个研究方向的证据链"
+      description="返回入口连接到关系、依据证据和图谱焦点，便于继续核对这个设想从哪里产生。"
+      links={[
+        ...(primaryRelation ? [{ label: "返回关联详情", href: `/relation/${primaryRelation.id}` }] : []),
+        ...(primaryEvidence ? [{ label: "查看首条依据证据", href: `/evidence/${primaryEvidence.id}` }] : []),
+        { label: "回到图谱定位", href: contextNode ? `/explore?focus=${contextNode.id}` : "/explore" },
+      ]}
+    />
+  </article>
+</BaseLayout>

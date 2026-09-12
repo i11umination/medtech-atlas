@@ -1,0 +1,63 @@
+---
+import type { EvidenceItem } from "../lib/types";
+
+interface Props {
+  item: EvidenceItem;
+}
+
+const { item } = Astro.props;
+const maturityStages = ["体外研究", "动物研究", "早期人体", "临床试验", "监管批准"];
+
+function maturityIndex(stage: string) {
+  if (stage.includes("体外")) return 0;
+  if (stage.includes("动物")) return 1;
+  if (stage.includes("早期人体")) return 2;
+  if (stage.includes("临床试验")) return 3;
+  if (stage.includes("批准") || stage.includes("获批")) return 4;
+  return -1;
+}
+
+const activeStage = maturityIndex(item.research_stage);
+const pico = [
+  { code: "P", label: "研究对象", value: item.population_or_model },
+  { code: "I", label: "干预或暴露", value: item.intervention ?? "不适用或未报告" },
+  { code: "C", label: "对照", value: item.comparator ?? "不适用或未报告" },
+  { code: "O", label: "观察结局", value: item.outcomes.slice(0, 3).join("；") || "未提取" },
+];
+---
+
+<section class="visual-section study-design-visual" aria-labelledby="study-design-title">
+  <div class="visual-section-heading">
+    <div>
+      <span class="eyebrow">研究设计图</span>
+      <h2 id="study-design-title">这项研究究竟比较了什么？</h2>
+      <p>用 PICO 结构压缩研究对象、干预、对照和结局，再标出证据所处阶段。</p>
+    </div>
+    <div class="study-sample-badge"><strong>{item.sample_size ?? "—"}</strong><span>样本量</span></div>
+  </div>
+
+  <ol class="pico-flow">
+    {pico.map((part) => (
+      <li>
+        <span>{part.code}</span>
+        <small>{part.label}</small>
+        <strong>{part.value}</strong>
+      </li>
+    ))}
+  </ol>
+
+  <div class="maturity-scale" aria-label={`研究成熟度：${item.research_stage}`}>
+    <div class="maturity-scale-heading">
+      <div><span class="eyebrow">研究成熟度尺</span><h3>当前阶段：{item.research_stage}</h3></div>
+      <p>这是证据类型的定位，不代表研究已经逐级“通关”，也不等同于监管批准。</p>
+    </div>
+    <ol>
+      {maturityStages.map((stage, index) => (
+        <li class={index === activeStage ? "active" : ""}>
+          <span aria-hidden="true"></span>
+          <strong>{stage}</strong>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

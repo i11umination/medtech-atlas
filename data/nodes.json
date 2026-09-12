@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.1.0",
+  "kind": "nodes",
+  "updated_at": "2026-09-12",
+  "items": [
+    { "id": "DOM-0001", "type": "domain", "name": "机械工程", "slug": "mechanical-engineering", "aliases": ["机械"], "tags": ["首批科学门类"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "DOM-0002", "type": "domain", "name": "自动化", "slug": "automation", "aliases": ["自动控制"], "tags": ["首批科学门类"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "DOM-0003", "type": "domain", "name": "机器人学", "slug": "robotics", "aliases": ["机器人技术"], "tags": ["首批科学门类"], "content_ref": null, "status": "draft", "last_verified": null },
+
+    { "id": "DIS-0001", "type": "disease", "name": "脑卒中", "slug": "stroke", "aliases": ["卒中", "中风"], "tags": ["首批主题", "神经系统"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "DIS-0002", "type": "disease", "name": "脊髓损伤", "slug": "spinal-cord-injury", "aliases": [], "tags": ["首批主题", "神经系统", "创伤"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "DIS-0003", "type": "disease", "name": "膝骨关节炎", "slug": "knee-osteoarthritis", "aliases": ["膝关节骨关节炎"], "tags": ["首批主题", "骨骼肌肉"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "DIS-0004", "type": "disease", "name": "髋骨关节炎", "slug": "hip-osteoarthritis", "aliases": ["髋关节骨关节炎"], "tags": ["首批主题", "骨骼肌肉"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "DIS-0005", "type": "disease", "name": "脑动脉瘤", "slug": "cerebral-aneurysm", "aliases": ["颅内动脉瘤"], "tags": ["首批主题", "神经血管"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "DIS-0006", "type": "disease", "name": "脊柱退行性疾病", "slug": "degenerative-spine-disease", "aliases": ["退行性脊柱疾病"], "tags": ["首批主题", "骨骼肌肉"], "content_ref": null, "status": "draft", "last_verified": null },
+
+    { "id": "CLP-0001", "type": "clinical_problem", "name": "脑卒中后运动功能障碍", "slug": "post-stroke-motor-impairment", "aliases": ["卒中后运动障碍"], "tags": ["首批主题", "康复"], "content_ref": null, "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "CLP-0002", "type": "clinical_problem", "name": "脊髓损伤后运动功能障碍", "slug": "sci-motor-impairment", "aliases": ["脊髓损伤后运动障碍"], "tags": ["首批主题", "康复"], "content_ref": null, "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "CLP-0003", "type": "clinical_problem", "name": "关节置换精准执行与术后功能恢复", "slug": "joint-replacement-precision-recovery", "aliases": [], "tags": ["首批主题", "手术", "康复"], "content_ref": null, "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "CLP-0004", "type": "clinical_problem", "name": "截肢与肢体缺失后的功能重建", "slug": "limb-loss-functional-restoration", "aliases": ["截肢后功能重建", "肢体缺失"], "tags": ["首批主题", "辅助器械"], "content_ref": null, "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "CLP-0005", "type": "clinical_problem", "name": "神经血管介入的精准导航与操作", "slug": "precision-neurovascular-intervention", "aliases": [], "tags": ["首批主题", "介入"], "content_ref": null, "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "CLP-0006", "type": "clinical_problem", "name": "脊柱手术精准定位与术后功能恢复", "slug": "spine-surgery-precision-recovery", "aliases": [], "tags": ["首批主题", "手术", "康复"], "content_ref": null, "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "CLP-0007", "type": "clinical_problem", "name": "急性脑卒中的影像识别与分层", "slug": "acute-stroke-imaging-triage", "aliases": ["卒中影像分诊"], "tags": ["首批主题", "诊断与监测"], "content_ref": null, "status": "draft", "last_verified": null },
+
+    { "id": "TEC-0001", "type": "technology", "name": "康复机器人", "slug": "rehabilitation-robotics", "aliases": ["机器人辅助康复"], "tags": ["优先技术方向"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "TEC-0002", "type": "technology", "name": "外骨骼机器人", "slug": "robotic-exoskeleton", "aliases": ["动力外骨骼"], "tags": ["优先技术方向"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "TEC-0003", "type": "technology", "name": "智能假肢", "slug": "intelligent-prosthesis", "aliases": ["智能义肢"], "tags": ["优先技术方向"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "TEC-0004", "type": "technology", "name": "手术机器人", "slug": "surgical-robotics", "aliases": ["机器人辅助手术"], "tags": ["优先技术方向"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "TEC-0005", "type": "technology", "name": "微型与介入机器人", "slug": "micro-interventional-robotics", "aliases": ["介入机器人", "微型机器人"], "tags": ["优先技术方向"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "TEC-0006", "type": "technology", "name": "医学影像自动化", "slug": "medical-imaging-automation", "aliases": ["医学影像智能分析"], "tags": ["优先技术方向"], "content_ref": null, "status": "draft", "last_verified": null },
+    { "id": "TEC-0007", "type": "technology", "name": "实验室自动化", "slug": "laboratory-automation", "aliases": ["自动化实验平台"], "tags": ["横向平台技术"], "content_ref": null, "status": "draft", "last_verified": null },
+
+    { "id": "RES-0001", "type": "research", "name": "RATULS 卒中上肢机器人训练随机试验", "slug": "ratuls-stroke-trial", "aliases": ["RATULS"], "tags": ["脑卒中", "随机对照试验"], "content_ref": "evidence/EVD-0001.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0002", "type": "research", "name": "卒中上肢机器人治疗荟萃分析", "slug": "stroke-upper-limb-robot-meta-analysis", "aliases": [], "tags": ["脑卒中", "系统综述", "荟萃分析"], "content_ref": "evidence/EVD-0002.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0003", "type": "research", "name": "WISE 脊髓损伤外骨骼随机试验", "slug": "wise-sci-exoskeleton-trial", "aliases": ["WISE"], "tags": ["脊髓损伤", "随机对照试验"], "content_ref": "evidence/EVD-0003.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0004", "type": "research", "name": "脊髓损伤外骨骼训练荟萃分析", "slug": "sci-exoskeleton-meta-analysis", "aliases": [], "tags": ["脊髓损伤", "系统综述", "荟萃分析"], "content_ref": "evidence/EVD-0004.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0005", "type": "research", "name": "机器人全膝关节置换长期随机试验", "slug": "robotic-tka-long-term-trial", "aliases": [], "tags": ["膝骨关节炎", "随机对照试验", "长期随访"], "content_ref": "evidence/EVD-0005.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0006", "type": "research", "name": "RACER-Knee 务实随机试验", "slug": "racer-knee-trial", "aliases": ["RACER-Knee"], "tags": ["膝骨关节炎", "随机对照试验"], "content_ref": "evidence/EVD-0006.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0007", "type": "research", "name": "神经连接感觉假肢居家研究", "slug": "neural-sensory-prosthesis-home-study", "aliases": [], "tags": ["截肢与肢体缺失", "早期人体研究"], "content_ref": "evidence/EVD-0007.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0008", "type": "research", "name": "非侵入感觉假手日常使用研究", "slug": "noninvasive-sensory-hand-daily-use", "aliases": [], "tags": ["截肢与肢体缺失", "前瞻性队列"], "content_ref": "evidence/EVD-0008.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0009", "type": "research", "name": "首例机器人辅助治疗性神经血管介入", "slug": "first-human-robotic-neurointervention", "aliases": [], "tags": ["脑动脉瘤", "首次人体病例"], "content_ref": "evidence/EVD-0009.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0010", "type": "research", "name": "机器人辅助神经介入荟萃分析", "slug": "robotic-neurointervention-meta-analysis", "aliases": [], "tags": ["神经血管介入", "系统综述", "荟萃分析"], "content_ref": "evidence/EVD-0010.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0011", "type": "research", "name": "机器人脊柱手术随机试验系统综述", "slug": "robotic-spine-rct-review", "aliases": [], "tags": ["脊柱退行性疾病", "系统综述"], "content_ref": "evidence/EVD-0011.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0012", "type": "research", "name": "退行性腰椎疾病机器人 MIS-TLIF 荟萃分析", "slug": "robotic-mis-tlif-meta-analysis", "aliases": [], "tags": ["脊柱退行性疾病", "系统综述", "荟萃分析"], "content_ref": "evidence/EVD-0012.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0013", "type": "research", "name": "患者来源结肠癌类器官自动化筛选平台研究", "slug": "automated-colon-organoid-screening", "aliases": [], "tags": ["实验室自动化", "体外研究"], "content_ref": "evidence/EVD-0013.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0014", "type": "research", "name": "OrBITS 自动化类器官图像分析研究", "slug": "orbits-organoid-imaging", "aliases": ["OrBITS"], "tags": ["实验室自动化", "体外研究"], "content_ref": "evidence/EVD-0014.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0015", "type": "research", "name": "上肢机器人训练卒中功能结局荟萃分析", "slug": "stroke-upper-limb-robot-meta-analysis-2024", "aliases": [], "tags": ["脑卒中", "系统综述", "荟萃分析"], "content_ref": "evidence/EVD-0015.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0016", "type": "research", "name": "不同卒中阶段上肢机器人康复多中心随机试验", "slug": "stroke-robot-rehabilitation-severity-rct", "aliases": [], "tags": ["脑卒中", "多中心", "随机对照试验"], "content_ref": "evidence/EVD-0016.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0017", "type": "research", "name": "CorPath GRX 脑动脉瘤栓塞多中心研究", "slug": "corpath-grx-cerebral-aneurysm-study", "aliases": ["CorPath GRX"], "tags": ["脑动脉瘤", "国际多中心", "前瞻性研究"], "content_ref": "evidence/EVD-0017.md", "status": "needs-review", "last_verified": "2026-09-12" },
+    { "id": "RES-0018", "type": "research", "name": "机器人辅助神经血管介入单中心系列", "slug": "robotic-neuro-endovascular-single-center-series", "aliases": [], "tags": ["神经血管介入", "回顾性研究"], "content_ref": "evidence/EVD-0018.md", "status": "needs-review", "last_verified": "2026-09-12" }
+  ]
+}

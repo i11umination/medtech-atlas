@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import RequestForm from "../components/RequestForm";
+---
+
+<BaseLayout
+  title="提交需求｜医学与先进技术图谱"
+  description="提交你希望医学与先进技术图谱补充的疾病、技术、科学门类或研究问题。"
+>
+  <article class="request-page page-shell">
+    <header class="request-header">
+      <span class="eyebrow">共同扩展这张图谱</span>
+      <h1>你想让技术帮助回答哪个医学问题？</h1>
+      <p>把你正在寻找的疾病、功能困境、科学门类或研究方向告诉我们。需求会进入人工策展队列，经过来源检索与医学审核后，才会成为公开内容。</p>
+    </header>
+
+    <div class="request-layout">
+      <section class="request-card" aria-labelledby="request-form-title">
+        <div class="request-card-heading">
+          <span class="eyebrow">需求表单</span>
+          <h2 id="request-form-title">描述你真正想知道的事</h2>
+        </div>
+        <RequestForm client:load />
+      </section>
+
+      <aside class="request-aside">
+        <div class="request-aside-block">
+          <span class="aside-number">01</span>
+          <h2>提交后会发生什么？</h2>
+          <p>系统先按内容类型和已有节点归类，尽量合并重复需求，再进入人工检索和证据审核。</p>
+        </div>
+        <div class="request-aside-block">
+          <span class="aside-number">02</span>
+          <h2>什么内容不会被直接公开？</h2>
+          <p>用户原话、未经核验的疗效判断和个体化医疗信息不会直接进入公开图谱。</p>
+        </div>
+        <div class="request-aside-block">
+          <span class="aside-number">03</span>
+          <h2>为什么不收集联系方式？</h2>
+          <p>首版只需要知道大家想了解什么，不需要姓名、邮箱、病历或其他个人健康信息。</p>
+        </div>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

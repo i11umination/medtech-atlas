@@ -1,0 +1,30 @@
+---
+interface ReturnLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  links: ReturnLink[];
+}
+
+const { title, description, links } = Astro.props;
+---
+
+<nav class="return-path" aria-label="返回路径">
+  <div class="return-path-copy">
+    <span class="eyebrow">返回路径</span>
+    <h2>{title}</h2>
+    <p>{description}</p>
+  </div>
+  <div class="return-path-actions">
+    {links.map((link, index) => (
+      <a class={`button ${index === 0 ? "button-primary" : "button-quiet"}`} href={link.href}>
+        <span aria-hidden="true">←</span>{link.label}
+      </a>
+    ))}
+  </div>
+</nav>
+

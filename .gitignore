@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+wrangler.toml
+.env
+.env.*
+!.env.example

@@ -1,0 +1,75 @@
+---
+import { typeLabels } from "../lib/data";
+import type { EvidenceItem, GraphNode, GraphRelation } from "../lib/types";
+
+interface Props {
+  relation: GraphRelation;
+  source?: GraphNode;
+  target?: GraphNode;
+  evidenceItems: EvidenceItem[];
+}
+
+const { relation, source, target, evidenceItems } = Astro.props;
+const outcomes = [...new Set(evidenceItems.flatMap((item) => item.outcomes))].slice(0, 2);
+const hasPatientFacingTarget = target?.type === "disease" || target?.type === "clinical_problem";
+const finalLabel = hasPatientFacingTarget ? "患者相关结局" : "下一层医学连接";
+const finalValue = outcomes.length > 0
+  ? outcomes.join("；")
+  : hasPatientFacingTarget
+    ? "尚未挂接可提取的患者结局"
+    : "继续沿图谱查找临床问题与研究证据";
+const steps = [
+  {
+    marker: "01",
+    label: "关系起点",
+    value: source ? `${typeLabels[source.type]} · ${source.name}` : relation.source_id,
+    href: source ? `/entity/${source.id}` : undefined,
+  },
+  {
+    marker: "02",
+    label: "作用或关系机制",
+    value: relation.mechanism_summary ?? "机制说明尚待来源核验",
+  },
+  {
+    marker: "03",
+    label: "关系指向",
+    value: target ? `${typeLabels[target.type]} · ${target.name}` : relation.target_id,
+    href: target ? `/entity/${target.id}` : undefined,
+  },
+  {
+    marker: "04",
+    label: "证据走到哪一步",
+    value: `${relation.research_stage} · ${evidenceItems.length} 张证据卡`,
+  },
+  {
+    marker: "05",
+    label: finalLabel,
+    value: finalValue,
+  },
+];
+---
+
+<section class="visual-section mechanism-path-section" aria-labelledby="mechanism-path-title">
+  <div class="visual-section-heading">
+    <div>
+      <span class="eyebrow">医学进展路径</span>
+      <h2 id="mechanism-path-title">从工程或疾病概念走向医学结局</h2>
+      <p>把关系拆成五步，区分机制、研究阶段和真正需要观察的患者结局。</p>
+    </div>
+    <span class="stage-chip">{relation.research_stage}</span>
+  </div>
+  <ol class="mechanism-path">
+    {steps.map((step) => (
+      <li>
+        <span class="mechanism-step-marker">{step.marker}</span>
+        <small>{step.label}</small>
+        {step.href ? <a href={step.href}>{step.value}</a> : <strong>{step.value}</strong>}
+      </li>
+    ))}
+  </ol>
+  <div class="mechanism-boundary">
+    <strong>证据边界</strong>
+    <p>{relation.limitations}</p>
+  </div>
+</section>
+

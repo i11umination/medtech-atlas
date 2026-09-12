@@ -1,0 +1,118 @@
+---
+import { evidenceById, nodeById, sourceById, typeLabels } from "../lib/data";
+import type { GraphNode, GraphRelation, NodeType } from "../lib/types";
+
+interface Props {
+  node: GraphNode;
+  relations: GraphRelation[];
+}
+
+const { node, relations } = Astro.props;
+const typeColors: Record<NodeType, string> = {
+  domain: "#d97706",
+  capability: "#2f7d62",
+  disease: "#b84b62",
+  clinical_problem: "#7c3aed",
+  technology: "#087f8c",
+  research: "#64748b",
+};
+const neighborMap = new Map<string, GraphNode>();
+relations.forEach((relation) => {
+  const otherId = relation.source_id === node.id ? relation.target_id : relation.source_id;
+  const other = nodeById.get(otherId);
+  if (other) neighborMap.set(other.id, other);
+});
+const neighbors = [...neighborMap.values()];
+const visibleNeighbors = neighbors.slice(0, 8);
+const hiddenCount = Math.max(0, neighbors.length - visibleNeighbors.length);
+const centerX = 340;
+const centerY = 190;
+const radiusX = 270;
+const radiusY = 125;
+const points = visibleNeighbors.map((neighbor, index) => {
+  const angle = -Math.PI / 2 + (Math.PI * 2 * index) / visibleNeighbors.length;
+  return {
+    neighbor,
+    x: centerX + Math.cos(angle) * radiusX,
+    y: centerY + Math.sin(angle) * radiusY,
+  };
+});
+const evidenceIds = [...new Set(relations.flatMap((relation) => relation.evidence_ids))];
+const years = evidenceIds.flatMap((id) => {
+  const evidence = evidenceById.get(id);
+  return evidence
+    ? evidence.source_ids
+        .map((sourceId) => sourceById.get(sourceId)?.year)
+        .filter((year): year is number => typeof year === "number")
+    : [];
+});
+const latestYear = years.length > 0 ? Math.max(...years) : null;
+const stageOrder = ["不适用", "阶段信息不明确", "体外研究", "动物研究", "早期人体研究", "临床试验", "监管批准"];
+const highestStage = relations
+  .map((relation) => relation.research_stage)
+  .sort((a, b) => stageOrder.indexOf(b) - stageOrder.indexOf(a))[0] ?? "暂无关系";
+const centerLines = node.name.length > 8 ? [node.name.slice(0, 8), node.name.slice(8, 15)] : [node.name];
+
+function labelLines(label: string) {
+  if (label.length <= 8) return [label];
+  return [label.slice(0, 8), `${label.slice(8, 14)}${label.length > 14 ? "…" : ""}`];
+}
+---
+
+<section class="visual-section entity-visual-overview" aria-labelledby="entity-visual-title">
+  <div class="visual-section-heading">
+    <div>
+      <span class="eyebrow">关系轨道图</span>
+      <h2 id="entity-visual-title">这个节点处在什么位置？</h2>
+      <p>中心是当前实体，周围是与它直接相连的图谱节点；点击外围节点可以继续探索。</p>
+    </div>
+    <span class="count-label">显示 {visibleNeighbors.length}/{neighbors.length} 个相邻节点</span>
+  </div>
+
+  <div class="entity-visual-layout">
+    <div class="relation-orbit-card">
+      {visibleNeighbors.length > 0 ? (
+        <svg viewBox="0 0 680 380" role="img" aria-labelledby="orbit-title orbit-description">
+          <title id="orbit-title">{node.name}的直接关系轨道</title>
+          <desc id="orbit-description">{node.name}位于中心，周围显示{visibleNeighbors.length}个直接相邻节点。</desc>
+          {points.map(({ x, y }) => (
+            <line class="orbit-line" x1={centerX} y1={centerY} x2={x} y2={y} />
+          ))}
+          {points.map(({ neighbor, x, y }) => (
+            <a class="orbit-node-link" href={`/entity/${neighbor.id}`} aria-label={`打开${neighbor.name}实体页`}>
+              <g class={`orbit-node orbit-node-${neighbor.type}`}>
+                <circle cx={x} cy={y} r="28" fill={typeColors[neighbor.type]} />
+                <text class="orbit-node-type" x={x} y={y - 37} text-anchor="middle">{typeLabels[neighbor.type]}</text>
+                <text class="orbit-node-label" x={x} y={y + 42} text-anchor="middle">
+                  {labelLines(neighbor.name).map((line, index) => (
+                    <tspan x={x} dy={index === 0 ? 0 : 15}>{line}</tspan>
+                  ))}
+                </text>
+              </g>
+            </a>
+          ))}
+          <g class="orbit-center-node">
+            <circle cx={centerX} cy={centerY} r="57" fill={typeColors[node.type]} />
+            <text class="orbit-center-type" x={centerX} y={centerY - 70} text-anchor="middle">{typeLabels[node.type]}</text>
+            <text class="orbit-center-label" x={centerX} y={centerY - (centerLines.length - 1) * 10} text-anchor="middle">
+              {centerLines.map((line, index) => (
+                <tspan x={centerX} dy={index === 0 ? 0 : 20}>{line}</tspan>
+              ))}
+            </text>
+          </g>
+        </svg>
+      ) : (
+        <div class="visual-empty-state"><strong>尚未建立直接关系</strong><p>当前节点可以作为后续资料征集和关系审核的起点。</p></div>
+      )}
+      {hiddenCount > 0 && <p class="orbit-overflow-note">另有 {hiddenCount} 个相邻节点可在下方关联内容或完整图谱中查看。</p>}
+    </div>
+
+    <aside class="entity-visual-metrics" aria-label="实体关系概览">
+      <div><strong>{neighbors.length}</strong><span>直接相邻节点</span></div>
+      <div><strong>{evidenceIds.length}</strong><span>关联证据卡</span></div>
+      <div><strong>{latestYear ?? "—"}</strong><span>最新来源年份</span></div>
+      <div><strong>{highestStage}</strong><span>当前最高研究阶段</span></div>
+      <p>这里统计的是当前数据库中的已收录内容，不代表该领域全部研究。</p>
+    </aside>
+  </div>
+</section>

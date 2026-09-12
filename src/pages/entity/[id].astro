@@ -1,0 +1,186 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import EntityVisualOverview from "../../components/EntityVisualOverview.astro";
+import RelatedContentExplorer from "../../components/RelatedContentExplorer";
+import ResearcherReading from "../../components/ResearcherReading.astro";
+import ReturnPath from "../../components/ReturnPath.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import {
+  evidenceById,
+  futureDirections,
+  nodeById,
+  nodeSummaryByNodeId,
+  nodes,
+  relations,
+  sourceById,
+  typeLabels,
+} from "../../lib/data";
+import type { EvidenceItem, GraphNode } from "../../lib/types";
+
+export function getStaticPaths() {
+  return nodes.map((node) => ({ params: { id: node.id }, props: { node } }));
+}
+
+interface Props {
+  node: GraphNode;
+}
+
+const { node } = Astro.props as Props;
+const summary = nodeSummaryByNodeId.get(node.id);
+const summaryFiles = import.meta.glob("../../../node-summaries/*.md", {
+  eager: true,
+});
+const summaryModule = summaryFiles[`../../../node-summaries/${node.id}.md`] as
+  | { default: any }
+  | undefined;
+const NodeSummaryContent = summaryModule?.default;
+const summarySources = summary
+  ? summary.source_ids.map((id) => sourceById.get(id)).filter(Boolean)
+  : [];
+const connectedRelations = relations.filter(
+  (relation) => relation.source_id === node.id || relation.target_id === node.id,
+);
+const relatedItems = connectedRelations.map((relation) => {
+  const otherId = relation.source_id === node.id ? relation.target_id : relation.source_id;
+  return {
+    relation,
+    other: nodeById.get(otherId),
+    evidence: relation.evidence_ids
+      .map((id) => evidenceById.get(id))
+      .filter((item): item is EvidenceItem => Boolean(item)),
+  };
+});
+const connectedEvidenceIds = new Set(
+  connectedRelations.flatMap((relation) => relation.evidence_ids),
+);
+const researcherEvidence = [...connectedEvidenceIds]
+  .map((id) => evidenceById.get(id))
+  .filter((item): item is EvidenceItem => Boolean(item));
+const researcherChainLinks = connectedRelations.map((relation) => {
+  const sourceName = nodeById.get(relation.source_id)?.name ?? relation.source_id;
+  const targetName = nodeById.get(relation.target_id)?.name ?? relation.target_id;
+  return {
+    label: `${sourceName} → ${targetName}`,
+    href: `/relation/${relation.id}`,
+  };
+});
+const relatedDirections = futureDirections.filter((direction) =>
+  direction.basis_evidence_ids.some((id) => connectedEvidenceIds.has(id)),
+);
+---
+
+<BaseLayout title={`${node.name}｜医学与先进技术图谱`}>
+  <article class="entity-page page-shell">
+    <Breadcrumbs
+      items={[
+        { label: "首页", href: "/" },
+        { label: "图谱探索", href: "/explore" },
+        { label: node.name },
+      ]}
+    />
+    <header class="entity-header">
+      <div>
+        <div class="entity-kicker">
+          <span>{typeLabels[node.type]}</span>
+          <StatusBadge status={node.status} />
+        </div>
+        <h1>{node.name}</h1>
+        {node.aliases.length > 0 && <p class="entity-aliases">别名：{node.aliases.join("、")}</p>}
+        <div class="tag-row">
+          {node.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+      </div>
+      <a class="button button-primary" href={`/explore?focus=${node.id}`}>在图谱中定位</a>
+    </header>
+
+    {node.status !== "approved" && (
+      <aside class="review-banner">
+        <strong>内容状态：尚未完成医学审核</strong>
+        <p>当前页面用于验证图谱结构，不应被理解为临床建议或确定性疗效结论。</p>
+      </aside>
+    )}
+
+    {summary && (
+      <section class="entity-section entity-summary-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">通俗简介</span><h2>先理解这个节点</h2></div>
+          <span class="count-label">{summarySources.length} 个来源 · 核验于 {summary.last_verified}</span>
+        </div>
+        <div class="entity-summary-layout">
+          <div class="entity-summary-content">
+            {NodeSummaryContent ? <NodeSummaryContent /> : <p>实体简介正文尚未加载。</p>}
+          </div>
+          <aside class="entity-summary-sources">
+            <div class="entity-summary-sources-heading">
+              <h3>可靠来源</h3>
+              <StatusBadge status={summary.review_status} />
+            </div>
+            {summarySources.map((source) => source && (
+              <article class="entity-summary-source">
+                <small>{source.source_type}{source.year ? ` · ${source.year}` : ""}</small>
+                <h4>{source.title}</h4>
+                <p>{source.institution ?? source.authors.join("、")}</p>
+                <a class="text-link" href={source.url} target="_blank" rel="noreferrer">打开来源 ↗</a>
+              </article>
+            ))}
+          </aside>
+        </div>
+      </section>
+    )}
+
+    <EntityVisualOverview node={node} relations={connectedRelations} />
+
+    <section class="entity-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">关联内容</span><h2>选择你想继续了解的内容类型</h2></div>
+        <span class="count-label">共 {connectedRelations.length} 条关联关系</span>
+      </div>
+      <RelatedContentExplorer client:load items={relatedItems} />
+    </section>
+
+    {relatedDirections.length > 0 && (
+      <section class="entity-section directions-section">
+        <div class="section-heading">
+          <div><span class="eyebrow">项目分析</span><h2>可能的未来研究方向</h2></div>
+          <span class="count-label">基于 {connectedEvidenceIds.size} 条关联证据</span>
+        </div>
+        <div class="direction-grid">
+          {relatedDirections.map((direction) => (
+            <article class="direction-card">
+              <div class="direction-card-top">
+                <span class="stage-chip">{direction.horizon}</span>
+                <StatusBadge status={direction.review_status} />
+              </div>
+              <h3>{direction.title}</h3>
+              <div class="direction-detail">
+                <strong>不确定性</strong>
+                <p>{direction.uncertainty}</p>
+              </div>
+              <div class="direction-detail risk-detail">
+                <strong>主要风险</strong>
+                <p>{direction.risks}</p>
+              </div>
+              <a class="text-link" href={`/analysis/${direction.id}`}>查看完整研究设想 →</a>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <ResearcherReading
+      items={researcherEvidence}
+      chainLinks={researcherChainLinks}
+      description={`汇总与“${node.name}”直接相连的研究设计、结局、限制和原始来源。`}
+    />
+
+    <ReturnPath
+      title={`回到“${node.name}”的探索位置`}
+      description="返回图谱后会自动聚焦当前节点；即使直接打开或刷新本页，这条路径也保持有效。"
+      links={[
+        { label: "回到图谱定位", href: `/explore?focus=${node.id}` },
+        { label: "返回首页", href: "/" },
+      ]}
+    />
+  </article>
+</BaseLayout>

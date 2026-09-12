@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.1.0",
+  "kind": "navigation_groups",
+  "updated_at": "2026-09-12",
+  "items": [
+    {
+      "id": "NAV-0001",
+      "name": "科学与技术体系",
+      "description": "从科学门类进入核心工程能力、具体技术和医学应用。",
+      "level": 0,
+      "axis": "science",
+      "parent_id": null,
+      "child_group_ids": ["NAV-0010", "NAV-0011", "NAV-0012", "NAV-0013"],
+      "primary_node_ids": [],
+      "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0002",
+      "name": "疾病与临床问题",
+      "description": "从疾病系统和患者面对的临床问题进入技术与证据。",
+      "level": 0,
+      "axis": "medicine",
+      "parent_id": null,
+      "child_group_ids": ["NAV-0020", "NAV-0021", "NAV-0022"],
+      "primary_node_ids": [],
+      "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0003",
+      "name": "研究与证据",
+      "description": "从研究设计和证据卡回看它们支持或限制了哪些医学技术关系。",
+      "level": 0,
+      "axis": "evidence",
+      "parent_id": null,
+      "child_group_ids": [],
+      "primary_node_ids": [
+        "RES-0001", "RES-0002", "RES-0003", "RES-0004", "RES-0005", "RES-0006",
+        "RES-0007", "RES-0008", "RES-0009", "RES-0010", "RES-0011", "RES-0012",
+        "RES-0013", "RES-0014", "RES-0015", "RES-0016", "RES-0017", "RES-0018"
+      ],
+      "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0010",
+      "name": "工程与信息科学",
+      "description": "连接机械、自动化、机器人和后续的信息、材料、计算与控制门类。",
+      "level": 1,
+      "axis": "science",
+      "parent_id": "NAV-0001",
+      "child_group_ids": [],
+      "primary_node_ids": [
+        "DOM-0001", "DOM-0002", "DOM-0003",
+        "TEC-0001", "TEC-0002", "TEC-0003", "TEC-0004", "TEC-0005", "TEC-0006", "TEC-0007"
+      ],
+      "cross_node_ids": [],
+      "planned_items": [
+        "电子与信息工程", "材料科学与工程", "计算机科学与人工智能", "化学工程", "自动化与控制科学"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0011",
+      "name": "基础科学",
+      "description": "从物质、能量、数量和不确定性等基本规律解释医学技术的原理。",
+      "level": 1,
+      "axis": "science",
+      "parent_id": "NAV-0001",
+      "child_group_ids": [],
+      "primary_node_ids": [],
+      "cross_node_ids": [],
+      "planned_items": ["物理学", "化学", "数学与统计学"],
+      "status": "planned"
+    },
+    {
+      "id": "NAV-0012",
+      "name": "生命与认知科学",
+      "description": "连接生命机制、神经系统、认知过程和相应的诊疗技术。",
+      "level": 1,
+      "axis": "science",
+      "parent_id": "NAV-0001",
+      "child_group_ids": [],
+      "primary_node_ids": [],
+      "cross_node_ids": [],
+      "planned_items": [
+        "神经科学与认知科学", "分子与细胞生物学", "遗传学与基因组学", "免疫学", "药理学与药剂学"
+      ],
+      "status": "planned"
+    },
+    {
+      "id": "NAV-0013",
+      "name": "交叉科学方向",
+      "description": "容纳跨越多个传统门类的研究尺度、方法和转化方向。",
+      "level": 1,
+      "axis": "science",
+      "parent_id": "NAV-0001",
+      "child_group_ids": [],
+      "primary_node_ids": [],
+      "cross_node_ids": [],
+      "planned_items": ["纳米科学", "再生医学与组织工程", "合成生物学"],
+      "status": "planned"
+    },
+    {
+      "id": "NAV-0020",
+      "name": "神经系统与神经功能",
+      "description": "覆盖脑卒中、脊髓损伤、脑动脉瘤及相关诊断、介入和康复问题。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": [
+        "DIS-0001", "DIS-0002", "DIS-0005", "CLP-0001", "CLP-0002", "CLP-0005", "CLP-0007"
+      ],
+      "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0021",
+      "name": "骨骼肌肉与脊柱",
+      "description": "覆盖骨关节炎、脊柱退行性疾病及相关手术精准执行与功能恢复。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0003", "DIS-0004", "DIS-0006", "CLP-0003", "CLP-0006"],
+      "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0022",
+      "name": "肢体功能重建",
+      "description": "聚焦截肢或肢体缺失后的运动控制、感觉反馈、假肢使用和真实生活功能。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["CLP-0004"],
+      "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    }
+  ]
+}
