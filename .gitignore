@@ -1,4 +1,5 @@
 node_modules/
+archives/
 dist/
 .astro/
 .wrangler/
