@@ -302,7 +302,7 @@ export default function GraphExplorer({
           className="graph-canvas explorer-canvas"
           ref={containerRef}
           role="img"
-          aria-label="可缩放、拖动和选择的 MedTech Atlas 医学科技图谱"
+          aria-label="可缩放、拖动和选择的医学×先进技术知识图谱"
         ></div>
         <div className="canvas-help">滚轮缩放 · 拖动平移 · 点击节点或连线查看详情</div>
       </div>

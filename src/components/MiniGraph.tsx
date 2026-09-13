@@ -162,7 +162,7 @@ export default function MiniGraph({
         {
           data: {
             id: homepageCenterId,
-            label: "MedTech Atlas",
+            label: "医学×先进技术",
             color: "#103f47",
           },
           classes: "homepage-center",
@@ -328,7 +328,7 @@ export default function MiniGraph({
         className="graph-canvas mini-graph"
         ref={containerRef}
         role="img"
-        aria-label="以 MedTech Atlas 为中心、向外连接科学门类及相关能力与医学问题的知识图谱；可自由平移并通过触控板捏合缩放"
+        aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；可自由平移并通过触控板捏合缩放"
       ></div>
       <div className="canvas-help mini-graph-help">拖动节点可高亮直接关联 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
       <div className="graph-legend" aria-label="图谱图例">
