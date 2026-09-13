@@ -1,4 +1,4 @@
-import cytoscape, { type Core } from "cytoscape";
+import cytoscape, { type Core, type NodeSingular } from "cytoscape";
 import { useEffect, useRef } from "react";
 import type { GraphNode, GraphRelation } from "../lib/types";
 
@@ -258,11 +258,11 @@ export default function MiniGraph({
           },
         },
         {
-          selector: "edge.drag-related",
+          selector: "edge.related-highlight",
           style: {
             width: 3.6,
-            "line-color": "data(dragColor)",
-            "target-arrow-color": "data(dragColor)",
+            "line-color": "data(highlightColor)",
+            "target-arrow-color": "data(highlightColor)",
             opacity: 1,
             "z-index": 999,
           },
@@ -295,19 +295,66 @@ export default function MiniGraph({
     graph.fit(undefined, 56);
     graphRef.current = graph;
 
+    let highlightedNodeId: string | null = null;
+    let dragState: { nodeId: string; moved: boolean } | null = null;
+    let suppressedTapNodeId: string | null = null;
+    let suppressedTapUntil = 0;
+
+    const clearRelatedHighlights = () => {
+      graph?.edges().removeClass("related-highlight").removeData("highlightColor");
+      highlightedNodeId = null;
+    };
+
+    const highlightRelatedEdges = (node: NodeSingular) => {
+      clearRelatedHighlights();
+      node
+        .connectedEdges()
+        .data("highlightColor", node.data("color"))
+        .addClass("related-highlight");
+      highlightedNodeId = node.id();
+    };
+
     graph.on("tap", "node", (event) => {
-      if (event.target.id() === homepageCenterId) return;
-      window.location.href = `${import.meta.env.BASE_URL}entity/${event.target.id()}`;
+      const nodeId = event.target.id();
+      if (nodeId === homepageCenterId) return;
+
+      if (suppressedTapNodeId === nodeId && performance.now() < suppressedTapUntil) {
+        suppressedTapNodeId = null;
+        suppressedTapUntil = 0;
+        return;
+      }
+
+      if (highlightedNodeId === nodeId) {
+        window.location.href = `${import.meta.env.BASE_URL}entity/${nodeId}`;
+        return;
+      }
+
+      highlightRelatedEdges(event.target);
     });
     graph.on("grab", "node", (event) => {
-      graph?.edges().removeClass("drag-related").removeData("dragColor");
-      event.target
-        .connectedEdges()
-        .data("dragColor", event.target.data("color"))
-        .addClass("drag-related");
+      const nodeId = event.target.id();
+      if (nodeId === homepageCenterId) return;
+      if (suppressedTapNodeId === nodeId) {
+        suppressedTapNodeId = null;
+        suppressedTapUntil = 0;
+      }
+      dragState = { nodeId, moved: false };
     });
-    graph.on("free", "node", () => {
-      graph?.edges().removeClass("drag-related").removeData("dragColor");
+    graph.on("drag", "node", (event) => {
+      const nodeId = event.target.id();
+      const currentDrag = dragState;
+      if (!currentDrag || currentDrag.nodeId !== nodeId || currentDrag.moved) return;
+      currentDrag.moved = true;
+      highlightRelatedEdges(event.target);
+    });
+    graph.on("free", "node", (event) => {
+      const nodeId = event.target.id();
+      const currentDrag = dragState;
+      if (currentDrag && currentDrag.nodeId === nodeId && currentDrag.moved) {
+        suppressedTapNodeId = nodeId;
+        suppressedTapUntil = performance.now() + 240;
+      }
+      dragState = null;
     });
 
     return () => {
@@ -328,9 +375,9 @@ export default function MiniGraph({
         className="graph-canvas mini-graph"
         ref={containerRef}
         role="img"
-        aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；可自由平移并通过触控板捏合缩放"
+        aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；点击或拖动节点高亮相连线，再次点击同一节点进入详情；可自由平移并通过触控板捏合缩放"
       ></div>
-      <div className="canvas-help mini-graph-help">拖动节点可高亮直接关联 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
+      <div className="canvas-help mini-graph-help">点击或拖动节点高亮直接关联 · 再次点击同一节点进入详情 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
       <div className="graph-legend" aria-label="图谱图例">
         {Object.entries(colors).filter(([type]) => type !== "research").map(([type, color]) => (
           <span key={type}>
