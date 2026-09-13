@@ -114,6 +114,21 @@ npm run build
 - `check`：Astro 与 TypeScript 检查；
 - `build`：完整静态站点构建。
 
+已知环境问题（本地开发机）：
+
+- `npm run check`（astro check）在当前开发机（Windows、Node 24）会因 Node 堆内存不足崩溃，报错为 `FATAL ERROR: Ineffective mark-compacts near heap limit - JavaScript heap out of memory`，退出码 134；通过 `NODE_OPTIONS="--max-old-space-size=8192"` 提高堆上限后仍然崩溃，系统物理内存充足（31.5 GB）；
+- 该崩溃与代码改动无关：用 `git stash` 收起全部改动后在原始代码上运行，同样复现，属既有环境问题；
+- 本地类型检查请改用 `npx tsc --noEmit`（已验证通过）；第 7 节中 `npm run check` 的验收记录为历史结果，不代表当前本机可复现；
+- 该问题不影响 GitHub Actions：CI 在 ubuntu-latest 上运行 `npm run check` 与 `npm run build`，构建和部署正常。
+
+部署路径约定（新增站内链接时必须遵守）：
+
+- 站点部署在 GitHub Pages 子路径下，`astro.config.mjs` 配置了 `base: "/medtech-atlas/"`；
+- Astro **不会**自动为 `.astro` 模板里的站内链接补 base 前缀，写 `href="/explore"` 会 404；
+- `.astro` 模板统一使用 `src/lib/site.ts` 导出的 `sitePath("/explore")`；
+- React 组件（`.tsx`）使用 `` `${import.meta.env.BASE_URL}entity/${id}` ``，注意拼接时不要加前导斜杠，否则会生成 `//` 双斜杠；
+- 接收 href 数组的组件（`Breadcrumbs`、`ReturnPath`、`MechanismPath`、`ResearcherReading`）已在组件内部统一调用 `sitePath`，页面传参无需处理。
+
 ## 7. 本阶段验收结果
 
 - `npm run validate:data`：通过；
@@ -122,7 +137,7 @@ npm run build
 - `npm run build`：成功生成 461 个静态页面；
 - 旧机器人学与旧化学工程地址均保留永久重定向；
 - 导航不存在悬空引用、重复主归属或未归组实体；
-- 当前分支为 `main`，已配置远程仓库 `github.com/i11umination/i11umination.github.io`，GitHub Actions 自动部署到 Pages。
+- 当前分支为 `main`，远程仓库为 `github.com/i11umination/medtech-atlas`（仓库已于 2026-09-14 由 `i11umination.github.io` 重命名），站点发布在 `https://i11umination.github.io/medtech-atlas/`，由 GitHub Actions 自动部署到 Pages。
 
 ## 8. 尚未完成与已知风险
 
