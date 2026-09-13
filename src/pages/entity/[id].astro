@@ -19,14 +19,20 @@ import {
 import type { EvidenceItem, GraphNode } from "../../lib/types";
 
 export function getStaticPaths() {
-  return nodes.map((node) => ({ params: { id: node.id }, props: { node } }));
+  return [
+    ...nodes.map((node) => ({ params: { id: node.id }, props: { node } })),
+    { params: { id: "DOM-0003" }, props: { redirectTo: "DOM-0001" } },
+  ];
 }
 
 interface Props {
-  node: GraphNode;
+  node?: GraphNode;
+  redirectTo?: string;
 }
 
-const { node } = Astro.props as Props;
+const { node, redirectTo } = Astro.props as Props;
+if (redirectTo) return Astro.redirect(`/entity/${redirectTo}`, 301);
+if (!node) return new Response("Not Found", { status: 404 });
 const summary = nodeSummaryByNodeId.get(node.id);
 const summaryFiles = import.meta.glob("../../../node-summaries/*.md", {
   eager: true,

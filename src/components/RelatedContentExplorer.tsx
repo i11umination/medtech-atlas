@@ -24,7 +24,7 @@ const typeOrder: NodeType[] = [
 const typeLabels: Record<NodeType, string> = {
   domain: "科学门类",
   capability: "核心能力",
-  disease: "疾病",
+  disease: "疾病与健康状态",
   clinical_problem: "临床问题",
   technology: "技术",
   research: "研究",

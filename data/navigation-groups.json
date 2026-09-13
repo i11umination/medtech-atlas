@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "kind": "navigation_groups",
-  "updated_at": "2026-09-12",
+  "updated_at": "2026-09-13",
   "items": [
     {
       "id": "NAV-0001",
@@ -23,7 +23,7 @@
       "level": 0,
       "axis": "medicine",
       "parent_id": null,
-      "child_group_ids": ["NAV-0020", "NAV-0021", "NAV-0022"],
+      "child_group_ids": ["NAV-0020", "NAV-0021", "NAV-0022", "NAV-0023", "NAV-0024", "NAV-0025", "NAV-0026", "NAV-0027", "NAV-0028", "NAV-0029"],
       "primary_node_ids": [],
       "cross_node_ids": [],
       "planned_items": [],
@@ -40,28 +40,28 @@
       "primary_node_ids": [
         "RES-0001", "RES-0002", "RES-0003", "RES-0004", "RES-0005", "RES-0006",
         "RES-0007", "RES-0008", "RES-0009", "RES-0010", "RES-0011", "RES-0012",
-        "RES-0013", "RES-0014", "RES-0015", "RES-0016", "RES-0017", "RES-0018"
+        "RES-0013", "RES-0014", "RES-0015", "RES-0016", "RES-0017", "RES-0018",
+        "RES-0019", "RES-0020", "RES-0021", "RES-0022", "RES-0023", "RES-0024", "RES-0025"
       ],
-      "cross_node_ids": [],
+      "cross_node_ids": ["CAP-0026", "CAP-0027", "CAP-0028", "TEC-0026", "TEC-0027", "TEC-0028"],
       "planned_items": [],
       "status": "active"
     },
     {
       "id": "NAV-0010",
       "name": "工程与信息科学",
-      "description": "连接机械、自动化、机器人和后续的信息、材料、计算与控制门类。",
+      "description": "连接机械（含机器人学）、自动化以及信息、材料、计算与控制门类。",
       "level": 1,
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
       "primary_node_ids": [
-        "DOM-0001", "DOM-0002", "DOM-0003",
-        "TEC-0001", "TEC-0002", "TEC-0003", "TEC-0004", "TEC-0005", "TEC-0006", "TEC-0007"
+        "DOM-0001", "DOM-0004", "DOM-0005", "DOM-0006", "DOM-0008",
+        "CAP-0001", "CAP-0002", "CAP-0003", "CAP-0004", "CAP-0005", "CAP-0006", "CAP-0007", "CAP-0008", "CAP-0009", "CAP-0010", "CAP-0011", "CAP-0012", "CAP-0013", "CAP-0014", "CAP-0015", "CAP-0016",
+        "TEC-0001", "TEC-0002", "TEC-0003", "TEC-0004", "TEC-0005", "TEC-0006", "TEC-0007", "TEC-0008", "TEC-0009", "TEC-0010", "TEC-0011", "TEC-0012", "TEC-0013", "TEC-0014", "TEC-0015", "TEC-0016", "TEC-0017", "TEC-0018", "TEC-0019"
       ],
-      "cross_node_ids": [],
-      "planned_items": [
-        "电子与信息工程", "材料科学与工程", "计算机科学与人工智能", "化学工程", "自动化与控制科学"
-      ],
+      "cross_node_ids": ["CAP-0026", "CAP-0027", "CAP-0028", "TEC-0026", "TEC-0027", "TEC-0028"],
+      "planned_items": ["化学工程"],
       "status": "active"
     },
     {
@@ -72,10 +72,14 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": [],
-      "cross_node_ids": [],
-      "planned_items": ["物理学", "化学", "数学与统计学"],
-      "status": "planned"
+      "primary_node_ids": [
+        "DOM-0009", "DOM-0010",
+        "CAP-0017", "CAP-0018", "CAP-0021", "CAP-0028",
+        "TEC-0020", "TEC-0025", "TEC-0028"
+      ],
+      "cross_node_ids": ["CAP-0020", "TEC-0022"],
+      "planned_items": ["化学"],
+      "status": "active"
     },
     {
       "id": "NAV-0012",
@@ -85,12 +89,14 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": [],
-      "cross_node_ids": [],
-      "planned_items": [
-        "神经科学与认知科学", "分子与细胞生物学", "遗传学与基因组学", "免疫学", "药理学与药剂学"
+      "primary_node_ids": [
+        "DOM-0007", "DOM-0011", "DOM-0012", "DOM-0013", "DOM-0014",
+        "CAP-0019", "CAP-0020", "CAP-0022", "CAP-0023", "CAP-0024", "CAP-0025", "CAP-0026", "CAP-0027",
+        "TEC-0021", "TEC-0022", "TEC-0023", "TEC-0024", "TEC-0026", "TEC-0027"
       ],
-      "status": "planned"
+      "cross_node_ids": ["CAP-0021", "CAP-0028"],
+      "planned_items": [],
+      "status": "active"
     },
     {
       "id": "NAV-0013",
@@ -128,7 +134,7 @@
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0003", "DIS-0004", "DIS-0006", "CLP-0003", "CLP-0006"],
+      "primary_node_ids": ["DIS-0003", "DIS-0004", "DIS-0006", "CLP-0003", "CLP-0006", "CLP-0008"],
       "cross_node_ids": [],
       "planned_items": [],
       "status": "active"
@@ -141,8 +147,99 @@
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["CLP-0004"],
+      "primary_node_ids": ["DIS-0007", "CLP-0004"],
       "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0023",
+      "name": "心血管系统",
+      "description": "覆盖冠状动脉疾病、主动脉瓣狭窄及相关介入器械的长期结局。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0008", "DIS-0012", "CLP-0009", "CLP-0012"],
+      "cross_node_ids": [],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0024",
+      "name": "代谢性疾病与糖尿病足",
+      "description": "覆盖糖尿病足溃疡及其创面闭合、感染和复发问题。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0009", "CLP-0010"],
+      "cross_node_ids": ["DIS-0010"],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0025",
+      "name": "皮肤、创面与烧伤",
+      "description": "覆盖压力性损伤、严重烧伤以及创面覆盖与皮肤重建。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0010", "DIS-0011", "CLP-0011"],
+      "cross_node_ids": ["DIS-0009", "CLP-0010"],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0026",
+      "name": "运动障碍",
+      "description": "覆盖特发性震颤、帕金森病及药物难治性震颤的控制、耐久性与不良事件。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0013", "DIS-0014", "CLP-0013"],
+      "cross_node_ids": ["TEC-0020"],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0027",
+      "name": "实体肿瘤",
+      "description": "覆盖结直肠癌、非小细胞肺癌、食管癌以及术后分子残留和放疗毒性平衡。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0015", "DIS-0016", "DIS-0021", "CLP-0014", "CLP-0018"],
+      "cross_node_ids": ["TEC-0021", "TEC-0025"],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0028",
+      "name": "血液与遗传性疾病",
+      "description": "覆盖镰状细胞病、输血依赖型 β 地中海贫血、B 细胞恶性肿瘤及细胞与基因治疗的长期问题。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0018", "DIS-0019", "DIS-0020", "CLP-0016", "CLP-0017"],
+      "cross_node_ids": ["TEC-0023", "TEC-0024"],
+      "planned_items": [],
+      "status": "active"
+    },
+    {
+      "id": "NAV-0029",
+      "name": "感染性疾病",
+      "description": "覆盖严重细菌感染及治疗窗较窄抗菌药物的目标暴露、疗效与毒性平衡。",
+      "level": 1,
+      "axis": "medicine",
+      "parent_id": "NAV-0002",
+      "child_group_ids": [],
+      "primary_node_ids": ["DIS-0017", "CLP-0015"],
+      "cross_node_ids": ["TEC-0022"],
       "planned_items": [],
       "status": "active"
     }

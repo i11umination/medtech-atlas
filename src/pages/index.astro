@@ -4,53 +4,12 @@ import MiniGraph from "../components/MiniGraph";
 import PreferencePanel from "../components/PreferencePanel";
 import SearchExplorer from "../components/SearchExplorer";
 import ScienceMedicineEmblem from "../components/ScienceMedicineEmblem.astro";
-import StatusBadge from "../components/StatusBadge.astro";
 import {
-  evidenceById,
   evidenceItems,
-  nodeById,
   nodes,
   preferenceOptions,
   relations,
 } from "../lib/data";
-import type { GraphNode } from "../lib/types";
-
-const firstReleaseThemeIds = [
-  "CLP-0001",
-  "CLP-0002",
-  "CLP-0003",
-  "CLP-0004",
-  "CLP-0005",
-  "CLP-0006",
-];
-const themes = firstReleaseThemeIds
-  .map((id) => nodeById.get(id))
-  .filter(
-    (node): node is GraphNode => node?.type === "clinical_problem",
-  );
-const themeCards = themes.map((theme) => {
-  const relatedRelations = relations.filter(
-    (relation) =>
-      relation.source_id === theme.id || relation.target_id === theme.id,
-  );
-  const relatedTechnologyIds = relatedRelations
-    .map((relation) =>
-      relation.source_id === theme.id ? relation.target_id : relation.source_id,
-    );
-  const technologies = relatedTechnologyIds
-    .map((id) => nodeById.get(id))
-    .filter((node) => node?.type === "technology")
-    .slice(0, 3);
-  const evidence = [...new Set(relatedRelations.flatMap((relation) => relation.evidence_ids))]
-    .map((id) => evidenceById.get(id))
-    .filter((item): item is NonNullable<typeof item> => Boolean(item));
-  return {
-    theme,
-    technologies,
-    evidenceCount: evidence.length,
-    headlineEvidence: evidence[0],
-  };
-});
 ---
 
 <BaseLayout>
@@ -59,7 +18,7 @@ const themeCards = themes.map((theme) => {
       <span class="eyebrow">以人的需要，衡量技术的价值</span>
       <h1>技术的终极目的，就是解决人类疾苦。</h1>
       <p>
-        我们从疾病和临床问题出发，追踪机械工程、自动化与机器人等技术正在解决什么、
+        我们从疾病和临床问题出发，追踪技术正在解决什么、
         已经证明什么，以及距离真正减轻疾苦还有多远。
       </p>
       <div class="hero-stats" aria-label="首版内容规模">
@@ -98,46 +57,6 @@ const themeCards = themes.map((theme) => {
       <a class="text-link" href="/explore">打开完整图谱 →</a>
     </div>
     <MiniGraph client:visible nodes={nodes} relations={relations} />
-  </section>
-
-  <section class="themes-section page-shell" aria-labelledby="themes-title">
-    <div class="section-heading">
-      <div>
-        <span class="eyebrow">需要被解决的问题</span>
-        <h2 id="themes-title">六类医学难题，六条技术探索路径</h2>
-      </div>
-      <p>每条路径都追问技术能否真正改善人的功能、生活与健康结局。</p>
-    </div>
-    <div class="theme-grid">
-      {themeCards.map(({ theme, technologies, evidenceCount, headlineEvidence }, index) => (
-        <a class="theme-card" href={`/entity/${theme.id}`}>
-          <div class="theme-card-top">
-            <span class="theme-number">0{index + 1}</span>
-            <StatusBadge status={theme.status} />
-          </div>
-          <h3>{theme.name}</h3>
-          <p>
-            {technologies.length
-              ? `关联方向：${technologies.map((item) => item?.name).join("、")}`
-              : "关联技术路径正在建立"}
-          </p>
-          <div class="theme-card-evidence-meta">
-            <span>{headlineEvidence?.research_stage ?? "证据待补充"}</span>
-            <span>{evidenceCount ? `${evidenceCount} 张证据卡` : "暂无证据卡"}</span>
-            <span>{headlineEvidence ? `代表研究 n=${headlineEvidence.sample_size ?? "未报告"}` : "样本量未报告"}</span>
-          </div>
-          {headlineEvidence && (
-            <div class="theme-card-evidence">
-              <small>代表性研究发现</small>
-              <p>{headlineEvidence.findings}</p>
-            </div>
-          )}
-          <span class="card-action">
-            {evidenceCount ? `查看 ${evidenceCount} 张证据卡与关联关系 →` : "查看关系与证据 →"}
-          </span>
-        </a>
-      ))}
-    </div>
   </section>
 
   <section class="principles-section page-shell" aria-labelledby="principles-title">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const requestTypes = [
-  { value: "disease", label: "疾病" },
+  { value: "disease", label: "疾病与健康状态" },
   { value: "clinical_problem", label: "临床问题" },
   { value: "domain", label: "科学门类" },
   { value: "technology", label: "技术或疗法" },

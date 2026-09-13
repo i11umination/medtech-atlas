@@ -19,6 +19,58 @@
 | SRC-0013 | 实验室自动化 | 体外平台研究 | Automated patient-derived colon cancer organoid screening | 2016 | 10.1177/1087057116650965 | https://pubmed.ncbi.nlm.nih.gov/27233291/ | 自动化流程与重复性验证 | content-reviewed |
 | SRC-0014 | 实验室自动化 | 体外平台研究 | OrBITS | 2023 | 10.1007/s13402-022-00750-0 | https://pubmed.ncbi.nlm.nih.gov/36508089/ | 自动图像分析与药物筛选 | content-reviewed |
 | SRC-0015 | 脑动脉瘤 | 已撤稿系统综述 | Bridging the gap | 2024 | 10.1007/s10143-024-02400-5 | https://pubmed.ncbi.nlm.nih.gov/38600417/ | 排除记录 | excluded：PubMed 标记撤稿 |
+| SRC-0033 | 电子与信息工程 | 机构资料 | Sensors | — | — | https://www.nibib.nih.gov/science-education/science-topics/sensors | 传感器、生物信号和医学数据采集范围 | metadata-verified |
+| SRC-0034 | 计算机科学与人工智能 | 机构资料 | Artificial Intelligence, Machine Learning, and Deep Learning | — | — | https://www.nibib.nih.gov/programs/machine-learning | 医学影像与复杂医学数据分析范围 | metadata-verified |
+| SRC-0035 | 材料科学与工程 | 监管资料 | Biocompatibility Assessment Resource Center | — | — | https://www.fda.gov/medical-devices/biocompatibility-assessment-resource-center | 生物相容性、接触条件与风险评估边界 | metadata-verified |
+| SRC-0036 | 神经科学与认知科学 | 机构资料 | Research: Stroke | — | — | https://www.ninds.nih.gov/health-information/stroke/research | 脑可塑性、康复研究与转化背景 | metadata-verified |
+| SRC-0037 | 自动化与控制科学 | 机构资料 | Process Controllers (Temperature, Pressure, etc.) | — | — | https://www.nist.gov/ncnr/nice-help/devices/process-controllers-temperature-pressure-etc | 传感器、反馈回路和控制器概念 | metadata-verified |
+| SRC-0059 | 关节植入材料 | 随机对照试验长期随访 | Highly Cross-Linked vs Conventional Polyethylene in 518 Primary TKAs | 2025 | 10.2106/JBJS.24.00445 | https://pubmed.ncbi.nlm.nih.gov/39504359/ | 膝关节垫片十年生存与再手术 | content-reviewed |
+| SRC-0060 | 关节植入材料 | 随机对照试验长期随访 | Ceramic-on-Ceramic vs Ceramic-on-Crossfire-Polyethylene | 2016 | 10.1016/j.arth.2015.11.043 | https://pubmed.ncbi.nlm.nih.gov/26730451/ | 髋关节摩擦界面十年功能与失败 | content-reviewed |
+| SRC-0061 | 关节植入材料 | 监管资料 | Concerns about Metal-on-Metal Hip Implants | 2023 | — | https://www.fda.gov/medical-devices/metal-metal-hip-implants/concerns-about-metal-metal-hip-implants | 磨损、腐蚀与组织风险 | content-reviewed |
+| SRC-0062 | 冠脉支架 | 监管资料 | BioFreedom Drug Coated Coronary Stent System | 2022 | P190020 | https://www.fda.gov/medical-devices/recently-approved-devices/biofreedom-drug-coated-coronary-stent-dcs-system-p190020 | 批准范围与高出血风险人群证据 | content-reviewed |
+| SRC-0063 | 冠脉支架 | 随机试验延长随访 | Ten-year outcomes of the randomised NEXT Trial | 2023 | 10.4244/EIJ-D-23-00076 | https://pubmed.ncbi.nlm.nih.gov/37395475/ | 聚合物平台十年比较 | content-reviewed |
+| SRC-0064 | 冠脉支架 | 随机对照试验 | ABSORB IV 5-Year Outcomes | 2023 | 10.1016/j.jacc.2023.05.003 | https://pubmed.ncbi.nlm.nih.gov/37207924/ | 可吸收平台长期不利结果 | content-reviewed |
+| SRC-0065 | 糖尿病足创面 | 权威指南 | IWGDF Wound Healing Guideline 2023 | 2023 | — | https://iwgdfguidelines.org/wound-healing-2023/ | 辅助干预建议与标准照护边界 | content-reviewed |
+| SRC-0066 | 糖尿病足创面 | 随机对照试验 | Explorer sucrose octasulfate dressing trial | 2018 | 10.1016/S2213-8587(17)30438-2 | https://pubmed.ncbi.nlm.nih.gov/29275068/ | 特定人群创面闭合与感染 | content-reviewed |
+| SRC-0067 | 压力性损伤 | 实用性随机对照试验 | EEPOC prophylactic foam dressings | 2025 | 10.1016/j.ijnurstu.2025.105258 | https://pubmed.ncbi.nlm.nih.gov/41197397/ | 阴性预防结果与成本 | content-reviewed |
+| SRC-0068 | 压力性损伤 | Cochrane 网络荟萃分析 | Dressings and topical agents for treating pressure ulcers | 2017 | — | https://pubmed.ncbi.nlm.nih.gov/28639707/ | 产品排序不确定性 | content-reviewed |
+| SRC-0069 | 骨锚定假肢 | 监管资料 | OPRA Implant System | 2020 | P190009 | https://www.accessdata.fda.gov/SCRIPTS/cdrh/devicesatfda/index.cfm?db=pma&id=439139 | 批准适应证与批准后研究要求 | content-reviewed |
+| SRC-0070 | 骨锚定假肢 | 前瞻性队列 | OPRA prospective five-year follow-up | 2019 | — | https://pubmed.ncbi.nlm.nih.gov/30550396/ | 五年使用、移动与并发症 | content-reviewed |
+| SRC-0071 | 骨锚定假肢 | 前瞻性队列 | OPRA prospective ten-year cohort | 2022 | — | https://pubmed.ncbi.nlm.nih.gov/36313974/ | 十年患者报告与事件负担 | content-reviewed |
+| SRC-0072 | 烧伤皮肤重建 | 监管资料 | RECELL Autologous Cell Harvesting Device | 2023 | BP170122 | https://www.fda.gov/vaccines-blood-biologics/approved-blood-products/recell-autologous-cell-harvesting-device | 批准范围 | content-reviewed |
+| SRC-0073 | 烧伤皮肤重建 | 随机对照试验 | RECELL with meshed autografts | 2018 | — | https://pubmed.ncbi.nlm.nih.gov/30578048/ | 创面闭合与供皮减少 | content-reviewed |
+| SRC-0074 | 烧伤皮肤重建 | 系统综述与荟萃分析 | Outcomes of dermal substitutes in burns | 2024 | 10.1111/wrr.13226 | https://pubmed.ncbi.nlm.nih.gov/39435560/ | 再上皮化、瘢痕与异质性 | content-reviewed |
+| SRC-0075 | 人工主动脉瓣 | 监管资料 | Edwards SAPIEN 3 and SAPIEN 3 Ultra | 2021 | P140031/S125 | https://www.fda.gov/medical-devices/recently-approved-devices/edwards-sapien-3-and-sapien-3-ultra-transcatheter-heart-valve-system-p140031s125 | 材料结构与批准范围 | content-reviewed |
+| SRC-0076 | 人工主动脉瓣 | 随机对照试验长期随访 | NOTION 10-year outcomes | 2024 | 10.1093/eurheartj/ehae043 | https://pubmed.ncbi.nlm.nih.gov/38321820/ | 十年临床结局与瓣膜耐久性 | content-reviewed |
+| SRC-0077 | 人工主动脉瓣 | 随机对照试验影像随访 | PARTNER 3 5-Year Echocardiographic Results | 2025 | — | https://pubmed.ncbi.nlm.nih.gov/40243974/ | 五年反流、压差与瓣口面积 | content-reviewed |
+| SRC-0078 | 聚焦超声 | 监管资料 | ExAblate Neuro – P150038 | 2016 | P150038 | https://www.accessdata.fda.gov/SCRIPTS/cdrh/devicesatfda/index.cfm?db=pma&id=320642 | 特发性震颤批准范围 | content-reviewed |
+| SRC-0079 | 聚焦超声 | 随机假手术对照试验 | A Randomized Trial of Focused Ultrasound Thalamotomy for Essential Tremor | 2016 | — | https://pubmed.ncbi.nlm.nih.gov/27557301/ | 三个月震颤、功能与不良事件 | content-reviewed |
+| SRC-0080 | 聚焦超声 | 长期随访 | MRI-guided focused ultrasound thalamotomy: 5-year follow-up | 2022 | — | https://pubmed.ncbi.nlm.nih.gov/35932269/ | 五年耐久性与迟发事件 | content-reviewed |
+| SRC-0081 | 聚焦超声 | 系统综述与荟萃分析 | Efficacy and Safety of MRgFUS Thalamotomy in Essential Tremor | 2025 | — | https://pubmed.ncbi.nlm.nih.gov/40243386/ | 疗效、不稳、感觉症状与时间变化 | content-reviewed |
+| SRC-0082 | ctDNA | 系统综述与荟萃分析 | ctDNA-Based molecular residual disease detection in resectable cancers | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/38614009/ | 预后关联和检测性能 | content-reviewed |
+| SRC-0083 | ctDNA | 随机策略试验 | DYNAMIC | 2022 | — | https://pubmed.ncbi.nlm.nih.gov/35657320/ | II 期结肠癌辅助治疗使用与不劣效 | content-reviewed |
+| SRC-0084 | ctDNA | 随机试验长期随访 | DYNAMIC 5-year outcomes | 2025 | — | https://pubmed.ncbi.nlm.nih.gov/40055522/ | 五年无复发生存与总生存 | content-reviewed |
+| SRC-0085 | ctDNA | 系统综述与荟萃分析 | ctDNA-Methylation in Non-Small Cell Lung Cancer | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/39518079/ | 诊断、预后和监测证据异质性 | content-reviewed |
+| SRC-0086 | 精准给药 | 领域综述 | Model-informed precision dosing: State of the art | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/39159868/ | 技术框架与结局证据缺口 | content-reviewed |
+| SRC-0087 | 精准给药 | 实施系统综述 | Barriers and Facilitators for Bringing MIPD to the Bedside | 2025 | — | https://pubmed.ncbi.nlm.nih.gov/39659053/ | 实施障碍与促进因素 | content-reviewed |
+| SRC-0088 | 万古霉素给药 | 前瞻性策略研究 | Trough versus AUC to determine vancomycin dosing | 2018 | — | https://pubmed.ncbi.nlm.nih.gov/29203493/ | 采样、疗程和肾毒性 | content-reviewed |
+| SRC-0089 | 万古霉素给药 | 可行性随机试验 | BAYES feasibility study | 2022 | — | https://pubmed.ncbi.nlm.nih.gov/36461655/ | 目标达标与肾毒性不确定性 | content-reviewed |
+| SRC-0090 | CRISPR 治疗 | 监管资料 | CASGEVY | 2026 | — | https://www.fda.gov/vaccines-blood-biologics/casgevy | 当前批准适应证与文件 | content-reviewed |
+| SRC-0091 | CRISPR 治疗 | 单组 III 期试验 | Exagamglogene Autotemcel for Severe Sickle Cell Disease | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/38661449/ | 严重危象与安全性 | content-reviewed |
+| SRC-0092 | CRISPR 治疗 | 单组 III 期试验 | Exagamglogene Autotemcel for Transfusion-Dependent β-Thalassemia | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/38657265/ | 输血独立与安全性 | content-reviewed |
+| SRC-0093 | CRISPR 治疗 | 临床版图综述 | Expanding Horizons of CRISPR/Cas Technology | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/39769084/ | 试验版图、递送与风险边界 | content-reviewed |
+| SRC-0094 | CAR-T | 监管产品名录 | Approved Cellular and Gene Therapy Products | 2026 | — | https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/approved-cellular-and-gene-therapy-products | 当前许可产品范围 | content-reviewed |
+| SRC-0095 | CAR-T | 系统综述与荟萃分析 | CD19 CAR T cells for B cell malignancies | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/39174908/ | 缓解、生存与结构亚组 | content-reviewed |
+| SRC-0096 | CAR-T | 系统综述与荟萃分析 | Treatment-related adverse events of CAR-T therapies | 2025 | — | https://pubmed.ncbi.nlm.nih.gov/40687742/ | 严重不良事件谱 | content-reviewed |
+| SRC-0097 | CAR-T | 系统综述与荟萃分析 | Second Primary Malignancies after CAR T-Cell Therapy | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/39256908/ | 第二原发恶性肿瘤与比较边界 | content-reviewed |
+| SRC-0098 | 质子治疗 | GRADE 系统评估 | Evidence-based indications for proton therapy in adults | 2026 | 10.1007/s12094-025-04083-w | https://doi.org/10.1007/s12094-025-04083-w | 成人适应证证据确定性 | content-reviewed |
+| SRC-0099 | 质子治疗 | 贝叶斯自适应随机试验 | Proton versus IMRT for locally advanced NSCLC | 2018 | — | https://pubmed.ncbi.nlm.nih.gov/29293386/ | 严重肺炎与局部失败 | content-reviewed |
+| SRC-0100 | 质子治疗 | 随机 IIb 期试验 | Proton versus IMRT for locally advanced esophageal cancer | 2020 | — | https://pubmed.ncbi.nlm.nih.gov/32160096/ | 总毒性负担与三年生存 | content-reviewed |
+| SRC-0101 | 质子治疗 | 系统综述与荟萃分析 | Proton Versus Photon Radiotherapy for NSCLC | 2026 | — | https://pubmed.ncbi.nlm.nih.gov/41681927/ | 生存和肺炎比较 | content-reviewed |
+| SRC-0102 | 器官芯片 | 技术与转化综述 | Organs-on-Chips in Drug Development | 2026 | — | https://pubmed.ncbi.nlm.nih.gov/41892047/ | 工程基础、临床一致性与监管验证 | content-reviewed |
+| SRC-0103 | 三维生物打印 | 技术与临床转化综述 | 3D Bioprinting for Engineered Tissue Constructs | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/39420757/ | 患者特异模型、血管化与成熟度 | content-reviewed |
+| SRC-0104 | 医学数字孪生 | 系统综述 | Digital twins in healthcare | 2026 | — | https://pubmed.ncbi.nlm.nih.gov/42370013/ | 应用、验证、互操作性与隐私 | content-reviewed |
+| SRC-0105 | 聚焦超声 | 新闻/通俗背景 | Focused ultrasound treatment offers long-term relief for patients with essential tremor | 2022 | — | https://www.news-medical.net/news/20221110/Focused-ultrasound-treatment-offers-long-term-relief-for-patients-with-essential-tremor.aspx | 发现与通俗解释辅助；不承担核心疗效结论 | metadata-verified |
 
 ## 核验状态
 
