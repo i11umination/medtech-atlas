@@ -1,5 +1,6 @@
 ---
 import { typeLabels } from "../lib/data";
+import { sitePath } from "../lib/site";
 import type { EvidenceItem, GraphNode, GraphRelation } from "../lib/types";
 
 interface Props {
@@ -63,7 +64,7 @@ const steps = [
       <li>
         <span class="mechanism-step-marker">{step.marker}</span>
         <small>{step.label}</small>
-        {step.href ? <a href={step.href}>{step.value}</a> : <strong>{step.value}</strong>}
+        {step.href ? <a href={sitePath(step.href)}>{step.value}</a> : <strong>{step.value}</strong>}
       </li>
     ))}
   </ol>

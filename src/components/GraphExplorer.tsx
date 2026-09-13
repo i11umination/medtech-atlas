@@ -327,7 +327,7 @@ export default function GraphExplorer({
             <div className="tag-row">
               {selectedNode.tags.map((tag) => <span key={tag}>{tag}</span>)}
             </div>
-            <a className="button button-primary full-button" href={`/entity/${selectedNode.id}`}>
+            <a className="button button-primary full-button" href={`${import.meta.env.BASE_URL}entity/${selectedNode.id}`}>
               打开实体详情
             </a>
           </div>
@@ -347,7 +347,7 @@ export default function GraphExplorer({
                 <h3>相关证据</h3>
                 {selectedRelation.evidence_ids.map((id) => {
                   const item = evidenceMap.get(id);
-                  return item ? <a href={`/evidence/${id}`} key={id}>{item.title}</a> : null;
+                  return item ? <a href={`${import.meta.env.BASE_URL}evidence/${id}`} key={id}>{item.title}</a> : null;
                 })}
               </div>
             ) : (

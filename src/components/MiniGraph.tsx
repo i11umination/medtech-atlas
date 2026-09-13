@@ -297,7 +297,7 @@ export default function MiniGraph({
 
     graph.on("tap", "node", (event) => {
       if (event.target.id() === homepageCenterId) return;
-      window.location.href = `/entity/${event.target.id()}`;
+      window.location.href = `${import.meta.env.BASE_URL}entity/${event.target.id()}`;
     });
     graph.on("grab", "node", (event) => {
       graph?.edges().removeClass("drag-related").removeData("dragColor");

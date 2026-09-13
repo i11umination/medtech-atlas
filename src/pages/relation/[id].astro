@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { sitePath } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import MechanismPath from "../../components/MechanismPath.astro";
 import ResearcherReading from "../../components/ResearcherReading.astro";
@@ -95,7 +96,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
                 <div class="relation-endpoint-label"><span class={`node-dot node-${source.type}`} aria-hidden="true"></span>{typeLabels[source.type]}</div>
                 <h3>{source.name}</h3>
                 <p>{source.aliases.length > 0 ? `别名：${source.aliases.join("、")}` : `节点 ID · ${source.id}`}</p>
-                <a class="text-link" href={`/entity/${source.id}`}>查看实体资料 →</a>
+                <a class="text-link" href={sitePath(`/entity/${source.id}`)}>查看实体资料 →</a>
               </article>
             )}
             <div class="relation-endpoint-arrow" aria-hidden="true">→</div>
@@ -104,7 +105,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
                 <div class="relation-endpoint-label"><span class={`node-dot node-${target.type}`} aria-hidden="true"></span>{typeLabels[target.type]}</div>
                 <h3>{target.name}</h3>
                 <p>{target.aliases.length > 0 ? `别名：${target.aliases.join("、")}` : `节点 ID · ${target.id}`}</p>
-                <a class="text-link" href={`/entity/${target.id}`}>查看实体资料 →</a>
+                <a class="text-link" href={sitePath(`/entity/${target.id}`)}>查看实体资料 →</a>
               </article>
             )}
           </div>
@@ -140,7 +141,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
                     <strong>谨慎解释</strong>
                     <p>{item.limitations}</p>
                   </div>
-                  <a class="text-link" href={`/evidence/${item.id}`}>阅读完整资料卡 →</a>
+                  <a class="text-link" href={sitePath(`/evidence/${item.id}`)}>阅读完整资料卡 →</a>
                 </article>
               ))}
             </div>
@@ -174,7 +175,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
                     <strong>主要风险</strong>
                     <p>{direction.risks}</p>
                   </div>
-                  <a class="text-link" href={`/analysis/${direction.id}`}>查看完整研究设想 →</a>
+                  <a class="text-link" href={sitePath(`/analysis/${direction.id}`)}>查看完整研究设想 →</a>
                 </article>
               ))}
             </div>
@@ -198,7 +199,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
             <div><dt>挂接证据</dt><dd>{relation.evidence_ids.length ? relation.evidence_ids.join("、") : "暂无"}</dd></div>
           </dl>
         </section>
-        <a class="button button-quiet full-button" href={`/explore?focus=${relation.source_id}`}>回到图谱定位 →</a>
+        <a class="button button-quiet full-button" href={sitePath(`/explore?focus=${relation.source_id}`)}>回到图谱定位 →</a>
       </aside>
     </div>
 

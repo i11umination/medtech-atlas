@@ -119,7 +119,7 @@ export default function RelatedContentExplorer({
                     </div>
                   )}
                   <div className="relation-actions">
-                    <a className="text-link" href={`/relation/${relation.id}`}>查看关联详情 →</a>
+                    <a className="text-link" href={`${import.meta.env.BASE_URL}relation/${relation.id}`}>查看关联详情 →</a>
                   </div>
                 </article>
               ))}

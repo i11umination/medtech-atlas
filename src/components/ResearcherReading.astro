@@ -1,5 +1,6 @@
 ---
 import { sourceById } from "../lib/data";
+import { sitePath } from "../lib/site";
 import type { EvidenceItem, SourceItem } from "../lib/types";
 import StatusBadge from "./StatusBadge.astro";
 
@@ -56,7 +57,7 @@ const timelineItems = items
       <ol>
         {timelineItems.map(({ item, year }) => (
           <li>
-            <a href={`/evidence/${item.id}`}>
+            <a href={sitePath(`/evidence/${item.id}`)}>
               <strong>{year ?? "待核验"}</strong>
               <span>{item.study_type}</span>
               <small>{item.title}</small>
@@ -96,7 +97,7 @@ const timelineItems = items
             <div><strong>外推边界</strong><p>{item.limitations}</p></div>
           </details>
           <div class="researcher-evidence-actions">
-            <a class="text-link" href={`/evidence/${item.id}`}>打开完整证据卡 →</a>
+            <a class="text-link" href={sitePath(`/evidence/${item.id}`)}>打开完整证据卡 →</a>
             {item.source_ids[0] && sourceById.get(item.source_ids[0]) && (
               <a class="text-link secondary-link" href={sourceById.get(item.source_ids[0])?.url} target="_blank" rel="noreferrer">阅读原始来源 ↗</a>
             )}
@@ -146,7 +147,7 @@ const timelineItems = items
           <span class="eyebrow">证据链</span>
           <h3>回到关系中核对</h3>
           <div class="researcher-chain-links">
-            {chainLinks.map((link) => <a href={link.href}>{link.label}<span aria-hidden="true">→</span></a>)}
+            {chainLinks.map((link) => <a href={sitePath(link.href)}>{link.label}<span aria-hidden="true">→</span></a>)}
           </div>
         </section>
       )}

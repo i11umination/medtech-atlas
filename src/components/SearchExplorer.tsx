@@ -133,7 +133,7 @@ export default function SearchExplorer({ nodes }: { nodes: GraphNode[] }) {
             </div>
             <a
               className="text-link"
-              href={`/explore?q=${encodeURIComponent(submittedQuery)}`}
+              href={`${import.meta.env.BASE_URL}explore?q=${encodeURIComponent(submittedQuery)}`}
             >
               在图谱中继续探索 →
             </a>
@@ -141,7 +141,7 @@ export default function SearchExplorer({ nodes }: { nodes: GraphNode[] }) {
           {results.length > 0 ? (
             <div className="result-grid">
               {results.map(({ node, reason }) => (
-                <a className="result-card" href={`/entity/${node.id}`} key={node.id}>
+                <a className="result-card" href={`${import.meta.env.BASE_URL}entity/${node.id}`} key={node.id}>
                   <span className={`node-dot node-${node.type}`} aria-hidden="true"></span>
                   <span>
                     <small>{typeLabels[node.type]} · {reason}</small>

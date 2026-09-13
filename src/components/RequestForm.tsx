@@ -36,7 +36,7 @@ export default function RequestForm() {
 
     setState({ kind: "submitting" });
     try {
-      const response = await fetch("/api/requests", {
+      const response = await fetch(`${import.meta.env.BASE_URL}api/requests`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

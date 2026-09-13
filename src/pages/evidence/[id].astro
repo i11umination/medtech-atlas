@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { sitePath } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import ResearcherReading from "../../components/ResearcherReading.astro";
 import ReturnPath from "../../components/ReturnPath.astro";
@@ -85,7 +86,7 @@ const contextNode = primaryRelation ? nodeById.get(primaryRelation.source_id) : 
         <section>
           <h2>连接到图谱</h2>
           {linkedRelations.map((relation) => relation && (
-            <a class="linked-relation" href={`/explore?focus=${relation.source_id}`}>
+            <a class="linked-relation" href={sitePath(`/explore?focus=${relation.source_id}`)}>
               <small>{relation.label}</small>
               <strong>{nodeById.get(relation.source_id)?.name} → {nodeById.get(relation.target_id)?.name}</strong>
             </a>

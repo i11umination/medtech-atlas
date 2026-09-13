@@ -1,5 +1,6 @@
 ---
 import { evidenceById, nodeById, sourceById, typeLabels } from "../lib/data";
+import { sitePath } from "../lib/site";
 import type { GraphNode, GraphRelation, NodeType } from "../lib/types";
 
 interface Props {
@@ -79,7 +80,7 @@ function labelLines(label: string) {
             <line class="orbit-line" x1={centerX} y1={centerY} x2={x} y2={y} />
           ))}
           {points.map(({ neighbor, x, y }) => (
-            <a class="orbit-node-link" href={`/entity/${neighbor.id}`} aria-label={`打开${neighbor.name}实体页`}>
+            <a class="orbit-node-link" href={sitePath(`/entity/${neighbor.id}`)} aria-label={`打开${neighbor.name}实体页`}>
               <g class={`orbit-node orbit-node-${neighbor.type}`}>
                 <circle cx={x} cy={y} r="28" fill={typeColors[neighbor.type]} />
                 <text class="orbit-node-type" x={x} y={y - 37} text-anchor="middle">{typeLabels[neighbor.type]}</text>

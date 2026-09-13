@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import BrandMark from "../components/BrandMark.astro";
+import { sitePath } from "../lib/site";
 
 interface Props {
   title?: string;
@@ -20,13 +21,13 @@ const {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={sitePath("/favicon.svg")} type="image/svg+xml" />
     <title>{title}</title>
   </head>
   <body>
     <a class="skip-link" href="#main-content">跳到正文</a>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="MedTech Atlas 医学科技图谱首页">
+      <a class="brand" href={sitePath("/")} aria-label="MedTech Atlas 医学科技图谱首页">
         <BrandMark />
         <span>
           <strong>MedTech Atlas</strong>
@@ -34,10 +35,10 @@ const {
         </span>
       </a>
       <nav aria-label="主要导航">
-        <a href="/">首页</a>
-        <a href="/explore">图谱探索</a>
-        <a href="/request">提交需求</a>
-        <a href="/methodology">方法与声明</a>
+        <a href={sitePath("/")}>首页</a>
+        <a href={sitePath("/explore")}>图谱探索</a>
+        <a href={sitePath("/request")}>提交需求</a>
+        <a href={sitePath("/methodology")}>方法与声明</a>
       </nav>
     </header>
     <main id="main-content">

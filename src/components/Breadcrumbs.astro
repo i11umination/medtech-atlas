@@ -1,4 +1,6 @@
 ---
+import { sitePath } from "../lib/site";
+
 interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -18,7 +20,7 @@ const { items } = Astro.props;
       return (
         <li>
           {item.href && !isCurrent ? (
-            <a href={item.href}>{item.label}</a>
+            <a href={sitePath(item.href)}>{item.label}</a>
           ) : (
             <span aria-current={isCurrent ? "page" : undefined}>{item.label}</span>
           )}

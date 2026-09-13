@@ -820,7 +820,7 @@ export default function LayeredGraphExplorer({
                 {evidenceCards.length > 0 ? (
                   <div className="catalog-card-grid catalog-evidence-grid">
                     {evidenceCards.map((item) => (
-                      <a className="catalog-evidence-card" href={`/evidence/${item.id}`} key={item.id}>
+                      <a className="catalog-evidence-card" href={`${import.meta.env.BASE_URL}evidence/${item.id}`} key={item.id}>
                         <span className="catalog-card-kicker">{item.id} · {item.study_type}</span>
                         <strong>{item.title}</strong>
                         <p>{item.claim}</p>
@@ -891,7 +891,7 @@ export default function LayeredGraphExplorer({
                   {layer.kind !== "theme" || layer.focusId !== selectedNode.id ? (
                     <button className="button button-primary full-button" type="button" onClick={() => openTheme(selectedNode.id)}>以此节点展开主题</button>
                   ) : null}
-                  <a className="button button-quiet full-button graph-secondary-action" href={`/entity/${selectedNode.id}`}>打开实体详情</a>
+                  <a className="button button-quiet full-button graph-secondary-action" href={`${import.meta.env.BASE_URL}entity/${selectedNode.id}`}>打开实体详情</a>
                 </div>
               )}
               {selectedRelation && (
@@ -909,11 +909,11 @@ export default function LayeredGraphExplorer({
                       <h3>相关证据</h3>
                       {selectedRelation.evidence_ids.map((id) => {
                         const item = evidenceMap.get(id);
-                        return item ? <a href={`/evidence/${id}`} key={id}>{item.title}</a> : null;
+                        return item ? <a href={`${import.meta.env.BASE_URL}evidence/${id}`} key={id}>{item.title}</a> : null;
                       })}
                     </div>
                   ) : <p className="review-warning">这条关系尚未绑定直接证据。</p>}
-                  <a className="button button-quiet full-button graph-secondary-action" href={`/relation/${selectedRelation.id}`}>打开关联详情</a>
+                  <a className="button button-quiet full-button graph-secondary-action" href={`${import.meta.env.BASE_URL}relation/${selectedRelation.id}`}>打开关联详情</a>
                   {selectedRelation.evidence_ids.length > 0 && <button className="button button-primary full-button graph-secondary-action" type="button" onClick={() => openEvidence(selectedRelation.id)}>进入证据链</button>}
                 </div>
               )}

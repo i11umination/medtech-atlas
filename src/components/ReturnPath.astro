@@ -1,4 +1,6 @@
 ---
+import { sitePath } from "../lib/site";
+
 interface ReturnLink {
   label: string;
   href: string;
@@ -21,7 +23,7 @@ const { title, description, links } = Astro.props;
   </div>
   <div class="return-path-actions">
     {links.map((link, index) => (
-      <a class={`button ${index === 0 ? "button-primary" : "button-quiet"}`} href={link.href}>
+      <a class={`button ${index === 0 ? "button-primary" : "button-quiet"}`} href={sitePath(link.href)}>
         <span aria-hidden="true">←</span>{link.label}
       </a>
     ))}
