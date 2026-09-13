@@ -299,6 +299,7 @@ export default function MiniGraph({
     let dragState: { nodeId: string; moved: boolean } | null = null;
     let suppressedTapNodeId: string | null = null;
     let suppressedTapUntil = 0;
+    let userPanUntil = 0;
 
     const clearRelatedHighlights = () => {
       graph?.edges().removeClass("related-highlight").removeData("highlightColor");
@@ -330,6 +331,14 @@ export default function MiniGraph({
       }
 
       highlightRelatedEdges(event.target);
+    });
+    graph.on("pan", (event) => {
+      if (event.originalEvent) userPanUntil = performance.now() + 150;
+    });
+    graph.on("tap", (event) => {
+      if (event.target !== graph) return;
+      if (performance.now() < userPanUntil) return;
+      clearRelatedHighlights();
     });
     graph.on("grab", "node", (event) => {
       const nodeId = event.target.id();
@@ -375,9 +384,9 @@ export default function MiniGraph({
         className="graph-canvas mini-graph"
         ref={containerRef}
         role="img"
-        aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；点击或拖动节点高亮相连线，再次点击同一节点进入详情；可自由平移并通过触控板捏合缩放"
+        aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；点击或拖动节点高亮相连线，再次点击同一节点进入详情，点击空白处取消高亮；可自由平移并通过触控板捏合缩放"
       ></div>
-      <div className="canvas-help mini-graph-help">点击或拖动节点高亮直接关联 · 再次点击同一节点进入详情 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
+      <div className="canvas-help mini-graph-help">点击或拖动节点高亮直接关联 · 再次点击同一节点进入详情 · 点击空白处取消高亮 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
       <div className="graph-legend" aria-label="图谱图例">
         {Object.entries(colors).filter(([type]) => type !== "research").map(([type, color]) => (
           <span key={type}>
