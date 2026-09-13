@@ -122,7 +122,7 @@ npm run build
 - `npm run build`：成功生成 461 个静态页面；
 - 旧机器人学与旧化学工程地址均保留永久重定向；
 - 导航不存在悬空引用、重复主归属或未归组实体；
-- 当前分支为 `master`，未配置远程仓库。
+- 当前分支为 `main`，已配置远程仓库 `github.com/i11umination/i11umination.github.io`，GitHub Actions 自动部署到 Pages。
 
 ## 8. 尚未完成与已知风险
 
