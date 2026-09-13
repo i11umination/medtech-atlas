@@ -109,6 +109,18 @@ for (const item of evidence) {
   for (const sourceId of item.source_ids ?? []) {
     requireId(sourceById, sourceId, `${item.id}.source_ids`);
   }
+
+  if (item.publication_status === "public" && item.review_status !== "source-checked") {
+    errors.push(`${item.id}: 公开证据卡必须达到 source-checked`);
+  }
+  if (item.review_status === "source-checked") {
+    for (const sourceId of item.source_ids ?? []) {
+      const source = sourceById.get(sourceId);
+      if (source && source.status !== "source-checked") {
+        errors.push(`${item.id}: 引用来源 ${sourceId} 尚未达到 source-checked`);
+      }
+    }
+  }
 }
 
 for (const summary of summaries) {
@@ -148,6 +160,21 @@ for (const [id, reference] of contentRefs) {
   }
   if (!fs.existsSync(path.join(projectRoot, normalized))) {
     errors.push(`${id}.content_ref: 文件不存在 ${reference}`);
+  }
+}
+
+for (const item of evidence) {
+  const absolutePath = path.join(projectRoot, item.content_ref);
+  if (!fs.existsSync(absolutePath)) continue;
+  const content = fs.readFileSync(absolutePath, "utf8");
+  const expectedFrontmatter = [
+    `review_status: ${item.review_status}`,
+    `expert_review_status: ${item.expert_review_status}`,
+    `publication_status: ${item.publication_status}`,
+    `curation_method: ${item.curation_method}`,
+  ];
+  for (const field of expectedFrontmatter) {
+    if (!content.includes(field)) errors.push(`${item.content_ref}: 缺少或不匹配 ${field}`);
   }
 }
 

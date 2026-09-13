@@ -1,6 +1,6 @@
-# 首批证据检索日志
+# 内容扩充证据检索日志
 
-状态：检索进行中
+状态：持续维护；首批、6+3 与第二批检索记录已入库
 
 | 日期 | 主题 | 平台 | 检索词或检索式 | 结果与下一步 |
 | --- | --- | --- | --- | --- |
@@ -27,6 +27,11 @@
 | 2026-09-13 | 器官芯片 | PubMed | `organ on chip microphysiological system drug development clinical translation review` | 纳入工程基础与临床转化综述；定位为体外研究，关注用途特异验证和监管资格。 |
 | 2026-09-13 | 三维生物打印 | PubMed | `3D bioprinting patient specific tissue clinical translation review vascularization maturation` | 纳入患者特异模型与临床应用综述；定位为临床前研究，突出血管化、成熟度和规模化瓶颈。 |
 | 2026-09-13 | 医学数字孪生 | PubMed | `digital twin healthcare systematic review clinical integration validation interoperability privacy` | 纳入 26 项研究的系统综述；定位为理论或概念研究，未把技术准确率等同于患者获益。 |
+| 2026-09-13 | 第二批门类定义 | NIGMS/NIBIB/NCI | `chemistry chemical biology drug delivery controlled release nanotechnology tissue engineering regenerative medicine synthetic biology` | 纳入五条 NIH 机构资料作为门类与能力定义来源；不用于证明具体临床疗效。 |
+| 2026-09-13 | HER2-low 抗体-药物偶联物 | FDA/PubMed | `trastuzumab deruxtecan DESTINY-Breast04 HER2-low randomized long-term FDA` | 纳入 2022 年 FDA 批准、557 人随机 III 期试验和 32 个月中位随访分析；重点保留间质性肺病风险和同一队列重复性边界。 |
+| 2026-09-13 | 长效卡博特韦 HIV PrEP | FDA/PubMed/PMC | `cabotegravir long acting HIV preexposure prophylaxis HPTN 083 HPTN 084 FDA` | 纳入 FDA 批准、4566 人 HPTN 083 和 3224 人 HPTN 084；把口服对照依从性、突破感染、检测延迟和耐药纳入解释。 |
+| 2026-09-13 | patisiran 脂质纳米颗粒 siRNA | FDA/PubMed/PMC | `patisiran APOLLO randomized hereditary transthyretin amyloidosis polyneuropathy five year` | 纳入 FDA 标签、225 人 APOLLO 随机试验和 211 人开放延长研究；长期结果按无同期对照和失访偏倚降级解释。 |
+| 2026-09-13 | MACI 软骨组织工程 | FDA/PubMed | `MACI SUMMIT randomized microfracture knee cartilage two year five year FDA` | 纳入 FDA 产品页、144 人 SUMMIT 两年随机结果和五年延长随访；区分患者报告改善与 MRI 结构结果。 |
 
 ## 记录要求
 

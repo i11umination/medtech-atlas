@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "kind": "evidence_index",
   "updated_at": "2026-09-12",
   "items": [
@@ -20,7 +20,10 @@
       "limitations": "结果对应特定训练系统、剂量和纳入人群；不能外推到所有机器人、卒中阶段或康复组合。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0001.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -40,7 +43,10 @@
       "limitations": "只聚焦运动损伤评分，不能直接代表日常活动、生活质量或长期独立性；存在临床与方法学异质性。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0002.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -60,7 +66,10 @@
       "limitations": "样本很小，纳入者仍有迈步能力；次要结局和非严重不良事件需要更大试验确认。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0003.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -80,7 +89,10 @@
       "limitations": "设备、损伤阶段、训练剂量和结局定义不同；不能把统计学差异直接解释为真实世界独立行走获益。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0004.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -100,7 +112,10 @@
       "limitations": "对应较早期机器人系统、单一手术团队和特定年龄人群；不能直接代表所有现代机器人平台。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0005.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -120,7 +135,10 @@
       "limitations": "当前只提取 12 个月结果，长期随访仍在进行；结果对应研究采用的系统和实施环境。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0006.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -140,7 +158,10 @@
       "limitations": "仅两名参与者，设备高度定制且包含植入接口，无法估计普遍疗效、安全性或长期可靠性。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0007.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -160,7 +181,10 @@
       "limitations": "样本很小、无平行对照、随访短，且定性与定量结果冲突。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0008.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -180,7 +204,10 @@
       "limitations": "单例、无对照、商业系统相关作者参与；只支持可行性，不支持优越性、总体安全性或患者获益结论。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0009.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -200,7 +227,10 @@
       "limitations": "证据以非随机、小样本系列为主，存在选择偏差和异质性；技术成功率不能等同于患者临床获益或相对安全优势。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0010.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -220,7 +250,10 @@
       "limitations": "机器人系统、适应证和结局定义不同；并发症和成本效果研究不足。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0011.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -240,7 +273,10 @@
       "limitations": "纳入研究设计和系统可能不同，技术终点不能代替长期患者结局。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0012.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -260,7 +296,10 @@
       "limitations": "体外平台可行性不等同于能够预测患者治疗反应，也不构成临床疗效证据。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0013.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -280,7 +319,10 @@
       "limitations": "属于体外分析工具验证；尚不能据此推断改善临床决策或患者结局。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0014.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -300,7 +342,10 @@
       "limitations": "合并结果仍受设备、训练剂量、人群和常规康复方案差异影响；量表的统计学变化不自动代表日常独立性、长期生活质量或患者认为重要的改善。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0015.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -320,7 +365,10 @@
       "limitations": "亚组分析可能受样本量和多重比较影响；长期随访完成度、机器人系统和训练方案限制外推；结果支持进一步分层研究，不支持对所有卒中患者作统一推荐。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0016.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -340,7 +388,10 @@
       "limitations": "单臂研究无法与手工介入比较；病例选择、中心经验和设备操作流程可能影响结果；论文披露多项作者或机构利益关系；技术完成率和出院状态不能单独证明长期患者获益。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0017.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -360,7 +411,10 @@
       "limitations": "单中心、回顾性、病例数量有限且适应证以诊断性造影为主；学习曲线和系统设置时间可能影响结果；术者辐射负担改善不能替代患者临床结局，也不能直接外推到脑动脉瘤治疗。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0018.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-12"
     },
     {
@@ -380,7 +434,10 @@
       "limitations": "综述整合的是方法和研究用途，不是统一的疗效比较；传感器位置、信号处理、任务和人群差异较大。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0019.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -400,7 +457,10 @@
       "limitations": "设备类别、训练内容和对照方案差异明显；统计学差异不能直接等同于日常功能或长期生活质量改善。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0020.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -420,7 +480,10 @@
       "limitations": "样本为慢性期且步行障碍程度有限，任务仍受控于评估环境；研究验证的是测量可靠性与效度，不是可穿戴设备治疗效果。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0021.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -440,7 +503,10 @@
       "limitations": "验证在跑台和短时任务中完成；算法表现不能直接外推到家庭场景，也不能证明对康复决策或患者结局有益。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0022.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -460,7 +526,10 @@
       "limitations": "不同传感器数量、算法、参考系统和步态障碍程度不能简单合并；测量性能仍需与具体临床任务和患者重要结局连接。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0023.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -480,7 +549,10 @@
       "limitations": "早期单中心网络环境、样本量小、部分随访缺失；结果对应特定机器人和治疗替代方式。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0024.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -500,7 +572,10 @@
       "limitations": "治疗后和随访存在失访，机器人系统和训练组合具有特定性；相似改善不能解读为所有患者或所有设备均等效。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0025.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -520,7 +595,10 @@
       "limitations": "样本量小、随访短、单一设备和受控训练环境；作者明确提出需要更大随机试验和随访确认。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0026.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -540,7 +618,10 @@
       "limitations": "非劣效结论依赖预设界值和方案执行；设备厂商参与、训练流程和人群范围限制向其他系统与真实世界使用外推。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0027.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -560,7 +641,10 @@
       "limitations": "样本小、单一机器人和 4 周干预；不能据此选择所有人群的训练模式，也未回答长期日常功能或生活质量。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0028.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -580,7 +664,10 @@
       "limitations": "开放标签、设备和训练流程特定，主要终点为短期量表变化；仍需关注长期功能、家庭使用、依从性和不同卒中阶段的可重复性。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0029.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -600,7 +687,10 @@
       "limitations": "样本小且以完成者分析为主，干预结合多种成分；认知或生物标志物差异不能直接等同于独立行走或长期功能获益。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0030.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -620,7 +710,10 @@
       "limitations": "样本小、部分分析为亚组和交叉分析，反应者定义及自然恢复影响需谨慎解释；不能外推到所有卒中患者。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0031.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -640,7 +733,10 @@
       "limitations": "样本小、设备高度定制、随访完成者有限；神经影像侧化指标未显示相应组间变化，不能据此判断广泛长期疗效。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0032.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -660,7 +756,10 @@
       "limitations": "各亚组研究数量有限且部分研究偏倚风险较高；训练时长、反馈方式和患者特征差异限制方案推荐。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0033.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -680,7 +779,10 @@
       "limitations": "回顾性数据来自两家中心，多个病例未能被算法处理；研究包含厂商作者和利益冲突，且未评估分诊时间、治疗决策改变或患者结局。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0034.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -700,7 +802,10 @@
       "limitations": "回顾性队列、医院和扫描协议存在分布限制；预测性能不能证明改变治疗决策或改善生存，仍需前瞻性工作流研究。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0035.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -720,7 +825,10 @@
       "limitations": "研究类型、设备和结局异质性较高；统计学效应不自动代表患者感知的重要改善，且结论需结合偏倚风险与随访长度。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0036.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -740,7 +848,10 @@
       "limitations": "研究使用特定后稳定型膝关节系统并来自一个转诊网络的三个中心；材料差异不能脱离假体设计和手术条件外推。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0037.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -760,7 +871,10 @@
       "limitations": "样本较小且 10 年随访不完整；未观察到失败不等于两类材料在更大人群或更长期中完全等效。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0038.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -780,7 +894,10 @@
       "limitations": "该资料用于风险识别而非估算统一发生率；不同器械型号、植入位置和患者风险不能合并解释。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0039.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -800,7 +917,10 @@
       "limitations": "比较包含历史对照，结论只适用于批准说明中的器械、病变和用药条件；不能外推为所有患者均可缩短抗血小板治疗。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0040.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -820,7 +940,10 @@
       "limitations": "并非所有原始中心参加延长随访，完整随访率为 87.5%；结果不能代表其他药物、支架平台或更复杂病变。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0041.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -840,7 +963,10 @@
       "limitations": "结果对应已研究的特定可吸收平台；研究存在产业相关利益冲突，且三年后事件率趋同不能抵消早期增加的风险。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0042.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -860,7 +986,10 @@
       "limitations": "不同产品不能因同属一种材料类别而互换；指南建议需结合清创、减压、感染与血供管理，并等待下一轮更新。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0043.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -880,7 +1009,10 @@
       "limitations": "研究由产品厂商资助，纳入标准排除了感染创面和近期血运重建者；不能替代减压、感染控制或血供评估。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0044.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -900,7 +1032,10 @@
       "limitations": "总体事件数少导致置信区间较宽；结果针对内外科住院人群，不能直接外推到重症监护或长期照护环境。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0045.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -920,7 +1055,10 @@
       "limitations": "研究规模小、网络稀疏且治疗定义异质；结果不能支持具体产品排序。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0046.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -940,7 +1078,10 @@
       "limitations": "批准只对应特定产品、手术流程和人群，不能把监管决定解释为优于传统假肢的普遍证明。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0047.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -960,7 +1101,10 @@
       "limitations": "非随机、单一系统、小样本且患者经过选择；术前术后变化可能受康复、期望和随访选择影响。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0048.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -980,7 +1124,10 @@
       "limitations": "12 人未完成十年观察且 8 人植入物被移除；小样本单队列不能与现代接受腔假肢直接比较。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0049.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1000,7 +1147,10 @@
       "limitations": "批准不能外推到未列明创面或非规范操作；该技术仍依赖清创、植皮、感染管理和烧伤综合救治。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0050.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1020,7 +1170,10 @@
       "limitations": "样本仅 30 人、采用创面内配对设计并研究特定系统；不能推断死亡、住院期或所有烧伤类型的总体优势。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0051.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1040,7 +1193,10 @@
       "limitations": "总体研究质量中等，材料、适应证和结局定义差异大；瘢痕评分改善不能替代长期功能和安全评价。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0052.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1060,7 +1216,10 @@
       "limitations": "不同补充审批对应不同人群和既往瓣膜状态；不能把单一型号的批准外推到所有经导管瓣膜。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0053.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1080,7 +1239,10 @@
       "limitations": "样本较小、使用早期代际自膨式瓣膜且患者平均年龄约 79 岁；结构退化差异不能直接外推到年轻患者或当前所有器械。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0054.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1100,7 +1262,10 @@
       "limitations": "该分析聚焦超声参数，不能由单一影像差异推断患者感知获益；结果对应特定瓣膜和低风险试验人群。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0055.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1120,7 +1285,10 @@
       "limitations": "批准只适用于具体器械、适应证和标签条件，不能外推到所有震颤、所有靶点或所有聚焦超声用途。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0056.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1140,7 +1308,10 @@
       "limitations": "主要比较窗口较短，操作不可逆且不能盲化术者；不良事件和长期复发风险需结合后续随访。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0057.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1160,7 +1331,10 @@
       "limitations": "只保留原试验治疗队列的一部分，缺少同期对照且存在失访；不能推断双侧治疗或其他靶点的长期结果。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0058.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1180,7 +1354,10 @@
       "limitations": "纳入设计和随访异质，许多研究缺少同期对照；汇总比例不能预测单个患者风险。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0059.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1200,7 +1377,10 @@
       "limitations": "肿瘤类型、检测平台和采样时间差异显著；预后关联不能证明按结果干预会改善患者结局。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0060.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1220,7 +1400,10 @@
       "limitations": "结果针对 II 期结肠癌和特定检测路径；ctDNA 阳性者接受何种强化治疗仍未由该试验充分回答。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0061.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1240,7 +1423,10 @@
       "limitations": "长期数据仍来自同一试验；ctDNA 清除分析样本小，不能直接定义所有阳性患者的最佳治疗。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0062.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1260,7 +1446,10 @@
       "limitations": "本卡仅完成摘要级核验；尚不能据此把结直肠癌中的治疗指导证据外推到肺癌。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0063.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1280,7 +1469,10 @@
       "limitations": "不同药物和适应证不可合并为统一疗效结论；该综述不是效果量荟萃分析。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0064.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1300,7 +1492,10 @@
       "limitations": "综述聚焦实施因素而非患者疗效；检索截止 2022 年底，快速变化的软件生态可能未被覆盖。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0065.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1320,7 +1515,10 @@
       "limitations": "比较按年份而非个体随机，流程改进、病例构成和时间趋势可能混杂结果。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0066.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1340,7 +1538,10 @@
       "limitations": "试验以可行性为主要目的、样本小；部分流程指标未达到预设目标，不能据此确认患者获益。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0067.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1360,7 +1561,10 @@
       "limitations": "年龄、疾病严重度、移植适宜性和其他标签条件必须按最新说明书核对；批准不消除长期随访要求。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0068.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1380,7 +1584,10 @@
       "limitations": "单组设计、可评估样本小且中位随访 19.3 个月；长期克隆、肿瘤和生殖风险需持续监测。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0069.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1400,7 +1607,10 @@
       "limitations": "单组设计、随访有限；基因型、清髓相关毒性、可及性和长期风险限制广泛外推。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0070.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1420,7 +1630,10 @@
       "limitations": "综述性质且试验异质；注册信息和早期结果不等同于监管批准或长期患者获益。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0071.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1440,7 +1653,10 @@
       "limitations": "名录不是比较疗效证据；靶点、疾病、年龄和治疗线次必须按每一产品标签核对。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0072.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1460,7 +1676,10 @@
       "limitations": "跨研究亚组易受疾病、患者和制造流程混杂；作者将其定位为缺少大规模随机证据时的假设生成工具。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0073.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1480,7 +1699,10 @@
       "limitations": "事件定义、报告完整性和产品构成高度异质；总体比例不能用于预测某一产品或单个患者风险。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0074.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1500,7 +1722,10 @@
       "limitations": "中位随访仅 21.7 个月，既往多线治疗和随访长度影响观察；不能排除罕见或迟发风险。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0075.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1520,7 +1745,10 @@
       "limitations": "71 项为观察性比较研究，选择偏倚和技术代际差异明显；报告针对西班牙尚未批准的适应证情境。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0076.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1540,7 +1768,10 @@
       "limitations": "采用被动散射而非当前全部质子技术；个体计划质量和解剖变化影响结果。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0077.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1560,7 +1791,10 @@
       "limitations": "仅 107 人可评估，80% 质子治疗采用被动散射；复合毒性终点和技术代际限制外推。",
       "confidence": "medium",
       "content_ref": "evidence/EVD-0078.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1580,7 +1814,10 @@
       "limitations": "仅含一项随机试验，样本量主要由回顾性数据库驱动，残余混杂和技术差异显著。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0079.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1600,7 +1837,10 @@
       "limitations": "综述中的平台、用途和参照标准异质；局部高性能示例不能代表所有器官芯片，也不是患者治疗证据。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0080.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1620,7 +1860,10 @@
       "limitations": "主要证据为体外和临床前研究；不能把患者特异模型或局部组织构建表述为可用的完整器官替代。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0081.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     },
     {
@@ -1640,7 +1883,401 @@
       "limitations": "数字孪生定义和研究设计不统一，技术准确率不能替代对临床决策影响和患者结局的前瞻性验证。",
       "confidence": "low",
       "content_ref": "evidence/EVD-0082.md",
-      "review_status": "needs-review",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0083",
+      "title": "T-DXd 获批用于既往治疗后的 HER2 低表达晚期乳腺癌",
+      "claim": "FDA 于 2022 年常规批准 T-DXd 用于特定既往治疗后的不可切除或转移性 HER2-low 乳腺癌。",
+      "relation_ids": [
+        "REL-0186"
+      ],
+      "source_ids": [
+        "SRC-0111"
+      ],
+      "study_type": "监管批准与标签",
+      "research_stage": "已获监管批准",
+      "population_or_model": "既往在转移阶段接受化疗，或辅助化疗完成后 6 个月内复发的成人 HER2-low 晚期乳腺癌患者",
+      "sample_size": "批准依据包含 DESTINY-Breast04 试验",
+      "intervention": "fam-trastuzumab deruxtecan-nxki（T-DXd）静脉输注",
+      "comparator": "监管审评所依据的医生选择化疗对照",
+      "outcomes": [
+        "监管适应证",
+        "获益风险",
+        "伴随诊断",
+        "上市后承诺"
+      ],
+      "findings": "监管批准确认了特定 HER2-low 人群的临床使用范围，并要求使用经批准的 HER2 检测方法识别患者。",
+      "limitations": "批准范围受 HER2 检测定义、既往治疗和疾病阶段限制；不能外推到所有乳腺癌，且间质性肺病风险仍需警惕。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0083.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0084",
+      "title": "DESTINY-Breast04 随机 III 期试验",
+      "claim": "557 名 HER2-low 晚期乳腺癌患者中，T-DXd 相比医生选择化疗延长无进展生存和总生存，但存在间质性肺病及其他毒性。",
+      "relation_ids": [
+        "REL-0186"
+      ],
+      "source_ids": [
+        "SRC-0112"
+      ],
+      "study_type": "随机开放标签 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "既往接受 1—2 线化疗的 HER2-low 不可切除或转移性乳腺癌患者",
+      "sample_size": 557,
+      "intervention": "T-DXd 5.4 mg/kg，每 3 周一次",
+      "comparator": "医生选择的单药化疗",
+      "outcomes": [
+        "无进展生存",
+        "总生存",
+        "客观缓解",
+        "高级别不良事件",
+        "间质性肺病或肺炎"
+      ],
+      "findings": "全体患者中位无进展生存为 9.9 对 5.1 个月，总生存为 23.4 对 16.8 个月；三级及以上不良事件为 52.6% 对 67.4%，T-DXd 相关间质性肺病或肺炎为 12.1%，含 0.8% 五级事件。",
+      "limitations": "开放标签且由生产企业资助；HER2-low 判定、既往治疗和入组条件限制外推，严重肺毒性需要与疗效共同解释。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0084.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0085",
+      "title": "DESTINY-Breast04 32 个月中位随访生存分析",
+      "claim": "延长随访中 T-DXd 的总生存优势仍存在，但这是同一随机试验的后续分析而非新的独立试验。",
+      "relation_ids": [
+        "REL-0186"
+      ],
+      "source_ids": [
+        "SRC-0113"
+      ],
+      "study_type": "随机 III 期试验延长随访",
+      "research_stage": "临床试验",
+      "population_or_model": "DESTINY-Breast04 随机队列",
+      "sample_size": 557,
+      "intervention": "T-DXd",
+      "comparator": "医生选择的化疗",
+      "outcomes": [
+        "总生存",
+        "长期安全性",
+        "亚组一致性"
+      ],
+      "findings": "中位随访 32.0 个月时，全体队列中位总生存为 22.9 对 16.8 个月，风险比 0.69（95% CI 0.55—0.86）；总体安全谱与既往报告大体一致。",
+      "limitations": "来自原始试验同一人群；后续亚组多为探索性分析，长期安全性和真实世界人群仍需持续监测。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0085.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0086",
+      "title": "长效卡博特韦获批用于 HIV-1 暴露前预防",
+      "claim": "FDA 批准 Apretude 用于有性传播 HIV-1 风险且符合年龄和体重条件的人群，但要求开始及每次注射前确认 HIV 阴性。",
+      "relation_ids": [
+        "REL-0192"
+      ],
+      "source_ids": [
+        "SRC-0114"
+      ],
+      "study_type": "监管批准与标签",
+      "research_stage": "已获监管批准",
+      "population_or_model": "有性传播 HIV-1 感染风险的成人及体重至少 35 kg 的青少年",
+      "sample_size": "批准依据包含 HPTN 083 与 HPTN 084",
+      "intervention": "cabotegravir 长效肌内注射",
+      "comparator": "每日口服 TDF-FTC 的关键试验",
+      "outcomes": [
+        "监管适应证",
+        "给药间隔",
+        "HIV 检测",
+        "耐药风险"
+      ],
+      "findings": "获批方案在起始负荷后每 8 周由医疗人员注射；监管标签以黑框警示强调未诊断感染时的耐药风险和重复检测要求。",
+      "limitations": "获批不消除漏针、药物尾期、注射服务可及性和感染迟发诊断问题。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0086.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0087",
+      "title": "HPTN 083 长效卡博特韦预防 HIV 随机试验",
+      "claim": "4566 名顺性别男性和跨性别女性中，长效卡博特韦的新发 HIV 感染少于每日 TDF-FTC，但注射反应更多且突破感染可伴耐药和诊断延迟。",
+      "relation_ids": [
+        "REL-0192"
+      ],
+      "source_ids": [
+        "SRC-0115"
+      ],
+      "study_type": "随机双盲双模拟 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "与男性发生性行为且 HIV 风险升高的顺性别男性与跨性别女性",
+      "sample_size": 4566,
+      "intervention": "cabotegravir 600 mg 肌内注射，每 8 周一次",
+      "comparator": "每日口服 TDF-FTC",
+      "outcomes": [
+        "HIV 新发感染",
+        "注射部位反应",
+        "药物耐受",
+        "INSTI 耐药",
+        "诊断延迟"
+      ],
+      "findings": "发生 52 例感染，其中卡博特韦组 13 例、TDF-FTC 组 39 例，风险比 0.34（95% CI 0.18—0.62）；注射部位反应分别为 81.4% 与 31.3%。",
+      "limitations": "有效性差异同时受到口服依从性影响；突破感染中的整合酶抑制剂耐药和诊断延迟需在实施中重点管理。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0087.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0088",
+      "title": "HPTN 084 女性人群长效卡博特韦随机试验",
+      "claim": "3224 名撒哈拉以南非洲女性中，长效卡博特韦组 HIV 新发感染少于每日 TDF-FTC 组，但口服对照组依从性不足影响比较。",
+      "relation_ids": [
+        "REL-0192"
+      ],
+      "source_ids": [
+        "SRC-0116"
+      ],
+      "study_type": "随机双盲双模拟 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "撒哈拉以南非洲 7 国、18—45 岁且 HIV 风险升高的女性",
+      "sample_size": 3224,
+      "intervention": "长效注射 cabotegravir",
+      "comparator": "每日口服 TDF-FTC",
+      "outcomes": [
+        "HIV 新发感染",
+        "依从性",
+        "注射覆盖",
+        "不良事件",
+        "妊娠"
+      ],
+      "findings": "共观察到 40 例感染，卡博特韦组 4 例、TDF-FTC 组 36 例，风险比 0.12（95% CI 0.05—0.31）；抽样血药浓度中仅 42.1% 符合每日服药。",
+      "limitations": "比较的是两种主动预防策略；口服依从性差异是结果的重要组成部分，不能仅解释为药物本身效力差异。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0088.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0089",
+      "title": "patisiran 获批用于成人 hATTR 多发性神经病",
+      "claim": "FDA 标签将 patisiran 限定用于成人遗传性 TTR 介导淀粉样变性的多发性神经病治疗。",
+      "relation_ids": [
+        "REL-0198"
+      ],
+      "source_ids": [
+        "SRC-0117"
+      ],
+      "study_type": "监管批准与标签",
+      "research_stage": "已获监管批准",
+      "population_or_model": "伴多发性神经病的成人 hATTR 患者",
+      "sample_size": "批准依据包含 APOLLO 试验",
+      "intervention": "patisiran 脂质纳米颗粒静脉输注",
+      "comparator": "监管审评所依据的安慰剂对照",
+      "outcomes": [
+        "监管适应证",
+        "给药",
+        "输注反应",
+        "维生素 A 管理"
+      ],
+      "findings": "监管标签确认了成人 hATTR 多发性神经病适应证，并规定静脉输注、预处理和相关安全管理。",
+      "limitations": "适应证不自动覆盖 ATTR 心肌病或无多发性神经病人群；监管状态不能替代个体化临床决策。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0089.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0090",
+      "title": "APOLLO patisiran 随机 III 期试验",
+      "claim": "225 名 hATTR 多发性神经病患者中，patisiran 在 18 个月改善神经损害和生活质量量表，但需要静脉输注且试验由生产企业资助。",
+      "relation_ids": [
+        "REL-0198"
+      ],
+      "source_ids": [
+        "SRC-0118"
+      ],
+      "study_type": "随机双盲安慰剂对照 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "hATTR 淀粉样变性伴多发性神经病患者",
+      "sample_size": 225,
+      "intervention": "patisiran 0.3 mg/kg 静脉输注，每 3 周一次",
+      "comparator": "安慰剂",
+      "outcomes": [
+        "mNIS+7",
+        "Norfolk QOL-DN",
+        "步速",
+        "营养状态",
+        "输注反应"
+      ],
+      "findings": "18 个月 mNIS+7 变化为 -6.0 对 28.0，组间差 -34.0 分；Norfolk QOL-DN 组间差 -21.1 分，步速与改良 BMI 也有利于 patisiran。",
+      "limitations": "量表变化需结合临床意义解释；样本为罕见病特定人群，随访 18 个月且由 Alnylam 资助。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0090.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0091",
+      "title": "patisiran 全球开放延长研究五年结果",
+      "claim": "开放延长研究显示部分完成随访者五年功能较稳定，但无同期对照、选择性入组和失访使长期效果估计存在偏倚。",
+      "relation_ids": [
+        "REL-0198"
+      ],
+      "source_ids": [
+        "SRC-0119"
+      ],
+      "study_type": "全球多中心开放延长研究",
+      "research_stage": "临床试验",
+      "population_or_model": "完成 APOLLO 或 II 期延长研究并耐受治疗的成人 hATTR-PN 患者",
+      "sample_size": "211人入组，138人完成五年随访",
+      "intervention": "patisiran 0.3 mg/kg 静脉输注，每 3 周一次，最长 5 年",
+      "comparator": "无同期对照；按原研究分组作探索性比较",
+      "outcomes": [
+        "PND",
+        "NIS",
+        "生活质量",
+        "营养状态",
+        "生存",
+        "长期安全性"
+      ],
+      "findings": "完成者中 65.0% 的 PND 评分稳定或改善；全体入组者 22.3% 因不良事件退出，19.4% 在研究期间死亡。",
+      "limitations": "开放、无同期对照且仅纳入完成前序试验并耐受治疗者；完成者分析、失访和利益冲突可能高估长期获益。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0091.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0092",
+      "title": "MACI 获批用于成人膝关节症状性全层软骨缺损",
+      "claim": "FDA 将 MACI 定义为自体细胞化支架产品，用于成人膝关节单个或多个症状性全层软骨缺损修复。",
+      "relation_ids": [
+        "REL-0204"
+      ],
+      "source_ids": [
+        "SRC-0120"
+      ],
+      "study_type": "监管批准与标签",
+      "research_stage": "已获监管批准",
+      "population_or_model": "成人膝关节单个或多个症状性全层软骨缺损，可伴或不伴骨受累",
+      "sample_size": "批准依据包含 SUMMIT 试验",
+      "intervention": "自体培养软骨细胞接种于猪 I/III 型胶原膜",
+      "comparator": "监管审评所依据的微骨折术对照",
+      "outcomes": [
+        "监管适应证",
+        "产品组成",
+        "植入流程",
+        "禁忌与限制"
+      ],
+      "findings": "MACI 于 2016 年首次获批；当前标签限定成人膝关节，单张 3×5 cm 细胞膜的细胞密度至少为每平方厘米 50 万。",
+      "limitations": "其他关节及 55 岁以上人群的有效性尚未确立；严重膝骨关节炎等情况不属于适用范围。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0092.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0093",
+      "title": "SUMMIT 两年 MACI 与微骨折术随机比较",
+      "claim": "144 名较大症状性膝软骨缺损患者中，MACI 的两年 KOOS 疼痛和功能改善大于微骨折术。",
+      "relation_ids": [
+        "REL-0204"
+      ],
+      "source_ids": [
+        "SRC-0121"
+      ],
+      "study_type": "前瞻性随机对照试验",
+      "research_stage": "临床试验",
+      "population_or_model": "股骨髁或滑车至少 3 cm² 的 Outerbridge III/IV 级症状性局灶软骨缺损患者",
+      "sample_size": "144人治疗，137人完成两年评估",
+      "intervention": "MACI",
+      "comparator": "微骨折术",
+      "outcomes": [
+        "KOOS 疼痛",
+        "KOOS 功能",
+        "MRI 结构修复",
+        "组织学",
+        "失败与安全性"
+      ],
+      "findings": "KOOS 疼痛由 37.0 改善至 82.5，对照由 35.5 至 70.9；功能由 14.9 改善至 60.9，对照由 12.6 至 48.7，联合主要终点 P=0.001。",
+      "limitations": "适用于较大局灶缺损和试验所选患者；手术技术、合并病变处理和康复方案会影响结果，不能外推至弥漫性骨关节炎。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0093.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0094",
+      "title": "SUMMIT 随机队列五年延长随访",
+      "claim": "五年随访中 MACI 的 KOOS 疼痛和功能优势维持，但 MRI 缺损填充在组间无显著差异。",
+      "relation_ids": [
+        "REL-0204"
+      ],
+      "source_ids": [
+        "SRC-0122"
+      ],
+      "study_type": "随机试验队列延长随访",
+      "research_stage": "临床试验",
+      "population_or_model": "SUMMIT 原随机队列中同意继续五年观察的患者",
+      "sample_size": "144人原始随机，128人进入延长研究",
+      "intervention": "MACI",
+      "comparator": "微骨折术",
+      "outcomes": [
+        "KOOS 疼痛与功能",
+        "日常生活活动",
+        "生活质量",
+        "MRI 缺损填充",
+        "安全性"
+      ],
+      "findings": "五年时 KOOS 疼痛与功能联合主要终点仍有利于 MACI（P=0.022），日常生活活动差异显著；MRI 结构修复组间未见显著差异。",
+      "limitations": "仅 128 人进入延长随访，来自同一随机试验而非独立复制；患者报告结局与影像结构结果并不完全一致。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0094.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
     }
   ]

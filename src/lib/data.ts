@@ -20,7 +20,9 @@ import type {
 export const nodes = nodesDocument.items as GraphNode[];
 export const nodeSummaries = nodeSummariesDocument.items as NodeSummary[];
 export const relations = relationsDocument.items as GraphRelation[];
-export const evidenceItems = evidenceDocument.items as EvidenceItem[];
+export const evidenceItems = (evidenceDocument.items as EvidenceItem[]).filter(
+  (item) => item.publication_status === "public",
+);
 export const sources = sourcesDocument.items as SourceItem[];
 export const preferenceOptions = preferencesDocument.items as PreferenceOption[];
 export const futureDirections = analysisDocument.items as FutureDirection[];
@@ -55,8 +57,7 @@ export const typeLabels: Record<GraphNode["type"], string> = {
 
 export const statusLabels: Record<string, string> = {
   draft: "资料待补充",
-  "needs-review": "待医学审核",
-  approved: "已审核",
+  "source-checked": "来源已核验",
   revise: "需要修订",
   blocked: "已阻断",
 };

@@ -1,6 +1,6 @@
-# 首批候选来源
+# 内容扩充候选来源
 
-状态：第一轮候选来源已完成元数据与摘要级核验；仍需医学审核，不能直接进入网站
+状态：已完成所列来源的元数据与摘要或监管文件核验；按 R1 流程，`content-reviewed` 可支持来源核验型公开内容，但不表示经过独立医学专家审核
 
 | 候选编号 | 主题 | 来源类型 | 标题 | 年份 | DOI/注册号 | URL | 初步用途 | 核验状态 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -71,6 +71,23 @@
 | SRC-0103 | 三维生物打印 | 技术与临床转化综述 | 3D Bioprinting for Engineered Tissue Constructs | 2024 | — | https://pubmed.ncbi.nlm.nih.gov/39420757/ | 患者特异模型、血管化与成熟度 | content-reviewed |
 | SRC-0104 | 医学数字孪生 | 系统综述 | Digital twins in healthcare | 2026 | — | https://pubmed.ncbi.nlm.nih.gov/42370013/ | 应用、验证、互操作性与隐私 | content-reviewed |
 | SRC-0105 | 聚焦超声 | 新闻/通俗背景 | Focused ultrasound treatment offers long-term relief for patients with essential tremor | 2022 | — | https://www.news-medical.net/news/20221110/Focused-ultrasound-treatment-offers-long-term-relief-for-patients-with-essential-tremor.aspx | 发现与通俗解释辅助；不承担核心疗效结论 | metadata-verified |
+| SRC-0106 | 化学 | NIH 机构资料 | Chemistry and Chemical Biology Branch | 2026 | — | https://www.nigms.nih.gov/about/overview/Pages/PPBC | 化学与化学生物学范围 | content-reviewed |
+| SRC-0107 | 化学工程 | NIH 机构资料 | Drug Delivery Systems: Getting Drugs to Their Targets in a Controlled Manner | — | — | https://www.nibib.nih.gov/sites/default/files/Drug%20Delivery_English_508.pdf | 靶向递送、控释与工程屏障 | content-reviewed |
+| SRC-0108 | 纳米科学 | NIH 机构资料 | Cancer and Nanotechnology | — | — | https://www.cancer.gov/sites/ocnr/cancer-nanotechnology | 纳米尺度、诊断与治疗范围 | content-reviewed |
+| SRC-0109 | 再生医学与组织工程 | NIH 机构资料 | Tissue Engineering and Regenerative Medicine Fact Sheet | 2019 | — | https://www.nibib.nih.gov/sites/default/files/2022-04/Fact-Sheet-Tissue-Engineering.pdf | 细胞、支架与功能组织定义 | content-reviewed |
+| SRC-0110 | 合成生物学 | NIH 机构资料 | Synthetic Biology | 2025 | — | https://www.nibib.nih.gov/science-education/science-topics/synthetic-biology | 设计—构建—测试与医学应用范围 | content-reviewed |
+| SRC-0111 | HER2-low ADC | FDA 监管资料 | ENHERTU prescribing information: HER2-Low Metastatic Breast Cancer | 2022 | BLA 761139/S-022 | https://www.accessdata.fda.gov/drugsatfda_docs/label/2022/761139s022lbl.pdf | 适应证、DESTINY-Breast04 安全性与标签边界 | content-reviewed |
+| SRC-0112 | HER2-low ADC | 随机 III 期试验 | DESTINY-Breast04 | 2022 | 10.1056/NEJMoa2203690 / NCT03734029 | https://pubmed.ncbi.nlm.nih.gov/35665782/ | PFS、OS 与间质性肺病 | content-reviewed |
+| SRC-0113 | HER2-low ADC | 随机试验延长随访 | DESTINY-Breast04 long-term survival analysis | 2025 | 10.1038/s41591-025-03981-4 / NCT03734029 | https://pubmed.ncbi.nlm.nih.gov/41062831/ | 32 个月中位随访总生存 | content-reviewed |
+| SRC-0114 | 长效 HIV PrEP | FDA 监管资料 | Apretude NDA approval | 2021 | NDA 215499 | https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2021/215499Orig1s000ltr.pdf | 批准范围、检测和耐药警示 | content-reviewed |
+| SRC-0115 | 长效 HIV PrEP | 随机 III 期试验 | HPTN 083 | 2021 | 10.1056/NEJMoa2101016 / NCT02720094 | https://pubmed.ncbi.nlm.nih.gov/34379922/ | HIV 新发感染、注射反应与耐药 | content-reviewed |
+| SRC-0116 | 长效 HIV PrEP | 随机 III 期试验 | HPTN 084 | 2022 | 10.1016/S0140-6736(22)00538-4 / NCT03164564 | https://pubmed.ncbi.nlm.nih.gov/35378077/ | 女性人群感染率与口服依从性 | content-reviewed |
+| SRC-0117 | patisiran | FDA 监管资料 | ONPATTRO prescribing information | 2023 | NDA 210922 | https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/210922s012lbl.pdf | 成人 hATTR-PN 适应证与标签边界 | content-reviewed |
+| SRC-0118 | patisiran | 随机 III 期试验 | APOLLO | 2018 | 10.1056/NEJMoa1716153 / NCT01960348 | https://pubmed.ncbi.nlm.nih.gov/29972753/ | 神经功能、生活质量与输注反应 | content-reviewed |
+| SRC-0119 | patisiran | 开放延长研究 | Five-Year Results With Patisiran | 2025 | 10.1001/jamaneurol.2024.4631 / NCT02510261 | https://pubmed.ncbi.nlm.nih.gov/39804640/ | 五年功能、安全和选择偏倚 | content-reviewed |
+| SRC-0120 | MACI | FDA 监管资料 | MACI autologous cultured chondrocytes on porcine collagen membrane | 2026 | BLA 125603 | https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/maci-autologous-cultured-chondrocytes-porcine-collagen-membrane | 产品组成、批准范围与限制 | content-reviewed |
+| SRC-0121 | MACI | 随机对照试验 | SUMMIT two-year follow-up | 2014 | 10.1177/0363546514528093 | https://pubmed.ncbi.nlm.nih.gov/24714783/ | 两年 KOOS、结构与安全性 | content-reviewed |
+| SRC-0122 | MACI | 随机试验延长随访 | SUMMIT five-year follow-up | 2018 | 10.1177/0363546518756976 | https://pubmed.ncbi.nlm.nih.gov/29565642/ | 五年 KOOS 与 MRI 结果差异 | content-reviewed |
 
 ## 核验状态
 

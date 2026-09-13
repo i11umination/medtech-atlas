@@ -4,6 +4,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import MechanismPath from "../../components/MechanismPath.astro";
 import ResearcherReading from "../../components/ResearcherReading.astro";
 import ReturnPath from "../../components/ReturnPath.astro";
+import ReviewDisclosure from "../../components/ReviewDisclosure.astro";
 import StatusBadge from "../../components/StatusBadge.astro";
 import {
   evidenceById,
@@ -71,12 +72,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
       </div>
     </header>
 
-    {relation.status !== "approved" && (
-      <aside class="review-banner">
-        <strong>这条关联仍在图谱审核队列中</strong>
-        <p>页面用于展示当前知识结构与证据线索，不应被理解为临床建议或确定性疗效结论。</p>
-      </aside>
-    )}
+    <ReviewDisclosure status={relation.status} />
 
     <MechanismPath relation={relation} source={source} target={target} evidenceItems={linkedEvidence} />
 
@@ -85,7 +81,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
         <section class="relation-detail-section">
           <span class="eyebrow">关系说明</span>
           <h2>{relation.label}</h2>
-          <p>{relation.mechanism_summary ?? "当前尚未补充这条关系的机制或应用解释。后续需要通过定义来源、原始研究或专家审核进一步完善。"}</p>
+          <p>{relation.mechanism_summary ?? "当前尚未补充这条关系的机制或应用解释。后续需要通过定义来源或原始研究进一步完善。"}</p>
         </section>
 
         <section class="relation-detail-section">
@@ -151,7 +147,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
           ) : (
             <div class="relation-empty-state">
               <strong>这条关联暂时没有已挂接的研究证据。</strong>
-              <p>它可以作为后续资料征集和医学审核的候选关系。</p>
+              <p>它可以作为后续资料征集和来源核验的候选关系。</p>
             </div>
           )}
         </section>

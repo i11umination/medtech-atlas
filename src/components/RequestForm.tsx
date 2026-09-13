@@ -154,7 +154,7 @@ export default function RequestForm() {
       {state.kind === "success" && (
         <div className="form-feedback form-success" role="status">
           <strong>需求已进入待处理队列</strong>
-          <p>登记编号：{state.requestId}。后续将经过归类、检索和医学审核，不会直接自动发布为医学结论。</p>
+          <p>登记编号：{state.requestId}。后续将经过归类、来源检索、事实提取和发布检查，不会直接自动发布为医学结论。</p>
         </div>
       )}
       {state.kind === "error" && (

@@ -13,7 +13,7 @@ const typeColors: Record<NodeType, string> = {
   capability: "#2f7d62",
   disease: "#b84b62",
   clinical_problem: "#7c3aed",
-  technology: "#087f8c",
+  technology: "#2563eb",
   research: "#64748b",
 };
 const neighborMap = new Map<string, GraphNode>();
@@ -102,7 +102,7 @@ function labelLines(label: string) {
           </g>
         </svg>
       ) : (
-        <div class="visual-empty-state"><strong>尚未建立直接关系</strong><p>当前节点可以作为后续资料征集和关系审核的起点。</p></div>
+        <div class="visual-empty-state"><strong>尚未建立直接关系</strong><p>当前节点可以作为后续资料征集和关系核验的起点。</p></div>
       )}
       {hiddenCount > 0 && <p class="orbit-overflow-note">另有 {hiddenCount} 个相邻节点可在下方关联内容或完整图谱中查看。</p>}
     </div>

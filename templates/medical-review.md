@@ -1,11 +1,13 @@
 ---
 target_id: REL-0000
 reviewer_role: medical-reviewer
-review_status: revise
+expert_review_status: completed
 reviewed_at: YYYY-MM-DD
 ---
 
-# 医学安全与质量审核
+# 可选的独立医学专家复核
+
+> R1 不要求专家复核后方可公开。本模板只在确有具名、可追溯的独立专家复核时使用；不得用机器检查或一般编辑冒充专家审核。
 
 ## 来源是否支持结论
 

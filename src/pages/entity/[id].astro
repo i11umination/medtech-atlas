@@ -5,6 +5,7 @@ import EntityVisualOverview from "../../components/EntityVisualOverview.astro";
 import RelatedContentExplorer from "../../components/RelatedContentExplorer";
 import ResearcherReading from "../../components/ResearcherReading.astro";
 import ReturnPath from "../../components/ReturnPath.astro";
+import ReviewDisclosure from "../../components/ReviewDisclosure.astro";
 import StatusBadge from "../../components/StatusBadge.astro";
 import {
   evidenceById,
@@ -22,6 +23,7 @@ export function getStaticPaths() {
   return [
     ...nodes.map((node) => ({ params: { id: node.id }, props: { node } })),
     { params: { id: "DOM-0003" }, props: { redirectTo: "DOM-0001" } },
+    { params: { id: "DOM-0016" }, props: { redirectTo: "DOM-0015" } },
   ];
 }
 
@@ -100,12 +102,7 @@ const relatedDirections = futureDirections.filter((direction) =>
       <a class="button button-primary" href={`/explore?focus=${node.id}`}>在图谱中定位</a>
     </header>
 
-    {node.status !== "approved" && (
-      <aside class="review-banner">
-        <strong>内容状态：尚未完成医学审核</strong>
-        <p>当前页面用于验证图谱结构，不应被理解为临床建议或确定性疗效结论。</p>
-      </aside>
-    )}
+    <ReviewDisclosure status={node.status} />
 
     {summary && (
       <section class="entity-section entity-summary-section">

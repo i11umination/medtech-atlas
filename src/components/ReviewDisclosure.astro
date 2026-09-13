@@ -1,0 +1,24 @@
+---
+interface Props {
+  status: string;
+  expertReviewStatus?: "not-performed" | "completed";
+  curationMethod?: "human-curated" | "machine-assisted";
+}
+
+const {
+  status,
+  expertReviewStatus = "not-performed",
+  curationMethod = "machine-assisted",
+} = Astro.props;
+const isSourceChecked = status === "source-checked";
+const hasExpertReview = expertReviewStatus === "completed";
+---
+
+<aside class:list={["review-banner", isSourceChecked && "source-checked-banner"]}>
+  <strong>{isSourceChecked ? "来源与内容已完成核验" : "内容尚未完成来源核验"}</strong>
+  <p>
+    {isSourceChecked
+      ? `${curationMethod === "machine-assisted" ? "本条目由机器辅助整理并逐项对照所列来源" : "本条目由人工整理并完成来源核对"}；${hasExpertReview ? "另有独立医学专家复核记录" : "未进行独立医学专家审核"}。它用于研究信息导航，不构成诊断、治疗或个体化医疗建议。`
+      : "当前内容仅作为资料骨架或候选关系展示，不应被视为已核验事实，也不构成诊断、治疗或个体化医疗建议。"}
+  </p>
+</aside>

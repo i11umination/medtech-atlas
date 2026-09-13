@@ -6,6 +6,9 @@ relation_ids:
 source_ids:
   - SRC-0000
 review_status: draft
+expert_review_status: not-performed
+publication_status: hidden
+curation_method: machine-assisted
 ---
 
 # 待填写证据卡片标题

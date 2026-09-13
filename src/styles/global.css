@@ -454,7 +454,7 @@ a {
 .node-capability { background: #2f7d62; }
 .node-disease { background: var(--rose); }
 .node-clinical_problem { background: var(--violet); }
-.node-technology { background: var(--teal); }
+.node-technology { background: #2563eb; }
 .node-research { background: var(--slate); }
 
 .empty-state {
@@ -691,12 +691,7 @@ a {
   white-space: nowrap;
 }
 
-.status-needs-review {
-  background: var(--amber-soft);
-  color: #8a4c00;
-}
-
-.status-approved {
+.status-source-checked {
   background: var(--teal-soft);
   color: #075d64;
 }
@@ -2564,6 +2559,12 @@ a {
   font-size: 13px;
 }
 
+.review-banner.source-checked-banner {
+  border-left-color: var(--teal);
+  background: var(--teal-soft);
+  color: #075d64;
+}
+
 .entity-section {
   margin-top: 58px;
 }
@@ -2853,7 +2854,7 @@ a {
 
 .evidence-meta {
   display: grid;
-  grid-template-columns: 2fr 1fr 0.7fr 0.8fr;
+  grid-template-columns: 1.5fr 1fr 0.8fr;
   gap: 1px;
   margin-top: 36px;
   overflow: hidden;

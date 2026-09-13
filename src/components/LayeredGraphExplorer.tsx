@@ -30,7 +30,7 @@ const colors: Record<NodeType, string> = {
   capability: "#2f7d62",
   disease: "#b84b62",
   clinical_problem: "#7c3aed",
-  technology: "#087f8c",
+  technology: "#2563eb",
   research: "#64748b",
 };
 const axisColors: Record<NavigationGroup["axis"], string> = {

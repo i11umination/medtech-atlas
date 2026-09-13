@@ -3,6 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import ResearcherReading from "../../components/ResearcherReading.astro";
 import ReturnPath from "../../components/ReturnPath.astro";
+import ReviewDisclosure from "../../components/ReviewDisclosure.astro";
 import StatusBadge from "../../components/StatusBadge.astro";
 import StudyDesignVisual from "../../components/StudyDesignVisual.astro";
 import {
@@ -60,15 +61,16 @@ const contextNode = primaryRelation ? nodeById.get(primaryRelation.source_id) : 
         <span><small>研究阶段</small>{item.research_stage}</span>
         <span><small>样本量</small>{item.sample_size ?? "未报告"}</span>
         <span><small>核验日期</small>{item.last_verified}</span>
+        <span><small>整理方式</small>{item.curation_method === "machine-assisted" ? "机器辅助 + 来源核对" : "人工整理"}</span>
+        <span><small>专家审核</small>{item.expert_review_status === "completed" ? "已完成" : "未进行"}</span>
       </div>
     </header>
 
-    {item.review_status !== "approved" && (
-      <aside class="review-banner">
-        <strong>这张证据卡仍在医学审核队列中</strong>
-        <p>页面忠实保留当前提取结果与限制，但在审核通过前不作为已确认医学结论。</p>
-      </aside>
-    )}
+    <ReviewDisclosure
+      status={item.review_status}
+      expertReviewStatus={item.expert_review_status}
+      curationMethod={item.curation_method}
+    />
 
     <StudyDesignVisual item={item} />
 

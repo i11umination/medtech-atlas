@@ -13,14 +13,13 @@ const canonicalGroups = [
       "电子与信息工程",
       "材料科学与工程",
       "计算机科学与人工智能",
-      "化学工程",
       "自动化与控制科学",
     ],
   },
   {
     id: "NAV-0011",
     name: "基础科学",
-    domains: ["物理学", "化学", "数学与统计学"],
+    domains: ["物理学", "化学与化学工程", "数学与统计学"],
   },
   {
     id: "NAV-0012",
@@ -255,14 +254,14 @@ try {
 
   console.log("内容覆盖软审计（不阻断构建）");
   console.log(`口径：${canonicalDomainCount} 个批准门类；当前落地 ${landedDomains.length} 个，缺少 ${canonicalDomainCount - landedDomains.length} 个。`);
-  console.log(`证据卡：${evidence.length} 张；审核状态 ${Object.entries(statusCounts).map(([status, count]) => `${status}=${count}`).join("，")}。`);
+  console.log(`证据卡：${evidence.length} 张；核验状态 ${Object.entries(statusCounts).map(([status, count]) => `${status}=${count}`).join("，")}。`);
   if (diseaseConcentration && concentration) {
     console.log(
       `集中度：疾病层最高为 ${nodeById.get(diseaseConcentration.nodeId)?.name ?? diseaseConcentration.nodeId} ${diseaseConcentration.count}/${evidence.length}（${(diseaseConcentration.count / evidence.length * 100).toFixed(1)}%）；临床问题层最高为 ${nodeById.get(concentration.nodeId)?.name ?? concentration.nodeId} ${concentration.count}/${evidence.length}（${(concentration.count / evidence.length * 100).toFixed(1)}%）。`,
     );
   }
   console.log("");
-  console.log("| 门类 | 核心能力 | 技术 | 临床问题 | 疾病与健康状态 | 独立应用证据 | 完整路径 | 审核状态 |");
+  console.log("| 门类 | 核心能力 | 技术 | 临床问题 | 疾病与健康状态 | 独立应用证据 | 完整路径 | 核验状态 |");
   console.log("| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |");
   for (const profile of profiles) {
     console.log(

@@ -6,6 +6,11 @@ export type NodeType =
   | "technology"
   | "research";
 
+export type ContentStatus = "draft" | "source-checked" | "revise" | "blocked";
+export type ExpertReviewStatus = "not-performed" | "completed";
+export type PublicationStatus = "hidden" | "public";
+export type CurationMethod = "human-curated" | "machine-assisted";
+
 export interface GraphNode {
   id: string;
   type: NodeType;
@@ -14,7 +19,7 @@ export interface GraphNode {
   aliases: string[];
   tags: string[];
   content_ref: string | null;
-  status: "draft" | "needs-review" | "approved" | "blocked";
+  status: ContentStatus;
   last_verified: string | null;
 }
 
@@ -22,7 +27,7 @@ export interface NodeSummary {
   node_id: string;
   content_ref: string;
   source_ids: string[];
-  review_status: "needs-review" | "approved" | "blocked";
+  review_status: ContentStatus;
   last_verified: string;
 }
 
@@ -36,7 +41,7 @@ export interface GraphRelation {
   research_stage: string;
   evidence_ids: string[];
   limitations: string;
-  status: "draft" | "needs-review" | "approved" | "blocked";
+  status: ContentStatus;
   last_verified: string | null;
 }
 
@@ -57,7 +62,10 @@ export interface EvidenceItem {
   limitations: string;
   confidence: "low" | "medium" | "high";
   content_ref: string;
-  review_status: "needs-review" | "approved" | "revise" | "blocked";
+  review_status: ContentStatus;
+  expert_review_status: ExpertReviewStatus;
+  publication_status: PublicationStatus;
+  curation_method: CurationMethod;
   last_verified: string;
 }
 
@@ -72,7 +80,7 @@ export interface SourceItem {
   registry_id: string | null;
   url: string;
   access_note: string;
-  status: "needs-review" | "approved" | "blocked";
+  status: ContentStatus;
   verified_at: string;
 }
 
@@ -84,7 +92,7 @@ export interface FutureDirection {
   uncertainty: string;
   risks: string;
   content_ref: string;
-  review_status: "draft" | "needs-review" | "approved" | "blocked";
+  review_status: ContentStatus;
   last_verified: string | null;
 }
 

@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "kind", "updated_at", "items"],
   "properties": {
-    "schema_version": { "const": "1.1.0" },
+    "schema_version": { "const": "1.2.0" },
     "kind": {
       "enum": [
         "nodes",
@@ -58,7 +58,16 @@
   ],
   "$defs": {
     "recordStatus": {
-      "enum": ["draft", "needs-review", "approved", "revise", "blocked"]
+      "enum": ["draft", "source-checked", "revise", "blocked"]
+    },
+    "expertReviewStatus": {
+      "enum": ["not-performed", "completed"]
+    },
+    "publicationStatus": {
+      "enum": ["hidden", "public"]
+    },
+    "curationMethod": {
+      "enum": ["human-curated", "machine-assisted"]
     },
     "researchStage": {
       "enum": [
@@ -173,7 +182,13 @@
       },
       "allOf": [
         {
-          "if": { "properties": { "status": { "const": "approved" } } },
+          "if": {
+            "properties": {
+              "status": { "const": "source-checked" },
+              "relation_type": { "enum": ["applies_to", "studies", "supports", "suggests"] }
+            },
+            "required": ["status", "relation_type"]
+          },
           "then": {
             "properties": {
               "evidence_ids": { "minItems": 1 },
@@ -205,6 +220,9 @@
         "confidence",
         "content_ref",
         "review_status",
+        "expert_review_status",
+        "publication_status",
+        "curation_method",
         "last_verified"
       ],
       "properties": {
@@ -242,11 +260,14 @@
         "confidence": { "enum": ["high", "medium", "low"] },
         "content_ref": { "type": "string", "minLength": 1 },
         "review_status": { "$ref": "#/$defs/recordStatus" },
+        "expert_review_status": { "$ref": "#/$defs/expertReviewStatus" },
+        "publication_status": { "$ref": "#/$defs/publicationStatus" },
+        "curation_method": { "$ref": "#/$defs/curationMethod" },
         "last_verified": { "$ref": "#/$defs/nullableDate" }
       },
       "allOf": [
         {
-          "if": { "properties": { "review_status": { "const": "approved" } } },
+          "if": { "properties": { "review_status": { "const": "source-checked" } } },
           "then": {
             "properties": {
               "relation_ids": { "minItems": 1 },
@@ -254,6 +275,14 @@
               "findings": { "minLength": 1 },
               "limitations": { "minLength": 1 },
               "last_verified": { "type": "string", "format": "date" }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "publication_status": { "const": "public" } } },
+          "then": {
+            "properties": {
+              "review_status": { "const": "source-checked" }
             }
           }
         }

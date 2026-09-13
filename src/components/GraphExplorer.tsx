@@ -16,7 +16,7 @@ const colors: Record<GraphNode["type"], string> = {
   capability: "#2f7d62",
   disease: "#b84b62",
   clinical_problem: "#7c3aed",
-  technology: "#087f8c",
+  technology: "#2563eb",
   research: "#64748b",
 };
 const interestNodeMap: Record<string, string[]> = {
