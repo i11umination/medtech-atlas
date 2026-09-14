@@ -14,6 +14,7 @@ import {
   relations,
   typeLabels,
 } from "../../lib/data";
+import { relationStageHint, relationStageLabel } from "../../lib/researchStage";
 import type { EvidenceItem, GraphNode, GraphRelation } from "../../lib/types";
 
 export function getStaticPaths() {
@@ -28,6 +29,8 @@ interface Props {
 }
 
 const { relation } = Astro.props as Props;
+const relationStage = relationStageLabel(relation.research_stage);
+const relationStageTitle = relationStageHint(relation.research_stage);
 const source = nodeById.get(relation.source_id);
 const target = nodeById.get(relation.target_id);
 const linkedEvidence = relation.evidence_ids
@@ -67,7 +70,7 @@ function nodeTitle(node: GraphNode | undefined, fallbackId: string) {
       <p class="lead-claim">{relation.mechanism_summary ?? "这条关联的机制解释尚待补充，当前仅作为图谱中的待核验关系。"}</p>
       <div class="relation-detail-meta">
         <span><small>关联类型</small>{relation.label}</span>
-        <span><small>研究阶段</small>{relation.research_stage}</span>
+        <span title={relationStageTitle}><small>研究阶段</small>{relationStage}</span>
         <span><small>关联证据</small>{linkedEvidence.length} 条</span>
         <span><small>最近核验</small>{relation.last_verified ?? "未记录"}</span>
       </div>

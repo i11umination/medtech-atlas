@@ -1,5 +1,6 @@
 ---
 import { evidenceById, nodeById, sourceById, typeLabels } from "../lib/data";
+import { highestResearchStage, relationStageLabel } from "../lib/researchStage";
 import { sitePath } from "../lib/site";
 import type { GraphNode, GraphRelation, NodeType } from "../lib/types";
 
@@ -48,10 +49,12 @@ const years = evidenceIds.flatMap((id) => {
     : [];
 });
 const latestYear = years.length > 0 ? Math.max(...years) : null;
-const stageOrder = ["不适用", "阶段信息不明确", "体外研究", "动物研究", "早期人体研究", "临床试验", "监管批准"];
-const highestStage = relations
-  .map((relation) => relation.research_stage)
-  .sort((a, b) => stageOrder.indexOf(b) - stageOrder.indexOf(a))[0] ?? "暂无关系";
+const highestStage = highestResearchStage(
+  relations.map((relation) => relation.research_stage),
+);
+const highestStageMetricLabel = highestStage === "不适用"
+  ? "研究阶段口径"
+  : "当前最高研究阶段";
 const centerLines = node.name.length > 8 ? [node.name.slice(0, 8), node.name.slice(8, 15)] : [node.name];
 
 function labelLines(label: string) {
@@ -60,7 +63,7 @@ function labelLines(label: string) {
 }
 ---
 
-<section class="visual-section entity-visual-overview" aria-labelledby="entity-visual-title">
+<section id="entity-position" class="visual-section entity-visual-overview" aria-labelledby="entity-visual-title">
   <div class="visual-section-heading">
     <div>
       <span class="eyebrow">关系轨道图</span>
@@ -105,6 +108,17 @@ function labelLines(label: string) {
       ) : (
         <div class="visual-empty-state"><strong>尚未建立直接关系</strong><p>当前节点可以作为后续资料征集和关系核验的起点。</p></div>
       )}
+      {neighbors.length > 0 && (
+        <nav class="entity-neighbor-list" aria-label="全部直接相邻节点">
+          {neighbors.map((neighbor) => (
+            <a href={sitePath(`/entity/${neighbor.id}`)}>
+              <span class={`node-dot node-${neighbor.type}`} aria-hidden="true"></span>
+              <span><small>{typeLabels[neighbor.type]}</small><strong>{neighbor.name}</strong></span>
+              <span aria-hidden="true">→</span>
+            </a>
+          ))}
+        </nav>
+      )}
       {hiddenCount > 0 && <p class="orbit-overflow-note">另有 {hiddenCount} 个相邻节点可在下方关联内容或完整图谱中查看。</p>}
     </div>
 
@@ -112,7 +126,7 @@ function labelLines(label: string) {
       <div><strong>{neighbors.length}</strong><span>直接相邻节点</span></div>
       <div><strong>{evidenceIds.length}</strong><span>关联证据卡</span></div>
       <div><strong>{latestYear ?? "—"}</strong><span>最新来源年份</span></div>
-      <div><strong>{highestStage}</strong><span>当前最高研究阶段</span></div>
+      <div><strong>{relationStageLabel(highestStage)}</strong><span>{highestStageMetricLabel}</span></div>
       <p>这里统计的是当前数据库中的已收录内容，不代表该领域全部研究。</p>
     </aside>
   </div>

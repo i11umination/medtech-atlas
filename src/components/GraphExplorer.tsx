@@ -1,5 +1,6 @@
 import cytoscape, { type Core } from "cytoscape";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { relationStageLabel } from "../lib/researchStage";
 import type { EvidenceItem, GraphNode, GraphRelation } from "../lib/types";
 
 const STORAGE_KEY = "med-tech-preferences-v1";
@@ -338,7 +339,7 @@ export default function GraphExplorer({
             <h2>{nodeMap.get(selectedRelation.source_id)?.name} → {nodeMap.get(selectedRelation.target_id)?.name}</h2>
             <dl className="detail-list">
               <div><dt>关系</dt><dd>{selectedRelation.label}</dd></div>
-              <div><dt>研究阶段</dt><dd>{selectedRelation.research_stage}</dd></div>
+              <div><dt>研究阶段</dt><dd>{relationStageLabel(selectedRelation.research_stage)}</dd></div>
               <div><dt>机制摘要</dt><dd>{selectedRelation.mechanism_summary ?? "待补充"}</dd></div>
               <div><dt>主要限制</dt><dd>{selectedRelation.limitations}</dd></div>
             </dl>

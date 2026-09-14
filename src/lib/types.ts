@@ -31,6 +31,15 @@ export interface NodeSummary {
   last_verified: string;
 }
 
+export interface PublicConnection {
+  node_id: string;
+  paragraphs: string[];
+  source_ids: string[];
+  review_status: ContentStatus;
+  curation_method: CurationMethod;
+  last_verified: string;
+}
+
 export interface GraphRelation {
   id: string;
   source_id: string;

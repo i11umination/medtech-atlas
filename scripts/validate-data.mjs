@@ -10,6 +10,7 @@ const dataFiles = [
   "evidence-index.json",
   "sources.json",
   "node-summaries.json",
+  "public-connections.json",
   "analysis-index.json",
   "preference-options.json",
   "navigation-groups.json",
@@ -70,6 +71,7 @@ const relations = items("relations.json");
 const evidence = items("evidence-index.json");
 const sources = items("sources.json");
 const summaries = items("node-summaries.json");
+const publicConnections = items("public-connections.json");
 const analyses = items("analysis-index.json");
 const navigationGroups = items("navigation-groups.json");
 
@@ -127,6 +129,30 @@ for (const summary of summaries) {
   requireId(nodeById, summary.node_id, `${summary.node_id}.summary`);
   for (const sourceId of summary.source_ids ?? []) {
     requireId(sourceById, sourceId, `${summary.node_id}.source_ids`);
+  }
+}
+
+const publicConnectionByNodeId = new Map();
+for (const connection of publicConnections) {
+  requireId(nodeById, connection.node_id, `${connection.node_id}.public_connection`);
+  if (connection.review_status !== "source-checked") {
+    errors.push(`${connection.node_id}: 公开通俗解释必须达到 source-checked`);
+  }
+  if (publicConnectionByNodeId.has(connection.node_id)) {
+    errors.push(`public-connections: 节点 ${connection.node_id} 出现重复通俗连接`);
+  }
+  publicConnectionByNodeId.set(connection.node_id, connection);
+  for (const sourceId of connection.source_ids ?? []) {
+    requireId(sourceById, sourceId, `${connection.node_id}.public_source_ids`);
+    const source = sourceById.get(sourceId);
+    if (connection.review_status === "source-checked" && source?.status !== "source-checked") {
+      errors.push(`${connection.node_id}: 通俗解释引用来源 ${sourceId} 尚未达到 source-checked`);
+    }
+  }
+}
+for (const node of nodes) {
+  if (!publicConnectionByNodeId.has(node.id)) {
+    errors.push(`${node.id}: 缺少通俗医学连接`);
   }
 }
 
@@ -215,6 +241,14 @@ for (const node of nodes) {
 }
 
 const highRiskPhrases = ["彻底治愈", "保证疗效", "一定有效", "你可能患有"];
+for (const connection of publicConnections) {
+  const content = (connection.paragraphs ?? []).join("\n");
+  for (const phrase of highRiskPhrases) {
+    if (content.includes(phrase)) {
+      errors.push(`${connection.node_id}.public_connection: 检出高风险措辞“${phrase}”`);
+    }
+  }
+}
 const markdownDirs = ["node-summaries", "evidence", "analysis", "review"];
 for (const directory of markdownDirs) {
   const absoluteDir = path.join(projectRoot, directory);
@@ -234,6 +268,6 @@ if (errors.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(
-    `数据验证通过：${nodes.length} 个节点、${relations.length} 条关系、${evidence.length} 张证据卡、${sources.length} 条来源、${analyses.length} 条未来方向。`,
+    `数据验证通过：${nodes.length} 个节点、${publicConnections.length} 条通俗连接、${relations.length} 条关系、${evidence.length} 张证据卡、${sources.length} 条来源、${analyses.length} 条未来方向。`,
   );
 }

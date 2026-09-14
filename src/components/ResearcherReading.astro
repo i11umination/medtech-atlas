@@ -13,13 +13,16 @@ interface Props {
   items: EvidenceItem[];
   chainLinks: ChainLink[];
   description?: string;
+  sectionId?: string;
 }
 
 const {
   items,
   chainLinks,
   description = "沿着研究设计、结局指标与原始来源继续核对，不只停留在通俗结论。",
+  sectionId = "researcher-reading",
 } = Astro.props;
+const titleId = `${sectionId}-title`;
 
 const confidenceLabels: Record<EvidenceItem["confidence"], string> = {
   low: "较低",
@@ -38,11 +41,11 @@ const timelineItems = items
   .sort((a, b) => (a.year ?? 9999) - (b.year ?? 9999));
 ---
 
-<section class="researcher-reading" aria-labelledby="researcher-reading-title">
+<section id={sectionId} class="researcher-reading" aria-labelledby={titleId}>
   <div class="researcher-reading-header">
     <div>
       <span class="eyebrow">研究者继续阅读</span>
-      <h2 id="researcher-reading-title">从结论进入证据本身</h2>
+      <h2 id={titleId}>从结论进入证据本身</h2>
       <p>{description}</p>
     </div>
     <span class="count-label">{items.length} 张证据卡 · {linkedSources.length} 个来源</span>

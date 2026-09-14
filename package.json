@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "validate:data": "node scripts/validate-data.mjs",
-    "audit:coverage": "node scripts/audit-content-coverage.mjs"
+    "audit:coverage": "node scripts/audit-content-coverage.mjs",
+    "audit:professional": "node scripts/audit-professional-overlap.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",

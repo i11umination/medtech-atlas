@@ -1,5 +1,6 @@
 import cytoscape, { type Core, type EdgeSingular, type NodeSingular } from "cytoscape";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { relationStageLabel } from "../lib/researchStage";
 import type { GraphNode, GraphRelation } from "../lib/types";
 
 const homepageCenterId = "homepage-med-tech-center";
@@ -12,6 +13,81 @@ const colors: Record<GraphNode["type"], string> = {
   technology: "#2563eb",
   research: "#64748b",
 };
+
+const typeLabels: Record<GraphNode["type"], string> = {
+  domain: "科学门类",
+  capability: "核心能力",
+  disease: "疾病与健康状态",
+  clinical_problem: "临床问题",
+  technology: "技术",
+  research: "研究",
+};
+
+const layoutRadii: Record<GraphNode["type"], number> = {
+  domain: 220,
+  capability: 430,
+  technology: 610,
+  clinical_problem: 770,
+  disease: 900,
+  research: 1020,
+};
+
+type GraphSelection =
+  | {
+      kind: "node";
+      id: string;
+      label: string;
+      nodeType: GraphNode["type"];
+      relationCount: number;
+      color: string;
+    }
+  | {
+      kind: "edge";
+      id: string;
+      label: string;
+      sourceId: string;
+      sourceLabel: string;
+      targetId: string;
+      targetLabel: string;
+      researchStage: string;
+      evidenceCount: number;
+      synthetic: boolean;
+      color: string;
+    }
+  | null;
+
+function deterministicNodePositions(nodes: GraphNode[]) {
+  const positions = new Map<string, { x: number; y: number }>();
+  const typeOrder: GraphNode["type"][] = [
+    "domain",
+    "capability",
+    "technology",
+    "clinical_problem",
+    "disease",
+    "research",
+  ];
+
+  typeOrder.forEach((type, typeIndex) => {
+    const group = nodes
+      .filter((node) => node.type === type)
+      .toSorted((left, right) => left.id.localeCompare(right.id));
+    const angleOffset = -Math.PI / 2 + typeIndex * 0.19;
+    group.forEach((node, index) => {
+      const angle = angleOffset + (Math.PI * 2 * index) / Math.max(group.length, 1);
+      const idSeed = [...node.id].reduce(
+        (total, character) => total + character.charCodeAt(0),
+        0,
+      );
+      const radius = layoutRadii[type] + ((idSeed % 9) - 4) * 7;
+      positions.set(node.id, {
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius * 0.72,
+      });
+    });
+  });
+
+  return positions;
+}
 
 const separateOverlappingLabels = (graph: Core) => {
   const graphNodes = graph.nodes().toArray();
@@ -98,6 +174,19 @@ export default function MiniGraph({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const graphRef = useRef<Core | null>(null);
+  const highlightedNodeIdRef = useRef<string | null>(null);
+  const [selection, setSelection] = useState<GraphSelection>(null);
+
+  const dismissSelection = () => {
+    const graph = graphRef.current;
+    graph?.edges()
+      .removeClass("related-highlight")
+      .removeClass("edge-highlight")
+      .removeData("highlightColor");
+    graph?.elements().removeClass("selection-muted").removeClass("selection-focus");
+    highlightedNodeIdRef.current = null;
+    setSelection(null);
+  };
 
   const zoomBy = (factor: number) => {
     const graph = graphRef.current;
@@ -122,6 +211,7 @@ export default function MiniGraph({
         visibleIds.has(relation.source_id) && visibleIds.has(relation.target_id),
     );
     const domainNodes = visibleNodes.filter((node) => node.type === "domain");
+    const initialPositions = deterministicNodePositions(visibleNodes);
 
     let graph: Core | null = null;
     const handleWheel = (event: WheelEvent) => {
@@ -165,6 +255,7 @@ export default function MiniGraph({
             label: "医学×先进技术",
             color: "#103f47",
           },
+          position: { x: 0, y: 0 },
           classes: "homepage-center",
         },
         ...visibleNodes.map((node) => ({
@@ -174,12 +265,17 @@ export default function MiniGraph({
             type: node.type,
             color: colors[node.type],
           },
+          position: initialPositions.get(node.id),
         })),
         ...visibleRelations.map((relation) => ({
           data: {
             id: relation.id,
             source: relation.source_id,
             target: relation.target_id,
+            label: relation.label,
+            researchStage: relationStageLabel(relation.research_stage),
+            evidenceCount: relation.evidence_ids.length,
+            synthetic: false,
           },
         })),
         ...domainNodes.map((node) => ({
@@ -187,6 +283,10 @@ export default function MiniGraph({
             id: `homepage-center-${node.id}`,
             source: homepageCenterId,
             target: node.id,
+            label: "连接科学门类",
+            researchStage: "结构关系",
+            evidenceCount: 0,
+            synthetic: true,
           },
           classes: "homepage-domain-edge",
         })),
@@ -268,6 +368,26 @@ export default function MiniGraph({
           },
         },
         {
+          selector: "node.selection-muted",
+          style: {
+            opacity: 0.22,
+          },
+        },
+        {
+          selector: "edge.selection-muted",
+          style: {
+            opacity: 0.1,
+          },
+        },
+        {
+          selector: "node.selection-focus",
+          style: {
+            "border-width": 6,
+            "border-color": "#12343b",
+            "z-index": 1001,
+          },
+        },
+        {
           selector: "edge.edge-highlight",
           style: {
             width: 4.4,
@@ -281,7 +401,7 @@ export default function MiniGraph({
       layout: {
         name: "cose",
         animate: false,
-        randomize: true,
+        randomize: false,
         fit: false,
         nodeRepulsion: () => 6200,
         nodeOverlap: 24,
@@ -305,7 +425,6 @@ export default function MiniGraph({
     graph.fit(undefined, 56);
     graphRef.current = graph;
 
-    let highlightedNodeId: string | null = null;
     let dragState: { nodeId: string; moved: boolean } | null = null;
     let suppressedTapNodeId: string | null = null;
     let suppressedTapUntil = 0;
@@ -316,24 +435,62 @@ export default function MiniGraph({
         .removeClass("related-highlight")
         .removeClass("edge-highlight")
         .removeData("highlightColor");
-      highlightedNodeId = null;
+      graph?.elements().removeClass("selection-muted").removeClass("selection-focus");
+      highlightedNodeIdRef.current = null;
+      setSelection(null);
     };
 
     const highlightRelatedEdges = (node: NodeSingular) => {
       clearRelatedHighlights();
-      node.connectedEdges().forEach((edge) => {
+      const connectedEdges = node.connectedEdges();
+      const neighborhood = node.closedNeighborhood();
+      graph?.elements().addClass("selection-muted");
+      neighborhood.removeClass("selection-muted");
+      node.addClass("selection-focus");
+      connectedEdges.forEach((edge) => {
         edge
           .data("highlightColor", edge.source().data("color"))
           .addClass("related-highlight");
       });
-      highlightedNodeId = node.id();
+      highlightedNodeIdRef.current = node.id();
+      const relationCount = connectedEdges.filter(
+        (edge) => !Boolean(edge.data("synthetic")),
+      ).length;
+      setSelection({
+        kind: "node",
+        id: node.id(),
+        label: node.data("label"),
+        nodeType: node.data("type"),
+        relationCount,
+        color: node.data("color"),
+      });
     };
 
     const highlightEdge = (edge: EdgeSingular) => {
       clearRelatedHighlights();
+      const source = edge.source();
+      const target = edge.target();
+      const color = source.data("color");
+      graph?.elements().addClass("selection-muted");
+      edge.removeClass("selection-muted").addClass("selection-focus");
+      source.removeClass("selection-muted").addClass("selection-focus");
+      target.removeClass("selection-muted").addClass("selection-focus");
       edge
-        .data("highlightColor", edge.source().data("color"))
+        .data("highlightColor", color)
         .addClass("edge-highlight");
+      setSelection({
+        kind: "edge",
+        id: edge.id(),
+        label: edge.data("label"),
+        sourceId: source.id(),
+        sourceLabel: source.data("label"),
+        targetId: target.id(),
+        targetLabel: target.data("label"),
+        researchStage: edge.data("researchStage"),
+        evidenceCount: Number(edge.data("evidenceCount") ?? 0),
+        synthetic: Boolean(edge.data("synthetic")),
+        color,
+      });
     };
 
     graph.on("tap", "node", (event) => {
@@ -346,7 +503,7 @@ export default function MiniGraph({
         return;
       }
 
-      if (highlightedNodeId === nodeId) {
+      if (highlightedNodeIdRef.current === nodeId) {
         window.location.href = `${import.meta.env.BASE_URL}entity/${nodeId}`;
         return;
       }
@@ -398,7 +555,7 @@ export default function MiniGraph({
   }, [nodes, relations]);
 
   return (
-    <div className="mini-graph-shell">
+    <div className={`mini-graph-shell ${selection ? "has-selection" : ""}`}>
       <div className="graph-zoom-controls" role="group" aria-label="云图缩放控制">
         <button type="button" aria-label="放大云图" title="放大" onClick={() => zoomBy(1.22)}>＋</button>
         <button type="button" aria-label="缩小云图" title="缩小" onClick={() => zoomBy(1 / 1.22)}>−</button>
@@ -410,12 +567,56 @@ export default function MiniGraph({
         role="img"
         aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；点击或拖动节点高亮相连线，再次点击同一节点进入详情，点击连线单独高亮该线，点击空白处取消高亮；可自由平移并通过触控板捏合缩放"
       ></div>
-      <div className="canvas-help mini-graph-help">点击或拖动节点高亮直接关联 · 再次点击同一节点进入详情 · 点击连线单独高亮 · 点击空白处取消高亮 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
+      {selection && (
+        <aside
+          className="mini-graph-selection"
+          aria-live="polite"
+          style={{ "--selection-color": selection.color } as React.CSSProperties}
+        >
+          <button
+            className="mini-graph-selection-close"
+            type="button"
+            aria-label="关闭所选内容"
+            onClick={dismissSelection}
+          >
+            ×
+          </button>
+          <span className="mini-graph-selection-kicker">
+            {selection.kind === "node" ? typeLabels[selection.nodeType] : "关系连线"}
+          </span>
+          {selection.kind === "node" ? (
+            <>
+              <h3>{selection.label}</h3>
+              <p>{selection.relationCount} 条直接关系；再次点击图中同一节点也可进入详情。</p>
+              <div className="mini-graph-selection-actions">
+                <a className="button button-primary" href={`${import.meta.env.BASE_URL}entity/${selection.id}`}>查看节点详情</a>
+                <a className="text-link" href={`${import.meta.env.BASE_URL}explore?focus=${selection.id}`}>在完整图谱定位 →</a>
+              </div>
+            </>
+          ) : (
+            <>
+              <h3>{selection.sourceLabel} <span aria-hidden="true">→</span> {selection.targetLabel}</h3>
+              <p>{selection.label} · {selection.researchStage} · {selection.evidenceCount} 张证据卡</p>
+              <div className="mini-graph-selection-actions">
+                {selection.synthetic ? (
+                  <a className="button button-primary" href={`${import.meta.env.BASE_URL}entity/${selection.targetId}`}>查看目标节点</a>
+                ) : (
+                  <a className="button button-primary" href={`${import.meta.env.BASE_URL}relation/${selection.id}`}>查看关联详情</a>
+                )}
+                {!selection.synthetic && (
+                  <a className="text-link" href={`${import.meta.env.BASE_URL}entity/${selection.sourceId}`}>查看起点节点 →</a>
+                )}
+              </div>
+            </>
+          )}
+        </aside>
+      )}
+      <div className="canvas-help mini-graph-help">选中节点或连线查看信息 · 再点已选节点进入详情 · 拖动或双指平移 · 捏合或使用＋−缩放</div>
       <div className="graph-legend" aria-label="图谱图例">
         {Object.entries(colors).filter(([type]) => type !== "research").map(([type, color]) => (
           <span key={type}>
             <i style={{ backgroundColor: color }}></i>
-            {{ domain: "科学门类", capability: "核心能力", disease: "疾病与健康状态", clinical_problem: "临床问题", technology: "技术" }[type]}
+            {typeLabels[type as GraphNode["type"]]}
           </span>
         ))}
       </div>

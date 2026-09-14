@@ -64,7 +64,7 @@ export default function PreferencePanel({
   };
 
   return (
-    <details className="preference-panel">
+    <details className="preference-panel" id="reading-preferences">
       <summary>
         <span>设置阅读偏好</span>
         <small>可跳过 · 仅保存在本机</small>

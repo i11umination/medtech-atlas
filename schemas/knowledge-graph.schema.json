@@ -14,6 +14,7 @@
         "evidence_index",
         "sources",
         "node-summaries",
+        "public_connections",
         "analysis_index",
         "preference_options",
         "navigation_groups"
@@ -42,6 +43,10 @@
     {
       "if": { "properties": { "kind": { "const": "node-summaries" } } },
       "then": { "properties": { "items": { "items": { "$ref": "#/$defs/nodeSummary" } } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "public_connections" } } },
+      "then": { "properties": { "items": { "items": { "$ref": "#/$defs/publicConnection" } } } }
     },
     {
       "if": { "properties": { "kind": { "const": "analysis_index" } } },
@@ -357,6 +362,36 @@
           "uniqueItems": true
         },
         "review_status": { "$ref": "#/$defs/recordStatus" },
+        "last_verified": { "type": "string", "format": "date" }
+      }
+    },
+    "publicConnection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node_id",
+        "paragraphs",
+        "source_ids",
+        "review_status",
+        "curation_method",
+        "last_verified"
+      ],
+      "properties": {
+        "node_id": { "$ref": "#/$defs/nodeId" },
+        "paragraphs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 20 },
+          "minItems": 2,
+          "maxItems": 6
+        },
+        "source_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^SRC-[0-9]{4}$" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "review_status": { "$ref": "#/$defs/recordStatus" },
+        "curation_method": { "$ref": "#/$defs/curationMethod" },
         "last_verified": { "type": "string", "format": "date" }
       }
     },

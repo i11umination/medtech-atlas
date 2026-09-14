@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { sitePath } from "../../lib/site";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import EntityReadingGuide from "../../components/EntityReadingGuide";
 import EntityVisualOverview from "../../components/EntityVisualOverview.astro";
 import RelatedContentExplorer from "../../components/RelatedContentExplorer";
 import ResearcherReading from "../../components/ResearcherReading.astro";
@@ -14,11 +15,13 @@ import {
   nodeById,
   nodeSummaryByNodeId,
   nodes,
+  publicConnectionByNodeId,
   relations,
   sourceById,
   typeLabels,
 } from "../../lib/data";
-import type { EvidenceItem, GraphNode } from "../../lib/types";
+import { analyzeProfessionalSummary } from "../../lib/professionalSummary";
+import type { EvidenceItem, GraphNode, SourceItem } from "../../lib/types";
 
 export function getStaticPaths() {
   return [
@@ -37,15 +40,27 @@ const { node, redirectTo } = Astro.props as Props;
 if (redirectTo) return Astro.redirect(`${import.meta.env.BASE_URL}entity/${redirectTo}`, 301);
 if (!node) return new Response("Not Found", { status: 404 });
 const summary = nodeSummaryByNodeId.get(node.id);
+const publicConnection = publicConnectionByNodeId.get(node.id);
 const summaryFiles = import.meta.glob("../../../node-summaries/*.md", {
   eager: true,
+  query: "?raw",
+  import: "default",
 });
-const summaryModule = summaryFiles[`../../../node-summaries/${node.id}.md`] as
-  | { default: any }
-  | undefined;
-const NodeSummaryContent = summaryModule?.default;
-const summarySources = summary
-  ? summary.source_ids.map((id) => sourceById.get(id)).filter(Boolean)
+const summaryMarkdown = summaryFiles[`../../../node-summaries/${node.id}.md`] as string | undefined;
+const professionalAnalysis = summaryMarkdown && publicConnection
+  ? analyzeProfessionalSummary(summaryMarkdown, publicConnection.paragraphs)
+  : undefined;
+const professionalSections = professionalAnalysis?.sections ?? [];
+const publicSources = publicConnection
+  ? publicConnection.source_ids.map((id) => sourceById.get(id)).filter(Boolean)
+  : [];
+const publicSourceIds = new Set(publicConnection?.source_ids ?? []);
+const professionalSources = summary
+  ? summary.source_ids
+      .map((id) => sourceById.get(id))
+      .filter(
+        (source): source is SourceItem => Boolean(source && !publicSourceIds.has(source.id)),
+      )
   : [];
 const connectedRelations = relations.filter(
   (relation) => relation.source_id === node.id || relation.target_id === node.id,
@@ -105,22 +120,64 @@ const relatedDirections = futureDirections.filter((direction) =>
 
     <ReviewDisclosure status={node.status} />
 
-    {summary && (
-      <section class="entity-section entity-summary-section">
+    <EntityReadingGuide client:load hasSummary={Boolean(publicConnection)} />
+
+    <nav class="entity-section-nav" aria-label="本页内容导航">
+      {publicConnection && <a href="#entity-overview">通俗概览</a>}
+      <a href="#entity-position">关系位置</a>
+      <a href="#entity-relations">关联内容 <span>{connectedRelations.length}</span></a>
+      {relatedDirections.length > 0 && <a href="#entity-directions">研究方向</a>}
+      <a href="#entity-evidence">证据阅读 <span>{researcherEvidence.length}</span></a>
+    </nav>
+
+    {publicConnection && (
+      <section id="entity-overview" class="entity-section entity-summary-section">
         <div class="section-heading">
-          <div><span class="eyebrow">通俗简介</span><h2>先理解这个节点</h2></div>
-          <span class="count-label">{summarySources.length} 个来源 · 核验于 {summary.last_verified}</span>
+          <div><span class="eyebrow">大众解释</span><h2>它怎样与医学发生联系？</h2></div>
+          <span class="count-label">
+            {publicSources.length} 个科普来源
+            {professionalSources.length > 0 && ` · ${professionalSources.length} 个专业来源`}
+            {` · 核验于 ${publicConnection.last_verified}`}
+          </span>
         </div>
         <div class="entity-summary-layout">
-          <div class="entity-summary-content">
-            {NodeSummaryContent ? <NodeSummaryContent /> : <p>实体简介正文尚未加载。</p>}
+          <div class="entity-public-connection">
+            <div class="entity-public-copy">
+              {publicConnection.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+            <p class="entity-public-note">
+              以上为依据权威科普、机构或监管资料所作的项目通俗改写，用于理解技术与医学的连接，不构成诊断或治疗建议。
+            </p>
+            {professionalSections.length > 0 && (
+              <details class="entity-professional-summary">
+                <summary>
+                  <span>查看专业说明</span>
+                  <small>仅显示大众解释之外的专业内容</small>
+                </summary>
+                <div class="entity-summary-content entity-professional-content">
+                  {professionalSections.map((section) => (
+                    <section class="entity-professional-section">
+                      <h2>{section.heading}</h2>
+                      {section.blocks.map((block) => {
+                        if (block.type === "paragraph") return <p>{block.text}</p>;
+                        if (block.type === "ordered-list") {
+                          return <ol>{block.items.map((item) => <li>{item}</li>)}</ol>;
+                        }
+                        return <ul>{block.items.map((item) => <li>{item}</li>)}</ul>;
+                      })}
+                    </section>
+                  ))}
+                </div>
+              </details>
+            )}
           </div>
           <aside class="entity-summary-sources">
             <div class="entity-summary-sources-heading">
-              <h3>可靠来源</h3>
-              <StatusBadge status={summary.review_status} />
+              <h3>科普解释依据</h3>
+              <StatusBadge status={publicConnection.review_status} />
             </div>
-            {summarySources.map((source) => source && (
+            <p class="entity-source-role">用于解释概念、医学场景和基本边界。</p>
+            {publicSources.map((source) => source && (
               <article class="entity-summary-source">
                 <small>{source.source_type}{source.year ? ` · ${source.year}` : ""}</small>
                 <h4>{source.title}</h4>
@@ -128,6 +185,26 @@ const relatedDirections = futureDirections.filter((direction) =>
                 <a class="text-link" href={source.url} target="_blank" rel="noreferrer">打开来源 ↗</a>
               </article>
             ))}
+            {professionalSources.length > 0 && (
+              <details class="entity-professional-sources">
+                <summary>
+                  <span>研究与专业依据</span>
+                  <small>{professionalSources.length} 项</small>
+                </summary>
+                <p class="entity-source-role">用于核对具体研究设计、结果、限制或监管范围。</p>
+                {professionalSources.map((source) => source && (
+                  <article class="entity-summary-source">
+                    <small>{source.source_type}{source.year ? ` · ${source.year}` : ""}</small>
+                    <h4>{source.title}</h4>
+                    <p>{source.institution ?? source.authors.join("、")}</p>
+                    <a class="text-link" href={source.url} target="_blank" rel="noreferrer">打开来源 ↗</a>
+                  </article>
+                ))}
+              </details>
+            )}
+            {researcherEvidence.length > 0 && (
+              <a class="entity-summary-evidence-link" href="#entity-evidence">继续核对关系证据 ↓</a>
+            )}
           </aside>
         </div>
       </section>
@@ -135,16 +212,16 @@ const relatedDirections = futureDirections.filter((direction) =>
 
     <EntityVisualOverview node={node} relations={connectedRelations} />
 
-    <section class="entity-section">
+    <section id="entity-relations" class="entity-section">
       <div class="section-heading">
-        <div><span class="eyebrow">关联内容</span><h2>选择你想继续了解的内容类型</h2></div>
+        <div><span class="eyebrow">关联内容</span><h2>继续探索这个节点</h2></div>
         <span class="count-label">共 {connectedRelations.length} 条关联关系</span>
       </div>
-      <RelatedContentExplorer client:load items={relatedItems} />
+      <RelatedContentExplorer client:load items={relatedItems} nodeId={node.id} />
     </section>
 
     {relatedDirections.length > 0 && (
-      <section class="entity-section directions-section">
+      <section id="entity-directions" class="entity-section directions-section">
         <div class="section-heading">
           <div><span class="eyebrow">项目分析</span><h2>可能的未来研究方向</h2></div>
           <span class="count-label">基于 {connectedEvidenceIds.size} 条关联证据</span>
@@ -175,6 +252,7 @@ const relatedDirections = futureDirections.filter((direction) =>
     <ResearcherReading
       items={researcherEvidence}
       chainLinks={researcherChainLinks}
+      sectionId="entity-evidence"
       description={`汇总与“${node.name}”直接相连的研究设计、结局、限制和原始来源。`}
     />
 

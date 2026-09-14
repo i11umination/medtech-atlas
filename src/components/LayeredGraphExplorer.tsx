@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { relationStageLabel, researchStageWeight } from "../lib/researchStage";
 import type {
   EvidenceItem,
   GraphNode,
@@ -85,17 +86,6 @@ function initialLayer(
   if (focusId && nodeIds.has(focusId)) return { kind: "theme", focusId };
   if (groupId && groupIds.has(groupId)) return { kind: "group", groupId };
   return { kind: "roots" };
-}
-
-function stageWeight(stage: string) {
-  if (stage.includes("监管") || stage.includes("批准")) return 7;
-  if (stage.includes("临床试验")) return 6;
-  if (stage.includes("早期人体")) return 5;
-  if (stage.includes("临床前")) return 4;
-  if (stage.includes("动物")) return 3;
-  if (stage.includes("体外")) return 2;
-  if (stage.includes("理论") || stage.includes("概念")) return 1;
-  return 0;
 }
 
 function metricStageLabel(metric: NodeMetric) {
@@ -235,7 +225,7 @@ export default function LayeredGraphExplorer({
         if (!metric) return;
         metric.relationIds.add(relation.id);
         relation.evidence_ids.forEach((evidenceId) => metric.evidenceIds.add(evidenceId));
-        const rank = stageWeight(relation.research_stage);
+        const rank = researchStageWeight(relation.research_stage);
         if (rank > metric.highestRank) {
           metric.highestRank = rank;
           metric.highestStage = relation.research_stage;
@@ -792,7 +782,7 @@ export default function LayeredGraphExplorer({
               <section className="catalog-section">
                 <div className="catalog-section-header">
                   <div><span className="catalog-section-index">01</span><h3>关系路径</h3></div>
-                  <span>{currentEvidenceRelation.research_stage}</span>
+                  <span>{relationStageLabel(currentEvidenceRelation.research_stage)}</span>
                 </div>
                 <div className="catalog-relation-path">
                   {evidenceSourceNode && (
@@ -900,7 +890,7 @@ export default function LayeredGraphExplorer({
                   <h2>{nodeMap.get(selectedRelation.source_id)?.name} → {nodeMap.get(selectedRelation.target_id)?.name}</h2>
                   <dl className="detail-list">
                     <div><dt>关系</dt><dd>{selectedRelation.label}</dd></div>
-                    <div><dt>研究阶段</dt><dd>{selectedRelation.research_stage}</dd></div>
+                    <div><dt>研究阶段</dt><dd>{relationStageLabel(selectedRelation.research_stage)}</dd></div>
                     <div><dt>机制摘要</dt><dd>{selectedRelation.mechanism_summary ?? "待补充"}</dd></div>
                     <div><dt>主要限制</dt><dd>{selectedRelation.limitations}</dd></div>
                   </dl>

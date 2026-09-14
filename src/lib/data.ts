@@ -1,5 +1,6 @@
 import nodesDocument from "../../data/nodes.json";
 import nodeSummariesDocument from "../../data/node-summaries.json";
+import publicConnectionsDocument from "../../data/public-connections.json";
 import relationsDocument from "../../data/relations.json";
 import evidenceDocument from "../../data/evidence-index.json";
 import sourcesDocument from "../../data/sources.json";
@@ -14,11 +15,13 @@ import type {
   NavigationGroup,
   NodeSummary,
   PreferenceOption,
+  PublicConnection,
   SourceItem,
 } from "./types";
 
 export const nodes = nodesDocument.items as GraphNode[];
 export const nodeSummaries = nodeSummariesDocument.items as NodeSummary[];
+export const publicConnections = publicConnectionsDocument.items as PublicConnection[];
 export const relations = relationsDocument.items as GraphRelation[];
 export const evidenceItems = (evidenceDocument.items as EvidenceItem[]).filter(
   (item) => item.publication_status === "public",
@@ -31,6 +34,9 @@ export const navigationGroups = navigationDocument.items as NavigationGroup[];
 export const nodeById = new Map(nodes.map((node) => [node.id, node]));
 export const nodeSummaryByNodeId = new Map(
   nodeSummaries.map((summary) => [summary.node_id, summary]),
+);
+export const publicConnectionByNodeId = new Map(
+  publicConnections.map((connection) => [connection.node_id, connection]),
 );
 export const relationById = new Map(
   relations.map((relation) => [relation.id, relation]),

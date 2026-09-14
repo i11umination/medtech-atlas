@@ -1,5 +1,6 @@
 ---
 import { typeLabels } from "../lib/data";
+import { relationStageLabel } from "../lib/researchStage";
 import { sitePath } from "../lib/site";
 import type { EvidenceItem, GraphNode, GraphRelation } from "../lib/types";
 
@@ -11,6 +12,8 @@ interface Props {
 }
 
 const { relation, source, target, evidenceItems } = Astro.props;
+const isUnstagedRelation = relation.research_stage === "不适用";
+const stageLabel = relationStageLabel(relation.research_stage);
 const outcomes = [...new Set(evidenceItems.flatMap((item) => item.outcomes))].slice(0, 2);
 const hasPatientFacingTarget = target?.type === "disease" || target?.type === "clinical_problem";
 const finalLabel = hasPatientFacingTarget ? "患者相关结局" : "下一层医学连接";
@@ -39,8 +42,10 @@ const steps = [
   },
   {
     marker: "04",
-    label: "证据走到哪一步",
-    value: `${relation.research_stage} · ${evidenceItems.length} 张证据卡`,
+    label: isUnstagedRelation ? "是否按研究阶段划分" : "证据走到哪一步",
+    value: isUnstagedRelation
+      ? "这是一条概念、支撑或结构关系，不表示研究成熟度"
+      : `${stageLabel} · ${evidenceItems.length} 张证据卡`,
   },
   {
     marker: "05",
@@ -57,7 +62,7 @@ const steps = [
       <h2 id="mechanism-path-title">从工程或疾病概念走向医学结局</h2>
       <p>把关系拆成五步，区分机制、研究阶段和真正需要观察的患者结局。</p>
     </div>
-    <span class="stage-chip">{relation.research_stage}</span>
+    <span class="stage-chip">{stageLabel}</span>
   </div>
   <ol class="mechanism-path">
     {steps.map((step) => (
@@ -73,4 +78,3 @@ const steps = [
     <p>{relation.limitations}</p>
   </div>
 </section>
-
