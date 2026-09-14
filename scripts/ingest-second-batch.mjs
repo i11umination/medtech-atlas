@@ -186,7 +186,7 @@ function writeIfMissing(relativePath, content) {
 
 function nodeMarkdown(node) {
   const [summary, connection, boundary, question] = nodeCopy[node.id];
-  return `---\nid: ${node.id}\ntitle: ${node.name}\nreview_status: source-checked\n---\n\n# ${node.name}\n\n## 一句话说明\n\n${summary}\n\n## 医学连接\n\n${connection}\n\n## 当前证据边界\n\n${boundary}\n\n## 仍待回答的问题\n\n${question}\n\n## 更新说明\n\n2026-09-13：随第二批内容扩充纳入；来源已核验，机器辅助整理，未经独立医学专家审核。\n`;
+  return `---\nid: ${node.id}\ntitle: ${node.name}\nreview_status: source-checked\n---\n\n# ${node.name}\n\n## 一句话说明\n\n${summary}\n\n## 医学连接\n\n${connection}\n\n## 当前证据边界\n\n${boundary}\n\n## 仍待回答的问题\n\n${question}\n`;
 }
 
 function evidenceMarkdown(card) {

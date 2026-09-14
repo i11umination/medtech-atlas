@@ -1,4 +1,4 @@
-import cytoscape, { type Core, type NodeSingular } from "cytoscape";
+import cytoscape, { type Core, type EdgeSingular, type NodeSingular } from "cytoscape";
 import { useEffect, useRef } from "react";
 import type { GraphNode, GraphRelation } from "../lib/types";
 
@@ -267,6 +267,16 @@ export default function MiniGraph({
             "z-index": 999,
           },
         },
+        {
+          selector: "edge.edge-highlight",
+          style: {
+            width: 4.4,
+            "line-color": "data(highlightColor)",
+            "target-arrow-color": "data(highlightColor)",
+            opacity: 1,
+            "z-index": 1000,
+          },
+        },
       ],
       layout: {
         name: "cose",
@@ -302,17 +312,28 @@ export default function MiniGraph({
     let userPanUntil = 0;
 
     const clearRelatedHighlights = () => {
-      graph?.edges().removeClass("related-highlight").removeData("highlightColor");
+      graph?.edges()
+        .removeClass("related-highlight")
+        .removeClass("edge-highlight")
+        .removeData("highlightColor");
       highlightedNodeId = null;
     };
 
     const highlightRelatedEdges = (node: NodeSingular) => {
       clearRelatedHighlights();
-      node
-        .connectedEdges()
-        .data("highlightColor", node.data("color"))
-        .addClass("related-highlight");
+      node.connectedEdges().forEach((edge) => {
+        edge
+          .data("highlightColor", edge.source().data("color"))
+          .addClass("related-highlight");
+      });
       highlightedNodeId = node.id();
+    };
+
+    const highlightEdge = (edge: EdgeSingular) => {
+      clearRelatedHighlights();
+      edge
+        .data("highlightColor", edge.source().data("color"))
+        .addClass("edge-highlight");
     };
 
     graph.on("tap", "node", (event) => {
@@ -331,6 +352,9 @@ export default function MiniGraph({
       }
 
       highlightRelatedEdges(event.target);
+    });
+    graph.on("tap", "edge", (event) => {
+      highlightEdge(event.target);
     });
     graph.on("pan", (event) => {
       if (event.originalEvent) userPanUntil = performance.now() + 150;
@@ -384,9 +408,9 @@ export default function MiniGraph({
         className="graph-canvas mini-graph"
         ref={containerRef}
         role="img"
-        aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；点击或拖动节点高亮相连线，再次点击同一节点进入详情，点击空白处取消高亮；可自由平移并通过触控板捏合缩放"
+        aria-label="以医学×先进技术为中心、向外连接科学门类及相关能力与医学问题的知识图谱；点击或拖动节点高亮相连线，再次点击同一节点进入详情，点击连线单独高亮该线，点击空白处取消高亮；可自由平移并通过触控板捏合缩放"
       ></div>
-      <div className="canvas-help mini-graph-help">点击或拖动节点高亮直接关联 · 再次点击同一节点进入详情 · 点击空白处取消高亮 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
+      <div className="canvas-help mini-graph-help">点击或拖动节点高亮直接关联 · 再次点击同一节点进入详情 · 点击连线单独高亮 · 点击空白处取消高亮 · 双指滑动或拖动空白处平移 · 双指捏合或使用＋−缩放</div>
       <div className="graph-legend" aria-label="图谱图例">
         {Object.entries(colors).filter(([type]) => type !== "research").map(([type, color]) => (
           <span key={type}>
