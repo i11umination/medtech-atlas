@@ -88,6 +88,18 @@
 | SRC-0120 | MACI | FDA 监管资料 | MACI autologous cultured chondrocytes on porcine collagen membrane | 2026 | BLA 125603 | https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/maci-autologous-cultured-chondrocytes-porcine-collagen-membrane | 产品组成、批准范围与限制 | content-reviewed |
 | SRC-0121 | MACI | 随机对照试验 | SUMMIT two-year follow-up | 2014 | 10.1177/0363546514528093 | https://pubmed.ncbi.nlm.nih.gov/24714783/ | 两年 KOOS、结构与安全性 | content-reviewed |
 | SRC-0122 | MACI | 随机试验延长随访 | SUMMIT five-year follow-up | 2018 | 10.1177/0363546518756976 | https://pubmed.ncbi.nlm.nih.gov/29565642/ | 五年 KOOS 与 MRI 结果差异 | content-reviewed |
+| SRC-0156 | Pluvicto | FDA 监管资料 | FDA expands Pluvicto's metastatic castration-resistant prostate cancer indication | 2025 | NCT04689828 | https://www.fda.gov/drugs/resources-information-approved-drugs/fda-expands-pluvictos-metastatic-castration-resistant-prostate-cancer-indication | 扩展人群、PSMA PET、疗效与标签风险 | content-reviewed |
+| SRC-0157 | Pluvicto | 随机 III 期试验 | VISION | 2021 | 10.1056/NEJMoa2107322 / NCT03511664 | https://pubmed.ncbi.nlm.nih.gov/34161051/ | 影像学无进展生存、总生存与严重不良事件 | content-reviewed |
+| SRC-0158 | Pluvicto | 随机 III 期最终分析 | PSMAfore final OS and safety | 2025 | NCT04689828 | https://pubmed.ncbi.nlm.nih.gov/40680993/ | 未显著总生存、交叉与安全性 | content-reviewed |
+| SRC-0159 | ARIKAYCE | FDA 监管资料 | ARIKAYCE prescribing information | 2026 | NDA 207356 | https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/207356s025lbl.pdf | 有限人群、加速批准、临床获益与黑框警告 | content-reviewed |
+| SRC-0160 | ARIKAYCE | 随机试验 | CONVERT | 2018 | 10.1164/rccm.201807-1318OC / NCT02344004 | https://pubmed.ncbi.nlm.nih.gov/30216086/ | 6 月培养转阴与呼吸不良事件 | content-reviewed |
+| SRC-0161 | ARIKAYCE | 随机队列延长分析 | Culture conversion sustainability and durability | 2021 | 10.1016/j.chest.2021.03.070 / NCT02344004 | https://pubmed.ncbi.nlm.nih.gov/33887244/ | 持续/耐久转阴、复发和同队列边界 | content-reviewed |
+| SRC-0162 | Omisirge | FDA 监管资料 | OMISIRGE product information | 2026 | STN 125738 | https://www.fda.gov/vaccines-blood-biologics/omisirge | 血液恶性肿瘤适应证与移植风险 | content-reviewed |
+| SRC-0163 | Omisirge | 随机 III 期试验 | Omidubicel vs standard myeloablative UCB transplantation | 2021 | 10.1182/blood.2021011719 / NCT02730299 | https://pubmed.ncbi.nlm.nih.gov/34157093/ | 植入、感染、住院、GVHD 与生存 | content-reviewed |
+| SRC-0164 | Omisirge | 多试验合并长期随访 | Multicenter Long-Term Follow-Up of HCT with Omidubicel | 2023 | 10.1016/j.jtct.2023.01.031 | https://pubmed.ncbi.nlm.nih.gov/36775201/ | 三系造血、三年生存和继发移植失败 | content-reviewed |
+| SRC-0165 | T-VEC | FDA 监管资料 | IMLYGIC product information and package insert | 2023 | STN 125518 | https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/imlygic | 局部适应证、总生存/内脏转移限制和传播风险 | content-reviewed |
+| SRC-0166 | T-VEC | 随机 III 期试验 | OPTiM | 2015 | 10.1200/JCO.2014.58.3377 / NCT00769704 | https://pubmed.ncbi.nlm.nih.gov/26014293/ | 持续缓解、客观缓解和未显著总生存 | content-reviewed |
+| SRC-0167 | T-VEC | 双盲随机 III 期试验 | T-VEC plus pembrolizumab | 2023 | 10.1200/JCO.22.00343 / NCT02263508 | https://pubmed.ncbi.nlm.nih.gov/35998300/ | PFS、OS 阴性结果、缓解与安全性 | content-reviewed |
 
 ## 核验状态
 

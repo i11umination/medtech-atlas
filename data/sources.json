@@ -2191,6 +2191,190 @@
       "access_note": "NIH 科普页已核验；用于解释干细胞的自我更新、分化、移植整合和组织成熟难题。",
       "status": "source-checked",
       "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0156",
+      "title": "FDA expands Pluvicto's metastatic castration-resistant prostate cancer indication",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2025,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "NCT04689828",
+      "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-expands-pluvictos-metastatic-castration-resistant-prostate-cancer-indication",
+      "access_note": "FDA 2025 年扩展适应证页面已核验，用于当前人群、PSMA PET 筛选、PSMAfore 疗效及标签风险。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0157",
+      "title": "Lutetium-177-PSMA-617 for Metastatic Castration-Resistant Prostate Cancer",
+      "authors": [
+        "Oliver Sartor et al."
+      ],
+      "institution": "VISION Investigators",
+      "year": 2021,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa2107322",
+      "registry_id": "NCT03511664",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34161051/",
+      "access_note": "PubMed 摘要与公开元数据已核验；提取随机人数、影像学无进展生存、总生存和严重不良事件。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0158",
+      "title": "Final overall survival and safety analyses of the phase III PSMAfore trial of [177Lu]Lu-PSMA-617 versus change of androgen receptor pathway inhibitor in taxane-naive patients with metastatic castration-resistant prostate cancer",
+      "authors": [
+        "Karim Fizazi et al."
+      ],
+      "institution": "PSMAfore Investigators",
+      "year": 2025,
+      "source_type": "原始研究",
+      "doi": null,
+      "registry_id": "NCT04689828",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40680993/",
+      "access_note": "PubMed 摘要与公开元数据已核验；提取 468 人随机、最终总生存、60.3% 交叉和安全性。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0159",
+      "title": "ARIKAYCE prescribing information",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2026,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "NDA 207356",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/207356s025lbl.pdf",
+      "access_note": "FDA 2026 当前标签已核验；提取有限人群、加速批准、临床获益未确立及呼吸不良反应黑框警告。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0160",
+      "title": "Amikacin Liposome Inhalation Suspension for Treatment-Refractory Lung Disease Caused by Mycobacterium avium Complex (CONVERT). A Prospective, Open-Label, Randomized Study",
+      "authors": [
+        "David E Griffith et al."
+      ],
+      "institution": "CONVERT Study Group",
+      "year": 2018,
+      "source_type": "原始研究",
+      "doi": "10.1164/rccm.201807-1318OC",
+      "registry_id": "NCT02344004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30216086/",
+      "access_note": "PubMed 摘要已核验；提取 336 人随机、6 月培养转阴及呼吸系统不良事件。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0161",
+      "title": "Amikacin Liposome Inhalation Suspension for Refractory Mycobacterium avium Complex Lung Disease: Sustainability and Durability of Culture Conversion and Safety of Long-term Exposure",
+      "authors": [
+        "David E Griffith et al."
+      ],
+      "institution": "CONVERT Study Group",
+      "year": 2021,
+      "source_type": "原始研究",
+      "doi": "10.1016/j.chest.2021.03.070",
+      "registry_id": "NCT02344004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33887244/",
+      "access_note": "PubMed 摘要已核验；提取持续且停药后耐久的培养转阴、复发与长期暴露安全性。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0162",
+      "title": "OMISIRGE (omidubicel-onlv) product information",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2026,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "STN 125738",
+      "url": "https://www.fda.gov/vaccines-blood-biologics/omisirge",
+      "access_note": "FDA 当前产品页及其公开说明书入口已核验；本批仅使用血液恶性肿瘤脐带血移植适应证及移植相关风险。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0163",
+      "title": "Omidubicel vs standard myeloablative umbilical cord blood transplantation: results of a phase 3 randomized study",
+      "authors": [
+        "Mitchell E Horwitz et al."
+      ],
+      "institution": "International multicenter phase 3 study",
+      "year": 2021,
+      "source_type": "原始研究",
+      "doi": "10.1182/blood.2021011719",
+      "registry_id": "NCT02730299",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34157093/",
+      "access_note": "PubMed 摘要与公开全文元数据已核验；提取 125 人随机、植入、感染、住院、GVHD 和生存。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0164",
+      "title": "Multicenter Long-Term Follow-Up of Allogeneic Hematopoietic Cell Transplantation with Omidubicel: A Pooled Analysis of Five Prospective Clinical Trials",
+      "authors": [
+        "Chenyu Lin et al."
+      ],
+      "institution": "26 academic transplantation centers",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": "10.1016/j.jtct.2023.01.031",
+      "registry_id": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36775201/",
+      "access_note": "PubMed 摘要与公开全文元数据已核验；提取 105 人合并队列、随访、造血耐久、生存和继发移植失败。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0165",
+      "title": "IMLYGIC (talimogene laherparepvec) product information and package insert",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2023,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "STN 125518",
+      "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/imlygic",
+      "access_note": "FDA 当前产品页及 2023 说明书已核验；提取局部适应证、总生存与内脏转移限制、活病毒处理风险。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0166",
+      "title": "Talimogene Laherparepvec Improves Durable Response Rate in Patients With Advanced Melanoma",
+      "authors": [
+        "Robert H I Andtbacka et al."
+      ],
+      "institution": "OPTiM Investigators",
+      "year": 2015,
+      "source_type": "原始研究",
+      "doi": "10.1200/JCO.2014.58.3377",
+      "registry_id": "NCT00769704",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26014293/",
+      "access_note": "PubMed 摘要已核验；提取 436 人随机、持续缓解率、客观缓解、总生存和不良事件。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0167",
+      "title": "Randomized, Double-Blind, Placebo-Controlled, Global Phase III Trial of Talimogene Laherparepvec Combined With Pembrolizumab for Advanced Melanoma",
+      "authors": [
+        "Jason A Chesney et al."
+      ],
+      "institution": "Global phase 3 study",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": "10.1200/JCO.22.00343",
+      "registry_id": "NCT02263508",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35998300/",
+      "access_note": "PubMed 摘要与公开全文元数据已核验；提取 692 人随机、PFS、OS、缓解和安全性阴性结果。",
+      "status": "source-checked",
+      "verified_at": "2026-09-14"
     }
   ]
 }

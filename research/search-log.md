@@ -32,6 +32,10 @@
 | 2026-09-13 | 长效卡博特韦 HIV PrEP | FDA/PubMed/PMC | `cabotegravir long acting HIV preexposure prophylaxis HPTN 083 HPTN 084 FDA` | 纳入 FDA 批准、4566 人 HPTN 083 和 3224 人 HPTN 084；把口服对照依从性、突破感染、检测延迟和耐药纳入解释。 |
 | 2026-09-13 | patisiran 脂质纳米颗粒 siRNA | FDA/PubMed/PMC | `patisiran APOLLO randomized hereditary transthyretin amyloidosis polyneuropathy five year` | 纳入 FDA 标签、225 人 APOLLO 随机试验和 211 人开放延长研究；长期结果按无同期对照和失访偏倚降级解释。 |
 | 2026-09-13 | MACI 软骨组织工程 | FDA/PubMed | `MACI SUMMIT randomized microfracture knee cartilage two year five year FDA` | 纳入 FDA 产品页、144 人 SUMMIT 两年随机结果和五年延长随访；区分患者报告改善与 MRI 结构结果。 |
+| 2026-09-14 | PSMA 靶向放射性配体治疗 | FDA/PubMed | `Pluvicto PSMAfore VISION metastatic castration resistant prostate cancer FDA final overall survival` | 纳入 FDA 2025 扩展适应证、831 人 VISION 和 468 人 PSMAfore；保留 PSMA PET 筛选、放射与器官毒性、最终总生存未显著和 60.3% 交叉。 |
+| 2026-09-14 | ARIKAYCE 吸入脂质体 | FDA/PubMed | `ARIKAYCE CONVERT refractory MAC lung disease culture conversion durability FDA label` | 纳入 FDA 2026 标签、336 人 CONVERT 和同队列持续性分析；明确有限人群、替代终点加速批准、临床获益未确立和呼吸黑框警告。 |
+| 2026-09-14 | Omisirge 扩增脐带血细胞 | FDA/PubMed/PMC | `Omisirge omidubicel cord blood transplantation randomized phase 3 long term follow up` | 纳入 FDA 当前产品页、125 人随机 III 期和 105 人五试验合并长期队列；区分快速植入、感染、生存/GVHD 未显著及无对照长期证据。 |
+| 2026-09-14 | T-VEC 工程化溶瘤病毒 | FDA/PubMed/PMC | `IMLYGIC T-VEC OPTiM pembrolizumab phase 3 melanoma FDA overall survival visceral metastases` | 纳入 FDA 产品与说明书、436 人 OPTiM 和 692 人联合阴性 III 期；明确局部可注射病灶、未证明总生存或内脏转移作用。 |
 
 ## 记录要求
 

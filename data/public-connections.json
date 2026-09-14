@@ -1886,6 +1886,262 @@
       "review_status": "source-checked",
       "curation_method": "machine-assisted",
       "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CAP-0038",
+      "paragraphs": [
+        "把识别特定分子靶点的配体、螯合结构和放射性核素组合成可生产、可质控的放射性药物。",
+        "Pluvicto 用这项能力将 PSMA 识别与镥-177 的 β 辐射递送连接起来，治疗前还要用 PSMA PET 确认适用病灶。",
+        "化学稳定和靶点结合不等于人体中均匀分布；辐射剂量、骨髓抑制、肾毒性和核医学操作必须单独管理。"
+      ],
+      "source_ids": [
+        "SRC-0156",
+        "SRC-0157",
+        "SRC-0158"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "TEC-0033",
+      "paragraphs": [
+        "一种把镥-177 标记的小分子配体递送到 PSMA 表达病灶的放射性配体治疗。",
+        "VISION 支持既往接受 ARPI 和紫杉类治疗人群的进展与生存获益；PSMAfore 支持更早治疗情境的进展获益和 2025 年 FDA 扩展适应证。",
+        "必须经获批 PSMA PET 产品筛选；PSMAfore 最终总生存差异未显著且对照组交叉率高，不能只报告进展终点。"
+      ],
+      "source_ids": [
+        "SRC-0156",
+        "SRC-0157",
+        "SRC-0158"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "DIS-0026",
+      "paragraphs": [
+        "指在去势水平雄激素环境下仍进展、已发生转移，并在获批影像检查中符合 PSMA 阳性标准的前列腺癌。",
+        "PSMA 表达可作为放射性配体成像与治疗的入口，但不同病灶可能表达不一致，且会随病程和治疗改变。",
+        "该节点是治疗相关人群定义，不表示所有前列腺癌都适用；既往 ARPI、紫杉类治疗和是否适合推迟化疗会改变证据边界。"
+      ],
+      "source_ids": [
+        "SRC-0156",
+        "SRC-0157",
+        "SRC-0158"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CLP-0023",
+      "paragraphs": [
+        "如何把电离辐射更多递送到 PSMA 表达转移灶，同时控制骨髓、肾脏和其他正常组织的累积暴露。",
+        "治疗链同时依赖配体化学、核素标记、PSMA PET 选择、剂量学、放射防护和血液学监测。",
+        "随机试验支持特定人群的疾病控制；不同线次的总生存结果并不一致，不能把影像学进展延缓自动等同为延长生命。"
+      ],
+      "source_ids": [
+        "SRC-0156",
+        "SRC-0157",
+        "SRC-0158"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CAP-0039",
+      "paragraphs": [
+        "把抗菌药包封在纳米尺度脂质体中，再通过专用雾化器形成适合肺部吸入的气溶胶。",
+        "ARIKAYCE 用脂质体和吸入途径提高肺部局部阿米卡星暴露，作为既有多药方案的附加治疗。",
+        "局部递送不会消除全身和呼吸风险；粒径、雾化器、气道结构和分泌物会共同改变沉积与耐受性。"
+      ],
+      "source_ids": [
+        "SRC-0159",
+        "SRC-0160",
+        "SRC-0161"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "TEC-0034",
+      "paragraphs": [
+        "一种每日经专用雾化器吸入的阿米卡星脂质体混悬液，用于有限的难治性 MAC 肺病成人。",
+        "CONVERT 显示加入背景方案后第 6 月痰培养转阴率提高，部分转阴可持续到停药后三个月。",
+        "这是基于替代终点的加速批准，临床获益尚未确立；严重呼吸不良反应有黑框警告，且存在耳毒性、肾毒性和耐药风险。"
+      ],
+      "source_ids": [
+        "SRC-0159",
+        "SRC-0160",
+        "SRC-0161"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "DIS-0027",
+      "paragraphs": [
+        "指接受稳定多药背景方案至少 6 个月后，痰培养仍显示鸟分枝杆菌复合群的成人肺病。",
+        "持续培养阳性提示微生物学治疗失败风险，但患者的咳嗽、气促、肺功能和结构性肺病负担未必与培养结果同步。",
+        "现有 ARIKAYCE 证据集中于阿米卡星敏感且选择余地有限的人群，不能外推到所有非结核分枝杆菌肺病。"
+      ],
+      "source_ids": [
+        "SRC-0159",
+        "SRC-0160",
+        "SRC-0161"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CLP-0024",
+      "paragraphs": [
+        "如何在既有多药治疗无效时增加肺部局部抗菌暴露，并让培养转阴在完成治疗后仍能维持。",
+        "脂质体吸入递送改变给药位置和暴露方式，但需要专用设备、长期每日操作和对呼吸反应的持续监测。",
+        "随机证据证明的是培养转阴概率提高，不是已经确认的广泛临床获益；延长分析仍来自同一试验。"
+      ],
+      "source_ids": [
+        "SRC-0159",
+        "SRC-0160",
+        "SRC-0161"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CAP-0040",
+      "paragraphs": [
+        "在体外扩增脐带血来源造血祖细胞，并控制扩增与未扩增细胞组分的身份、活性和剂量。",
+        "Omisirge 试图克服单份脐带血细胞数量有限的问题，从而缩短移植后中性粒细胞缺乏期。",
+        "细胞数和放行指标只是制造证据；植入、感染、GVHD、移植失败和长期生存还受患者、供者、预处理和中心流程影响。"
+      ],
+      "source_ids": [
+        "SRC-0162",
+        "SRC-0163",
+        "SRC-0164"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "TEC-0035",
+      "paragraphs": [
+        "一种由单份脐带血制备、含烟酰胺修饰扩增造血祖细胞和未扩增免疫细胞组分的异基因移植产品。",
+        "随机 III 期试验显示中性粒细胞植入更快、部分早期感染更少、前 100 天院外时间更多，FDA 已批准相应适应证。",
+        "随机试验未显示 GVHD 或生存显著差异；产品仍承担异基因移植的严重风险，长期证据主要来自无同期对照的合并队列。"
+      ],
+      "source_ids": [
+        "SRC-0162",
+        "SRC-0163",
+        "SRC-0164"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "DIS-0028",
+      "paragraphs": [
+        "涵盖因血液系统恶性肿瘤计划在清髓预处理后接受脐带血移植的患者。",
+        "当缺少合适成人供者时，脐带血可提供替代移植物，但较低细胞剂量会延长造血恢复并增加早期感染负担。",
+        "疾病种类、缓解状态、HLA 匹配、预处理和支持治疗差异很大；本节点不包含严重再生障碍性贫血适应证的证据外推。"
+      ],
+      "source_ids": [
+        "SRC-0162",
+        "SRC-0163",
+        "SRC-0164"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CLP-0025",
+      "paragraphs": [
+        "如何缩短脐带血移植后的中性粒细胞缺乏期，减少早期感染和住院，同时保持持久、安全的造血与免疫重建。",
+        "离体扩增可以增加早期可用祖细胞，但移植结局仍取决于供者匹配、清髓、免疫抑制、感染预防和中心经验。",
+        "随机试验支持更快植入和较少早期感染，却没有证明生存或 GVHD 显著改善；长期队列没有同期对照。"
+      ],
+      "source_ids": [
+        "SRC-0162",
+        "SRC-0163",
+        "SRC-0164"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CAP-0041",
+      "paragraphs": [
+        "通过删除、插入和调控病毒基因，使病毒更偏向在肿瘤中复制并表达预设免疫效应分子。",
+        "T-VEC 由 HSV-1 改造而来，病灶内注射后尝试局部裂解肿瘤并表达 GM-CSF。",
+        "工程病毒仍是可传播的活生物制品；体内选择性、疱疹感染、意外暴露和注射位置都要按产品验证。"
+      ],
+      "source_ids": [
+        "SRC-0165",
+        "SRC-0166",
+        "SRC-0167"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "TEC-0036",
+      "paragraphs": [
+        "一种经工程改造并表达 GM-CSF 的 HSV-1 溶瘤病毒，直接注射到可触及的黑色素瘤病灶。",
+        "OPTiM 显示持续缓解率高于 GM-CSF，FDA 批准局部病灶适应证；后续与 pembrolizumab 联合的 III 期试验未改善 PFS 或 OS。",
+        "标签未证明总生存改善或作用于内脏转移；免疫功能低下和妊娠患者禁用，并需防止疱疹传播和意外暴露。"
+      ],
+      "source_ids": [
+        "SRC-0165",
+        "SRC-0166",
+        "SRC-0167"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "DIS-0029",
+      "paragraphs": [
+        "指初次手术后复发、无法切除，并存在可见、可触及或超声可定位的皮肤、皮下或淋巴结黑色素瘤病灶。",
+        "可注射病灶允许局部递送工程病毒并反复观察，但内脏转移和不可注射病灶仍决定整体疾病风险。",
+        "现有适应证不代表所有晚期黑色素瘤都适用；分期、既往治疗、免疫状态和病灶分布会影响选择。"
+      ],
+      "source_ids": [
+        "SRC-0165",
+        "SRC-0166",
+        "SRC-0167"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "CLP-0026",
+      "paragraphs": [
+        "如何通过病灶内治疗控制可注射黑色素瘤，同时判断这种局部反应能否带来全身疾病和生存获益。",
+        "工程病毒可局部复制、裂解和释放免疫信号，但远隔效应必须用全身终点而不是机制推断证明。",
+        "T-VEC 提高了持续缓解率，却未在关键试验中证明总生存改善；与 pembrolizumab 联合也未显著改善 PFS 或 OS。"
+      ],
+      "source_ids": [
+        "SRC-0165",
+        "SRC-0166",
+        "SRC-0167"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
     }
   ]
 }

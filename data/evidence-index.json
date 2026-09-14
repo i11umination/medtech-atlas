@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2.0",
   "kind": "evidence_index",
-  "updated_at": "2026-09-12",
+  "updated_at": "2026-09-14",
   "items": [
     {
       "id": "EVD-0001",
@@ -2279,6 +2279,396 @@
       "publication_status": "public",
       "curation_method": "machine-assisted",
       "last_verified": "2026-09-13"
+    },
+    {
+      "id": "EVD-0095",
+      "title": "FDA 扩展 Pluvicto 至化疗前 PSMA 阳性 mCRPC 人群",
+      "claim": "FDA 于 2025 年把 Pluvicto 适应证扩展至既往接受雄激素受体通路抑制剂、适合推迟紫杉类化疗的 PSMA 阳性 mCRPC 成人。",
+      "relation_ids": [
+        "REL-0212"
+      ],
+      "source_ids": [
+        "SRC-0156"
+      ],
+      "study_type": "监管批准与标签更新",
+      "research_stage": "已获监管批准",
+      "population_or_model": "经获批 PSMA PET 产品选择、既往接受 ARPI 且适合推迟紫杉类化疗的 PSMA 阳性 mCRPC 成人",
+      "sample_size": "批准依据包括 468 人 PSMAfore 随机试验",
+      "intervention": "Pluvicto",
+      "comparator": "更换另一种雄激素受体通路抑制剂",
+      "outcomes": [
+        "适应证",
+        "影像学无进展生存",
+        "总生存",
+        "安全性"
+      ],
+      "findings": "FDA 报告中位影像学无进展生存为 9.3 对 5.6 个月（HR 0.41）；总生存为 24.5 对 23.1 个月（HR 0.91），未达到统计学显著。",
+      "limitations": "适应证要求 PSMA PET 选择并限定既往治疗情境；辐射暴露、骨髓抑制和肾毒性需要监测，不能把延缓进展表述为已证实延长总生存。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0095.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0096",
+      "title": "VISION III 期试验显示既往重度治疗 mCRPC 的进展与生存改善",
+      "claim": "VISION 在 PSMA 阳性、已接受 ARPI 和紫杉类治疗的 mCRPC 中显示，镥-177-PSMA-617 加允许的标准照护改善影像学无进展生存和总生存。",
+      "relation_ids": [
+        "REL-0212"
+      ],
+      "source_ids": [
+        "SRC-0157"
+      ],
+      "study_type": "国际多中心、开放标签、随机 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "既往接受至少一种 ARPI 和一至两种紫杉类方案、PSMA PET 阳性的 mCRPC 患者",
+      "sample_size": 831,
+      "intervention": "镥-177-PSMA-617加方案允许的标准照护",
+      "comparator": "方案允许的标准照护",
+      "outcomes": [
+        "影像学无进展生存",
+        "总生存",
+        "客观缓解",
+        "症状性骨事件",
+        "安全性"
+      ],
+      "findings": "中位影像学无进展生存 8.7 对 3.4 个月（HR 0.40），中位总生存 15.3 对 11.3 个月（HR 0.62）；3 级及以上不良事件为 52.7% 对 38.0%。",
+      "limitations": "开放标签且对照组允许的标准照护有限；结果对应既往接受紫杉类治疗和 PSMA PET 筛选的人群，不应外推到未筛选或更早疾病阶段。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0096.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0097",
+      "title": "PSMAfore 最终分析中总生存差异未显著且存在高比例交叉",
+      "claim": "PSMAfore 最终意向治疗分析未显示 Pluvicto 相对更换 ARPI 的总生存显著差异，60.3% 对照组患者交叉接受 Pluvicto。",
+      "relation_ids": [
+        "REL-0212"
+      ],
+      "source_ids": [
+        "SRC-0158",
+        "SRC-0156"
+      ],
+      "study_type": "国际多中心、开放标签、随机 III 期试验最终分析",
+      "research_stage": "临床试验",
+      "population_or_model": "既往一种 ARPI 后进展、未接受紫杉类且适合更换 ARPI 的 PSMA 阳性 mCRPC 患者",
+      "sample_size": 468,
+      "intervention": "镥-177-PSMA-617",
+      "comparator": "更换为阿比特龙或恩扎卢胺",
+      "outcomes": [
+        "影像学无进展生存",
+        "总生存",
+        "交叉治疗",
+        "安全性"
+      ],
+      "findings": "中位总生存 24.48 对 23.13 个月（HR 0.91，P=0.20）；对照组 141/234 人交叉。Pluvicto 组常见口干和贫血。",
+      "limitations": "高交叉率使总生存解释复杂；交叉校正分析依赖模型假设，不能替代预先设定的意向治疗结果。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0097.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0098",
+      "title": "ARIKAYCE 为有限人群的加速批准且临床获益尚未确立",
+      "claim": "FDA 当前标签把 ARIKAYCE 限于至少 6 个月多药背景方案后仍培养阳性且替代选择有限的成人，并明确临床获益尚未确立。",
+      "relation_ids": [
+        "REL-0216"
+      ],
+      "source_ids": [
+        "SRC-0159"
+      ],
+      "study_type": "监管批准与当前标签",
+      "research_stage": "已获监管批准",
+      "population_or_model": "多药背景方案至少连续 6 个月后仍未获得痰培养阴性、治疗选择有限的成人 MAC 肺病患者",
+      "sample_size": "加速批准依据为 CONVERT 随机试验",
+      "intervention": "ARIKAYCE 590 mg 每日吸入并联合多药背景方案",
+      "comparator": "多药背景方案",
+      "outcomes": [
+        "6 月痰培养转阴",
+        "适应证边界",
+        "呼吸不良反应",
+        "耳毒性与肾毒性"
+      ],
+      "findings": "适应证依据第 6 月连续 3 次月度痰培养阴性的替代终点获得加速批准；标签明确临床获益尚未确立，并对严重呼吸不良反应设置黑框警告。",
+      "limitations": "仅适用于有限且具体的人群；培养转阴不能替代症状、肺功能、生活质量或生存等临床结局，获批不等于已确认长期临床获益。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0098.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0099",
+      "title": "CONVERT 随机试验提高 6 月痰培养转阴但增加呼吸不良事件",
+      "claim": "CONVERT 中 ARIKAYCE 加背景方案使第 6 月培养转阴率高于单用背景方案，同时呼吸系统不良事件更常见。",
+      "relation_ids": [
+        "REL-0216"
+      ],
+      "source_ids": [
+        "SRC-0160"
+      ],
+      "study_type": "前瞻性、多中心、开放标签、随机试验",
+      "research_stage": "临床试验",
+      "population_or_model": "对阿米卡星敏感、稳定多药方案至少 6 个月后仍培养阳性的成人 MAC 肺病患者",
+      "sample_size": 336,
+      "intervention": "ALIS 590 mg 每日吸入加指南背景方案",
+      "comparator": "指南背景方案",
+      "outcomes": [
+        "第 6 月培养转阴",
+        "转阴时间",
+        "呼吸系统不良事件",
+        "严重不良事件"
+      ],
+      "findings": "培养转阴为 29.0%（65/224）对 8.9%（10/112），P<0.001；呼吸不良事件为 87.4% 对 50.0%，严重治疗期间不良事件为 20.2% 对 17.9%。",
+      "limitations": "开放标签且主要终点是微生物学替代终点；人群多有支气管扩张或慢阻肺，不能据此确定症状、功能或生存获益。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0099.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0100",
+      "title": "CONVERT 延长分析显示部分培养转阴可持续至停药后三个月",
+      "claim": "在同一 CONVERT 队列中，ALIS 加背景方案达到持续且停药后三个月仍保持培养转阴的比例高于背景方案。",
+      "relation_ids": [
+        "REL-0216"
+      ],
+      "source_ids": [
+        "SRC-0161"
+      ],
+      "study_type": "随机试验队列延长与转换者分析",
+      "research_stage": "临床试验",
+      "population_or_model": "CONVERT 随机人群及第 6 月前达到培养转阴并继续治疗 12 个月的患者",
+      "sample_size": "原随机 336 人；第 6 月前转阴者为 65 人对 10 人",
+      "intervention": "ALIS 加背景方案并在转阴后继续 12 个月",
+      "comparator": "背景方案",
+      "outcomes": [
+        "持续培养转阴",
+        "停药后三个月耐久转阴",
+        "复发",
+        "长期暴露安全性"
+      ],
+      "findings": "意向治疗人群持续且耐久转阴为 16.1%（36/224）对 0%（0/112）；转阴者中为 55.4% 对 0%，停药后三个月内复发为 9.2% 对 30.0%。",
+      "limitations": "这是同一试验的转阴者和延长分析，转换者样本小且受筛选影响；随访仅至停药后三个月，仍不能确认患者感受或功能获益。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0100.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0101",
+      "title": "Omisirge 获批用于缩短血液恶性肿瘤脐带血移植后的中性粒细胞恢复",
+      "claim": "FDA 当前产品信息包括 12 岁及以上、计划在清髓预处理后接受脐带血移植的血液恶性肿瘤患者，以缩短中性粒细胞恢复并减少感染。",
+      "relation_ids": [
+        "REL-0220"
+      ],
+      "source_ids": [
+        "SRC-0162"
+      ],
+      "study_type": "监管批准与产品信息",
+      "research_stage": "已获监管批准",
+      "population_or_model": "12 岁及以上、患血液系统恶性肿瘤并计划在清髓预处理后接受脐带血移植的患者",
+      "sample_size": "批准依据包括 125 人随机 III 期试验",
+      "intervention": "Omisirge",
+      "comparator": "标准未扩增脐带血移植",
+      "outcomes": [
+        "中性粒细胞恢复",
+        "感染",
+        "移植相关安全风险"
+      ],
+      "findings": "获批目标是缩短中性粒细胞恢复时间并降低感染发生；当前 FDA 页面另列严重再生障碍性贫血适应证，本证据包不沿用血液恶性肿瘤随机结果解释该人群。",
+      "limitations": "造血细胞移植本身具有移植物抗宿主病、输注反应、移植失败和感染等严重风险；不同适应证、预处理和患者人群证据不可混用。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0101.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0102",
+      "title": "Omidubicel III 期试验缩短中性粒细胞植入并减少早期感染",
+      "claim": "随机 III 期试验中，omidubicel 相对标准脐带血移植缩短中性粒细胞植入时间，并减少早期细菌或侵袭性真菌感染。",
+      "relation_ids": [
+        "REL-0220"
+      ],
+      "source_ids": [
+        "SRC-0163"
+      ],
+      "study_type": "国际多中心、开放标签、随机 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "13至65岁、患血液恶性肿瘤且接受清髓预处理和脐带血移植的患者",
+      "sample_size": 125,
+      "intervention": "omidubicel 移植",
+      "comparator": "标准未扩增脐带血移植",
+      "outcomes": [
+        "中性粒细胞植入",
+        "血小板恢复",
+        "细菌或侵袭性真菌感染",
+        "住院天数",
+        "GVHD",
+        "生存"
+      ],
+      "findings": "中位中性粒细胞植入 12 对 22 天；42 天血小板恢复 55% 对 35%，2至3级首次细菌或侵袭性真菌感染 37% 对 57%，前100天院外中位天数 61 对 48 天。",
+      "limitations": "GVHD 和生存差异未达到统计学显著；开放标签、样本量和移植中心流程限制对长期净获益的判断。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0102.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0103",
+      "title": "五项 Omidubicel 前瞻性试验合并队列的长期随访",
+      "claim": "105 人多试验合并随访提示 omidubicel 可形成持久三系造血，但该资料没有同期随机对照。",
+      "relation_ids": [
+        "REL-0220"
+      ],
+      "source_ids": [
+        "SRC-0164"
+      ],
+      "study_type": "五项前瞻性临床试验的预设多中心合并长期随访",
+      "research_stage": "临床试验",
+      "population_or_model": "26 个中心接受 omidubicel 移植的血液恶性肿瘤或镰状细胞血红蛋白病患者",
+      "sample_size": 105,
+      "intervention": "omidubicel 异基因造血细胞移植",
+      "comparator": "无同期对照",
+      "outcomes": [
+        "三系造血耐久性",
+        "免疫细胞重建",
+        "总生存",
+        "无病生存",
+        "继发移植失败",
+        "供者来源肿瘤"
+      ],
+      "findings": "中位随访 22 个月，估计 3 年总生存 62.5%、无病生存 54.0%；首年继发移植失败 5 例（5%），报告 1 例供者来源髓系肿瘤。",
+      "limitations": "跨五项试验合并、疾病和方案异质且无同期对照；最长随访不代表所有人均随访多年，生存率不能与其他移植来源直接比较。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0103.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0104",
+      "title": "IMLYGIC 获批仅限术后复发黑色素瘤的局部可注射病灶",
+      "claim": "FDA 将 T-VEC 定位为术后复发黑色素瘤不可切除皮肤、皮下和淋巴结病灶的局部治疗，并明确未证明改善总生存或作用于内脏转移。",
+      "relation_ids": [
+        "REL-0224"
+      ],
+      "source_ids": [
+        "SRC-0165"
+      ],
+      "study_type": "监管批准与当前说明书",
+      "research_stage": "已获监管批准",
+      "population_or_model": "初次手术后复发、具有不可切除皮肤、皮下或淋巴结病灶的黑色素瘤患者",
+      "sample_size": "批准依据包括 OPTiM 随机 III 期试验",
+      "intervention": "IMLYGIC 病灶内注射",
+      "comparator": "监管审评依据中的 GM-CSF 对照",
+      "outcomes": [
+        "局部适应证",
+        "总生存限制",
+        "内脏转移限制",
+        "疱疹传播与暴露风险"
+      ],
+      "findings": "说明书限定病灶内局部治疗；未显示总生存改善或对内脏转移有效，并要求管理意外暴露、疱疹感染和注射部位并发症。",
+      "limitations": "不可把局部可注射病灶的缓解外推为全身转移控制；免疫功能低下和妊娠患者禁用，活病毒处理要求影响实施。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0104.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0105",
+      "title": "OPTiM III 期试验提高持续缓解率但总生存差异未显著",
+      "claim": "OPTiM 中 T-VEC 相对 GM-CSF 提高持续缓解率和客观缓解率，但预设总生存比较未达到统计学显著。",
+      "relation_ids": [
+        "REL-0224"
+      ],
+      "source_ids": [
+        "SRC-0166"
+      ],
+      "study_type": "多中心、开放标签、随机 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "具有可注射、不可手术切除 IIIB 至 IVM1c 期黑色素瘤的患者",
+      "sample_size": 436,
+      "intervention": "病灶内 T-VEC",
+      "comparator": "皮下 GM-CSF",
+      "outcomes": [
+        "持续缓解率",
+        "客观缓解率",
+        "总生存",
+        "不良事件"
+      ],
+      "findings": "持续缓解率 16.3% 对 2.1%，客观缓解率 26.4% 对 5.7%；中位总生存 23.3 对 18.9 个月，HR 0.79，P=0.051。",
+      "limitations": "开放标签且对照为 GM-CSF 而非现代免疫检查点治疗；获益在较早分期和初治亚组更明显，但亚组不应替代总体结论。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0105.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0106",
+      "title": "T-VEC 联合 pembrolizumab 的 III 期试验未改善 PFS 或 OS",
+      "claim": "692 人双盲 III 期试验中，在 pembrolizumab 基础上加入 T-VEC 未显著改善无进展生存或总生存。",
+      "relation_ids": [
+        "REL-0224"
+      ],
+      "source_ids": [
+        "SRC-0167"
+      ],
+      "study_type": "全球多中心、随机、双盲、安慰剂对照 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "既往未接受抗 PD-1 治疗的不可切除 IIIB 至 IVM1c 期黑色素瘤患者",
+      "sample_size": 692,
+      "intervention": "T-VEC 加 pembrolizumab",
+      "comparator": "安慰剂加 pembrolizumab",
+      "outcomes": [
+        "无进展生存",
+        "总生存",
+        "客观缓解",
+        "完全缓解",
+        "安全性"
+      ],
+      "findings": "PFS HR 0.86（P=0.13），OS HR 0.96（P=0.74），均未显著；客观缓解率 48.6% 对 41.3%，3级及以上治疗相关不良事件 20.7% 对 19.5%。",
+      "limitations": "较高缓解率不能覆盖共同主要终点的阴性结果；试验有企业资助和作者利益关系，且只回答与 pembrolizumab 联合这一特定方案。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0106.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-14"
     }
   ]
 }

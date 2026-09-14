@@ -128,7 +128,7 @@ export default function SearchExplorer({ nodes }: { nodes: GraphNode[] }) {
         <section className="search-results" aria-live="polite">
           <div className="section-heading compact-heading">
             <div>
-              <span className="eyebrow">本地语义归纳</span>
+              <span className="eyebrow">本地规则归纳</span>
               <h2>可能相关的方向</h2>
             </div>
             <a

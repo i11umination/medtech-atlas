@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2.0",
   "kind": "navigation_groups",
-  "updated_at": "2026-09-13",
+  "updated_at": "2026-09-14",
   "items": [
     {
       "id": "NAV-0001",
@@ -73,11 +73,7 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": [
-        "DOM-0009", "DOM-0010", "DOM-0015",
-        "CAP-0017", "CAP-0018", "CAP-0021", "CAP-0028", "CAP-0029", "CAP-0030", "CAP-0031", "CAP-0032",
-        "TEC-0020", "TEC-0025", "TEC-0028", "TEC-0029", "TEC-0030"
-      ],
+      "primary_node_ids": ["DOM-0009", "DOM-0010", "DOM-0015", "CAP-0017", "CAP-0018", "CAP-0021", "CAP-0028", "CAP-0029", "CAP-0030", "CAP-0031", "CAP-0032", "TEC-0020", "TEC-0025", "TEC-0028", "TEC-0029", "TEC-0030", "CAP-0038", "TEC-0033"],
       "cross_node_ids": ["CAP-0020", "TEC-0022"],
       "planned_items": [],
       "status": "active"
@@ -107,11 +103,7 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": [
-        "DOM-0017", "DOM-0018", "DOM-0019",
-        "CAP-0033", "CAP-0034", "CAP-0035", "CAP-0036",
-        "TEC-0031", "TEC-0032"
-      ],
+      "primary_node_ids": ["DOM-0017", "DOM-0018", "DOM-0019", "CAP-0033", "CAP-0034", "CAP-0035", "CAP-0036", "TEC-0031", "TEC-0032", "CAP-0039", "TEC-0034", "CAP-0040", "TEC-0035", "CAP-0041", "TEC-0036"],
       "cross_node_ids": ["CAP-0022", "CAP-0024", "CAP-0025", "TEC-0023", "TEC-0024", "TEC-0027"],
       "planned_items": [],
       "status": "active"
@@ -212,12 +204,12 @@
     {
       "id": "NAV-0027",
       "name": "实体肿瘤",
-      "description": "覆盖结直肠癌、非小细胞肺癌、食管癌以及术后分子残留和放疗毒性平衡。",
+      "description": "覆盖多类实体肿瘤及其术后分子残留、靶向递送、局部治疗与放疗毒性平衡。",
       "level": 1,
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0015", "DIS-0016", "DIS-0021", "DIS-0022", "CLP-0014", "CLP-0018", "CLP-0019"],
+      "primary_node_ids": ["DIS-0015", "DIS-0016", "DIS-0021", "DIS-0022", "CLP-0014", "CLP-0018", "CLP-0019", "DIS-0026", "CLP-0023", "DIS-0029", "CLP-0026"],
       "cross_node_ids": ["TEC-0021", "TEC-0025"],
       "planned_items": [],
       "status": "active"
@@ -225,12 +217,12 @@
     {
       "id": "NAV-0028",
       "name": "血液与遗传性疾病",
-      "description": "覆盖镰状细胞病、输血依赖型 β 地中海贫血、B 细胞恶性肿瘤及细胞与基因治疗的长期问题。",
+      "description": "覆盖遗传性血液病、B 细胞恶性肿瘤、需脐带血移植的血液恶性肿瘤及细胞与基因治疗的长期问题。",
       "level": 1,
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0018", "DIS-0019", "DIS-0020", "DIS-0024", "CLP-0016", "CLP-0017", "CLP-0021"],
+      "primary_node_ids": ["DIS-0018", "DIS-0019", "DIS-0020", "DIS-0024", "CLP-0016", "CLP-0017", "CLP-0021", "DIS-0028", "CLP-0025"],
       "cross_node_ids": ["TEC-0023", "TEC-0024"],
       "planned_items": [],
       "status": "active"
@@ -238,12 +230,12 @@
     {
       "id": "NAV-0029",
       "name": "感染性疾病",
-      "description": "覆盖严重细菌感染及治疗窗较窄抗菌药物的目标暴露、疗效与毒性平衡。",
+      "description": "覆盖 HIV 暴露风险、严重细菌感染和难治性 MAC 肺病，以及抗感染药物的暴露、疗效与毒性平衡。",
       "level": 1,
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0017", "DIS-0023", "CLP-0015", "CLP-0020"],
+      "primary_node_ids": ["DIS-0017", "DIS-0023", "CLP-0015", "CLP-0020", "DIS-0027", "CLP-0024"],
       "cross_node_ids": ["TEC-0022"],
       "planned_items": [],
       "status": "active"

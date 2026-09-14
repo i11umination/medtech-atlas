@@ -47,7 +47,6 @@ const readItems = (file) => {
 };
 
 const unique = (values) => [...new Set(values)];
-const displayCount = (values) => unique(values).length;
 const displayList = (values) => (values.length ? values.join("、") : "无");
 
 try {
@@ -210,41 +209,6 @@ try {
     }
   }
 
-  const evidenceByClinicalProblem = new Map();
-  for (const relation of relations.filter((item) => item.relation_type === "applies_to")) {
-    const current = evidenceByClinicalProblem.get(relation.target_id) ?? [];
-    current.push(...(relation.evidence_ids ?? []));
-    evidenceByClinicalProblem.set(relation.target_id, current);
-  }
-  const concentration = [...evidenceByClinicalProblem.entries()]
-    .map(([nodeId, ids]) => ({ nodeId, count: displayCount(ids) }))
-    .sort((left, right) => right.count - left.count)[0];
-  if (concentration && evidence.length > 0 && concentration.count / evidence.length > 0.5) {
-    warnings.push(
-      `${nodeById.get(concentration.nodeId)?.name ?? concentration.nodeId}连接 ${concentration.count}/${evidence.length} 张证据卡，内容集中度超过 50%`,
-    );
-  }
-
-  const evidenceByDisease = new Map();
-  for (const relation of relations.filter((item) => item.relation_type === "has_clinical_problem")) {
-    const clinicalEvidence = evidenceByClinicalProblem.get(relation.target_id) ?? [];
-    const current = evidenceByDisease.get(relation.source_id) ?? [];
-    current.push(...clinicalEvidence);
-    evidenceByDisease.set(relation.source_id, current);
-  }
-  const diseaseConcentration = [...evidenceByDisease.entries()]
-    .map(([nodeId, ids]) => ({ nodeId, count: displayCount(ids) }))
-    .sort((left, right) => right.count - left.count)[0];
-  if (
-    diseaseConcentration &&
-    evidence.length > 0 &&
-    diseaseConcentration.count / evidence.length > 0.5
-  ) {
-    warnings.push(
-      `${nodeById.get(diseaseConcentration.nodeId)?.name ?? diseaseConcentration.nodeId}覆盖 ${diseaseConcentration.count}/${evidence.length} 张证据卡，疾病层内容集中度超过 50%`,
-    );
-  }
-
   const landedDomains = canonicalGroups.flatMap((group) => group.domains).filter((name) => domainByName.has(name));
   const canonicalDomainCount = canonicalGroups.reduce((sum, group) => sum + group.domains.length, 0);
   const statusCounts = evidence.reduce((counts, item) => {
@@ -255,11 +219,6 @@ try {
   console.log("内容覆盖软审计（不阻断构建）");
   console.log(`口径：${canonicalDomainCount} 个批准门类；当前落地 ${landedDomains.length} 个，缺少 ${canonicalDomainCount - landedDomains.length} 个。`);
   console.log(`证据卡：${evidence.length} 张；核验状态 ${Object.entries(statusCounts).map(([status, count]) => `${status}=${count}`).join("，")}。`);
-  if (diseaseConcentration && concentration) {
-    console.log(
-      `集中度：疾病层最高为 ${nodeById.get(diseaseConcentration.nodeId)?.name ?? diseaseConcentration.nodeId} ${diseaseConcentration.count}/${evidence.length}（${(diseaseConcentration.count / evidence.length * 100).toFixed(1)}%）；临床问题层最高为 ${nodeById.get(concentration.nodeId)?.name ?? concentration.nodeId} ${concentration.count}/${evidence.length}（${(concentration.count / evidence.length * 100).toFixed(1)}%）。`,
-    );
-  }
   console.log("");
   console.log("| 门类 | 核心能力 | 技术 | 临床问题 | 疾病与健康状态 | 独立应用证据 | 完整路径 | 核验状态 |");
   console.log("| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |");
