@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2.0",
   "kind": "evidence_index",
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-15",
   "items": [
     {
       "id": "EVD-0001",
@@ -2669,6 +2669,845 @@
       "publication_status": "public",
       "curation_method": "machine-assisted",
       "last_verified": "2026-09-14"
+    },
+    {
+      "id": "EVD-0107",
+      "title": "FDA 文件界定 Control-IQ 的自动调节功能与 2 岁以上 1 型糖尿病范围",
+      "claim": "FDA 510(k) 文件说明 Control-IQ 可依据兼容连续葡萄糖监测自动增减或暂停基础胰岛素，并在限定条件下给校正剂量。",
+      "relation_ids": [
+        "REL-0227"
+      ],
+      "source_ids": [
+        "SRC-0168"
+      ],
+      "study_type": "监管器械文件与预期用途",
+      "research_stage": "已获监管批准",
+      "population_or_model": "2 岁及以上、使用兼容连续葡萄糖监测和可互操作胰岛素泵的 1 型糖尿病患者",
+      "sample_size": "监管文件汇总设计验证和临床资料",
+      "intervention": "Control-IQ 自动胰岛素递送功能",
+      "comparator": "常规人工泵设置或关闭自动化功能",
+      "outcomes": [
+        "适用年龄",
+        "自动基础率调节",
+        "自动校正",
+        "设备兼容与警告"
+      ],
+      "findings": "文件确认系统可自动增加、减少或暂停基础胰岛素，并可自动给予校正剂量；使用范围限定于兼容设备和规定年龄的 1 型糖尿病。",
+      "limitations": "这是器械预期用途和审评文件，不等于所有用户都能获得相同控糖效果；仍需要人工餐前操作、设备维护和高低血糖处置。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0107.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0108",
+      "title": "成人与青少年 6 个月随机试验显示 Control-IQ 增加目标范围时间",
+      "claim": "168 人随机试验中，闭环组 6 个月目标范围时间较对照组高约 11 个百分点，同时 HbA1c 和低血糖时间改善。",
+      "relation_ids": [
+        "REL-0227"
+      ],
+      "source_ids": [
+        "SRC-0169"
+      ],
+      "study_type": "多中心随机对照试验",
+      "research_stage": "临床试验",
+      "population_or_model": "14 至 71 岁 1 型糖尿病患者",
+      "sample_size": 168,
+      "intervention": "Control-IQ 闭环系统，112 人",
+      "comparator": "传感器增强胰岛素泵，56 人",
+      "outcomes": [
+        "70 至 180 mg/dL 目标范围时间",
+        "HbA1c",
+        "低于 70 mg/dL 时间",
+        "严重低血糖",
+        "糖尿病酮症酸中毒"
+      ],
+      "findings": "目标范围时间从 61% 增至 71%，对照组约维持 59%；组间调整差 11 个百分点，HbA1c 差 -0.33 个百分点，低血糖时间也减少。两组均无严重低血糖，闭环组有 1 例输注器故障相关酮症酸中毒。",
+      "limitations": "试验由具备设备使用条件的入组者完成，6 个月不能回答多年依从性、设备更新和少见安全事件。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0108.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0109",
+      "title": "2 至不足 6 岁儿童随机试验显示闭环系统增加约 3 小时每日目标范围时间",
+      "claim": "102 名幼儿的 13 周随机试验中，闭环控制相对标准治疗增加目标范围时间约 12.4 个百分点。",
+      "relation_ids": [
+        "REL-0227"
+      ],
+      "source_ids": [
+        "SRC-0170"
+      ],
+      "study_type": "多中心随机对照试验",
+      "research_stage": "临床试验",
+      "population_or_model": "2 至不足 6 岁的 1 型糖尿病儿童",
+      "sample_size": 102,
+      "intervention": "闭环系统，68 人",
+      "comparator": "标准治疗，34 人",
+      "outcomes": [
+        "目标范围时间",
+        "HbA1c",
+        "低血糖",
+        "严重低血糖",
+        "糖尿病酮症酸中毒"
+      ],
+      "findings": "13 周目标范围时间为 69.3% 对 55.9%，调整后组间差 12.4 个百分点，约合每日增加 3 小时。闭环组报告 2 例严重低血糖和 1 例酮症酸中毒，对照组报告 1 例严重低血糖。",
+      "limitations": "随访仅 13 周，幼儿照护强度、家长培训和设备故障对现实使用影响较大；不能据平均目标范围时间忽略个体急性事件。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0109.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0110",
+      "title": "CLIO 前瞻性真实世界研究报告急性事件率低于历史数据",
+      "claim": "Control-IQ 使用者的一年前瞻性观察中，严重低血糖和酮症酸中毒报告率低于历史 T1D Exchange 数据。",
+      "relation_ids": [
+        "REL-0227"
+      ],
+      "source_ids": [
+        "SRC-0171"
+      ],
+      "study_type": "前瞻性、单臂真实世界观察研究并与历史数据比较",
+      "research_stage": "临床试验",
+      "population_or_model": "美国 6 岁以上开始使用 Control-IQ 的 1 型糖尿病患者",
+      "sample_size": "3157 人入组，2998 人完成 12 个月",
+      "intervention": "现实使用 Control-IQ",
+      "comparator": "历史 T1D Exchange 急性事件率",
+      "outcomes": [
+        "严重低血糖",
+        "糖尿病酮症酸中毒",
+        "目标范围时间",
+        "持续使用"
+      ],
+      "findings": "研究报告成人和儿童使用者的严重低血糖与酮症酸中毒率均低于历史比较值，并观察到目标范围时间维持。",
+      "limitations": "无同期随机对照，事件依赖参与者报告，健康使用者选择和历史比较可造成偏倚；研究存在制造商雇员、持股和资助关系。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0110.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0111",
+      "title": "FDA 扩大 blinatumomab 至 CD19 阳性 Ph 阴性 BCP-ALL 巩固期",
+      "claim": "FDA 于 2024 年批准 blinatumomab 用于 1 月龄以上儿童和成人 CD19 阳性、Ph 阴性 BCP-ALL 的多阶段化疗巩固期。",
+      "relation_ids": [
+        "REL-0231"
+      ],
+      "source_ids": [
+        "SRC-0172"
+      ],
+      "study_type": "监管批准与关键试验汇总",
+      "research_stage": "已获监管批准",
+      "population_or_model": "1 月龄以上儿童和成人 CD19 阳性、Ph 阴性 B 细胞前体 ALL 患者",
+      "sample_size": "关键证据包括 E1910 的 224 人及 Study 20120215 的监管分析人群",
+      "intervention": "巩固阶段 blinatumomab 与多阶段化疗组合",
+      "comparator": "单用强化化疗巩固",
+      "outcomes": [
+        "总生存",
+        "无复发生存",
+        "适应证范围",
+        "常见不良反应"
+      ],
+      "findings": "FDA 依据成人 E1910 与儿童/青少年 Study 20120215 批准巩固期适应证；页面报告两项研究的 5 年 OS 分别为 82.4% 对 62.5% 和 78.4% 对 41.4%。",
+      "limitations": "监管页面汇总不同年龄和风险情境，不能把一个试验的相对获益直接外推至所有 BCP-ALL；剂量、输注和严重风险需查现行说明书。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0111.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0112",
+      "title": "E1910 显示 MRD 阴性成人巩固期加入 blinatumomab 改善生存",
+      "claim": "224 名处于 MRD 阴性缓解的成人随机后，blinatumomab 加巩固化疗相对单纯化疗提高 3 年总生存和无复发生存。",
+      "relation_ids": [
+        "REL-0231"
+      ],
+      "source_ids": [
+        "SRC-0173"
+      ],
+      "study_type": "多中心随机 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "30 至 70 岁、新诊断 Ph 阴性 BCP-ALL 且诱导强化后 MRD 阴性缓解的成人",
+      "sample_size": 224,
+      "intervention": "blinatumomab 加巩固化疗，112 人",
+      "comparator": "巩固化疗，112 人",
+      "outcomes": [
+        "总生存",
+        "无复发生存",
+        "神经精神事件"
+      ],
+      "findings": "中位随访 43 个月时，3 年 OS 为 85% 对 68%，死亡 HR 0.41；3 年无复发生存为 80% 对 64%，复发或死亡 HR 0.53。blinatumomab 组神经精神事件较多。",
+      "limitations": "结论限定于达到 MRD 阴性缓解并进入随机的成人；不能替代对不同 MRD 状态、年龄或 Ph 阳性疾病的独立证据。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0112.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0113",
+      "title": "儿童高危首次复发试验中一周期 blinatumomab 改善事件结局并减少重度毒性",
+      "claim": "108 名儿童高危首次复发 B-ALL 随机试验中，移植前 blinatumomab 相对强化化疗减少事件并提高 MRD 缓解。",
+      "relation_ids": [
+        "REL-0231"
+      ],
+      "source_ids": [
+        "SRC-0174"
+      ],
+      "study_type": "开放标签随机 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "28 日龄以上、不足 18 岁且处于高危首次复发后的 B-ALL 儿童",
+      "sample_size": 108,
+      "intervention": "一周期 blinatumomab 巩固，54 人",
+      "comparator": "第三周期强化多药化疗，54 人",
+      "outcomes": [
+        "事件自由生存",
+        "总生存",
+        "MRD 缓解",
+        "严重不良事件"
+      ],
+      "findings": "中位随访 22.4 个月，事件发生 31% 对 57%，HR 0.33；MRD 缓解 90% 对 54%，严重不良事件 24.1% 对 43.1%。死亡 8 对 16 人，但 OS HR 0.43 的置信区间跨 1。",
+      "limitations": "因预设获益规则提前停止，样本较小且随访较短；治疗发生在移植前特定巩固周期，不能外推为所有复发场景。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0113.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0114",
+      "title": "AALL1331 高中危首次复发队列的主要 DFS 终点未达预设显著性",
+      "claim": "208 名儿童、青少年和年轻成人试验中，blinatumomab 的 2 年 DFS 数值较高，但主要终点未达到预设的单侧显著性阈值。",
+      "relation_ids": [
+        "REL-0231"
+      ],
+      "source_ids": [
+        "SRC-0175"
+      ],
+      "study_type": "开放标签随机 III 期试验",
+      "research_stage": "临床试验",
+      "population_or_model": "1 至 30 岁高危或中危首次复发 B-ALL 患者",
+      "sample_size": 208,
+      "intervention": "两周期 blinatumomab 后移植，105 人",
+      "comparator": "两周期多药化疗后移植，103 人",
+      "outcomes": [
+        "无病生存",
+        "总生存",
+        "感染",
+        "发热性中性粒细胞减少",
+        "脓毒症"
+      ],
+      "findings": "2 年 DFS 为 54.4% 对 39.0%，HR 0.70，单侧 P=0.03，未达到预设 P<0.025；2 年 OS 为 71.3% 对 58.4%。感染和发热性中性粒细胞减少在 blinatumomab 组更少。",
+      "limitations": "随机分配提前停止且未满足疗效或无效停止规则，计划事件数不足；OS 为次要终点，不能覆盖主要 DFS 结论。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0114.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0115",
+      "title": "FDA 现行说明书限定 HEMGENIX 成人适用条件并要求长期肝脏监测",
+      "claim": "HEMGENIX 获批用于符合特定既往预防或严重出血条件的成人血友病 B，并要求治疗前抑制物与肝脏评估及治疗后密集转氨酶监测。",
+      "relation_ids": [
+        "REL-0235"
+      ],
+      "source_ids": [
+        "SRC-0176"
+      ],
+      "study_type": "监管批准与 2026 年 4 月现行说明书",
+      "research_stage": "已获监管批准",
+      "population_or_model": "当前使用 FIX 预防、既往或当前危及生命出血、或反复严重自发出血的成人血友病 B 患者",
+      "sample_size": "监管审评包含 HOPE-B 关键试验",
+      "intervention": "单次静脉输注 HEMGENIX",
+      "comparator": "既往 FIX 预防与支持治疗",
+      "outcomes": [
+        "标签适用条件",
+        "FIX 抑制物",
+        "肝毒性",
+        "输注反应",
+        "肝细胞癌风险"
+      ],
+      "findings": "说明书要求给药前筛查 FIX 抑制物并评估肝脏，给药后前三个月每周、随后至一年每月监测转氨酶，并披露潜在肝细胞致癌风险与长期随访要求。",
+      "limitations": "监管批准不等于长期风险已完全量化；既往或活动性肝病、抑制物和载体免疫会改变适用性。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0115.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0116",
+      "title": "HOPE-B 18 个月分析显示年化出血率和 FIX 替代使用下降",
+      "claim": "54 人 HOPE-B 单臂试验以自身导入期比较，给药后 7 至 18 个月年化出血率由 4.19 降至 1.51。",
+      "relation_ids": [
+        "REL-0235"
+      ],
+      "source_ids": [
+        "SRC-0177"
+      ],
+      "study_type": "多中心开放标签单臂 III 期试验，含前瞻性自身导入期",
+      "research_stage": "临床试验",
+      "population_or_model": "接受 FIX 预防的中重度成人血友病 B 男性",
+      "sample_size": 54,
+      "intervention": "单次 etranacogene dezaparvovec 输注",
+      "comparator": "同一患者给药前至少 6 个月 FIX 预防导入期",
+      "outcomes": [
+        "年化出血率",
+        "FIX 活性",
+        "外源 FIX 使用",
+        "肝脏安全"
+      ],
+      "findings": "调整后 ABR 从 4.19 降至 1.51，比值 0.36；18 个月 FIX 活性平均增加 34.3 个百分点，多数参与者停止常规预防。",
+      "limitations": "无同期随机对照且人数有限；给药后主要比较排除前 6 个月，试验由 uniQure 与 CSL Behring 资助。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0116.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0117",
+      "title": "HOPE-B 24 个月随访提示出血降低和预防停用维持",
+      "claim": "同一 HOPE-B 队列 24 个月分析显示 ABR 维持在约 1.51，96% 参与者在 24 个月时不再使用常规 FIX 预防。",
+      "relation_ids": [
+        "REL-0235"
+      ],
+      "source_ids": [
+        "SRC-0178"
+      ],
+      "study_type": "HOPE-B 单臂 III 期试验的 24 个月延长随访",
+      "research_stage": "临床试验",
+      "population_or_model": "HOPE-B 的 54 名成人血友病 B 参与者",
+      "sample_size": 54,
+      "intervention": "单次 etranacogene dezaparvovec 输注",
+      "comparator": "同一患者给药前 FIX 预防导入期",
+      "outcomes": [
+        "年化出血率",
+        "FIX 活性",
+        "常规预防停用",
+        "安全性"
+      ],
+      "findings": "调整后 ABR 从导入期 4.18 降至给药后 7 至 24 个月 1.51；报告 96% 在 24 个月时不再使用常规 FIX 预防。",
+      "limitations": "这是 EVD-0116 同一队列的延长分析，不是独立复制；无同期对照且企业资助，不能据 24 个月结果确定终生耐久性。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0117.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0118",
+      "title": "HOPE-B 五年随访显示 FIX 表达与较低出血率持续但仍为同一单臂队列",
+      "claim": "HOPE-B 五年分析中，调整后 ABR 为 1.52 对导入期 4.16，5 年 FIX 活性均值约 36%，但证据仍来自同一 54 人无同期对照队列。",
+      "relation_ids": [
+        "REL-0235"
+      ],
+      "source_ids": [
+        "SRC-0179"
+      ],
+      "study_type": "HOPE-B 单臂 III 期试验的五年最终随访",
+      "research_stage": "临床试验",
+      "population_or_model": "HOPE-B 的 54 名成人血友病 B 参与者",
+      "sample_size": 54,
+      "intervention": "单次 etranacogene dezaparvovec 输注",
+      "comparator": "同一患者给药前 FIX 预防导入期",
+      "outcomes": [
+        "五年年化出血率",
+        "FIX 活性",
+        "外源 FIX 使用",
+        "长期安全"
+      ],
+      "findings": "调整后 ABR 为 1.52 对 4.16，降幅 63%；5 年 FIX 活性均值 36.1%，外源 FIX 使用量较导入期降低约 96%。",
+      "limitations": "同队列、无随机同期对照且企业资助；队列规模不足以排除少见或更晚出现的肝脏、免疫与载体相关风险。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0118.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0119",
+      "title": "FDA 批准 Wegovy 降低既有心血管疾病成人的严重心血管事件风险",
+      "claim": "FDA 将 Wegovy 的心血管风险降低适应证限定于已有心血管疾病且超重或肥胖的成人，并要求配合饮食与体力活动。",
+      "relation_ids": [
+        "REL-0239"
+      ],
+      "source_ids": [
+        "SRC-0180"
+      ],
+      "study_type": "监管批准与关键结局试验汇总",
+      "research_stage": "已获监管批准",
+      "population_or_model": "已有心血管疾病且超重或肥胖的成人",
+      "sample_size": "批准依据的 SELECT 试验超过 17600 人",
+      "intervention": "每周司美格鲁肽 2.4 mg 加生活方式干预",
+      "comparator": "安慰剂加生活方式干预",
+      "outcomes": [
+        "心血管死亡",
+        "非致死心肌梗死",
+        "非致死卒中",
+        "标签适用范围"
+      ],
+      "findings": "FDA 页面报告主要心血管事件发生于 6.5% 对 8.0%，据此批准相应风险降低适应证。",
+      "limitations": "批准范围是已有心血管疾病的成人二级预防，不代表所有肥胖人群；药物禁忌、不良反应和停药问题需参照现行说明书。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0119.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0120",
+      "title": "SELECT 显示司美格鲁肽降低无糖尿病超重或肥胖成人的 MACE",
+      "claim": "17604 人随机试验中，司美格鲁肽 2.4 mg 使 MACE 从 8.0% 降至 6.5%，HR 0.80。",
+      "relation_ids": [
+        "REL-0239"
+      ],
+      "source_ids": [
+        "SRC-0181"
+      ],
+      "study_type": "国际多中心双盲随机安慰剂对照事件驱动试验",
+      "research_stage": "临床试验",
+      "population_or_model": "45 岁以上、BMI 至少 27、有既往心血管疾病且无糖尿病的成人",
+      "sample_size": 17604,
+      "intervention": "每周司美格鲁肽 2.4 mg，8803 人",
+      "comparator": "安慰剂，8801 人",
+      "outcomes": [
+        "MACE",
+        "心血管死亡",
+        "非致死心肌梗死",
+        "非致死卒中",
+        "永久停药"
+      ],
+      "findings": "中位随访 39.8 个月，MACE 为 6.5% 对 8.0%，HR 0.80；因不良事件永久停用研究产品为 16.6% 对 8.2%。",
+      "limitations": "试验排除糖尿病且只纳入已有心血管疾病者；较高停药率影响现实净获益，研究由 Novo Nordisk 资助。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0120.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0121",
+      "title": "SELECT 预设心衰分析提示 MACE 与心衰复合终点下降",
+      "claim": "SELECT 中 4286 名基线有研究者判定心衰者的预设分析显示，司美格鲁肽与较低 MACE 和心衰复合终点相关。",
+      "relation_ids": [
+        "REL-0239"
+      ],
+      "source_ids": [
+        "SRC-0182"
+      ],
+      "study_type": "大型随机试验的预设心衰亚组分析",
+      "research_stage": "临床试验",
+      "population_or_model": "SELECT 中已有动脉粥样硬化性心血管疾病、超重或肥胖且基线有心衰史的成人",
+      "sample_size": 4286,
+      "intervention": "每周司美格鲁肽 2.4 mg",
+      "comparator": "安慰剂",
+      "outcomes": [
+        "MACE",
+        "心血管死亡或心衰住院及紧急就诊复合终点",
+        "全因死亡",
+        "严重不良事件"
+      ],
+      "findings": "心衰人群中 MACE HR 0.72，心衰复合终点 HR 0.79；保留射血分数与降低射血分数亚组未显示显著交互。",
+      "limitations": "这是 EVD-0120 同一 SELECT 队列的亚组而非独立试验；心衰由研究者判定，部分亚型终点置信区间跨 1，研究由 Novo Nordisk 资助。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0121.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0122",
+      "title": "FDA 分别批准超声与射频肾动脉去神经系统作为高血压辅助治疗",
+      "claim": "FDA 于 2023 年批准 Paradise 超声和 Symplicity Spyral 射频系统，用于在生活方式与药物基础上辅助治疗选择性未控制高血压成人。",
+      "relation_ids": [
+        "REL-0243"
+      ],
+      "source_ids": [
+        "SRC-0183",
+        "SRC-0184"
+      ],
+      "study_type": "两项器械监管批准与当前 PMA 记录",
+      "research_stage": "已获监管批准",
+      "population_or_model": "经临床选择、生活方式和药物仍不足的高血压成人",
+      "sample_size": "两套系统分别基于各自 PMA 临床与工程资料",
+      "intervention": "Paradise 超声或 Symplicity Spyral 射频肾动脉去神经",
+      "comparator": "假手术和继续标准治疗的审评证据",
+      "outcomes": [
+        "适应证",
+        "能量方式",
+        "血压",
+        "器械与血管安全"
+      ],
+      "findings": "FDA 记录确认两套系统获批作为生活方式与降压药的辅助，Paradise 使用超声能量，Symplicity Spyral 使用射频能量。",
+      "limitations": "批准不等于两个系统可互换，也未证明已减少心梗、卒中或死亡；PMA 后续补充审评需持续核验。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0122.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0123",
+      "title": "RADIANCE II 在停药条件下显示超声肾动脉去神经降低两个月动态血压",
+      "claim": "224 人假手术对照试验中，超声肾动脉去神经使两个月日间动态收缩压比假手术多降低 6.3 mmHg。",
+      "relation_ids": [
+        "REL-0243"
+      ],
+      "source_ids": [
+        "SRC-0185"
+      ],
+      "study_type": "多中心、患者与评估者设盲、随机假手术对照试验",
+      "research_stage": "临床试验",
+      "population_or_model": "停用最多两种降压药后仍有轻中度高血压的成人",
+      "sample_size": 224,
+      "intervention": "超声肾动脉去神经，150 人",
+      "comparator": "假手术，74 人",
+      "outcomes": [
+        "两个月日间动态收缩压",
+        "24 小时血压",
+        "主要安全事件"
+      ],
+      "findings": "日间动态收缩压变化为 -7.9 对 -1.8 mmHg，调整后组间差 -6.3 mmHg；至 30 日未报告主要安全事件。",
+      "limitations": "主要终点仅两个月且处于停药条件，不能回答长期用药背景、耐久性或心血管事件；由器械公司资助。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0123.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0124",
+      "title": "RADIANCE-HTN TRIO 显示标准三联药背景下两个月血压小幅额外下降",
+      "claim": "136 名顽固性高血压患者中，超声肾动脉去神经相对假手术使两个月日间动态收缩压额外降低约 4.5 mmHg。",
+      "relation_ids": [
+        "REL-0243"
+      ],
+      "source_ids": [
+        "SRC-0186"
+      ],
+      "study_type": "国际多中心、单盲、随机假手术对照试验",
+      "research_stage": "临床试验",
+      "population_or_model": "标准化单片三联降压药后仍未控制的顽固性高血压成人",
+      "sample_size": 136,
+      "intervention": "超声肾动脉去神经，69 人",
+      "comparator": "假手术，67 人",
+      "outcomes": [
+        "两个月日间动态收缩压",
+        "家庭与诊室血压",
+        "安全性"
+      ],
+      "findings": "两个月日间动态收缩压中位变化为 -8.0 对 -3.0 mmHg，校正组间差 -4.5 mmHg，P=0.022。",
+      "limitations": "效应幅度有限且随访短；药物依从性、解剖适用性和后续用药变化影响个体结果，尚非患者重要心血管终点。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0124.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0125",
+      "title": "SPYRAL HTN-ON MED 六个月主要动态血压比较未显著",
+      "claim": "337 人试验中，射频肾动脉去神经与假手术的六个月 24 小时动态收缩压组间差为 -1.9 mmHg，P=0.12。",
+      "relation_ids": [
+        "REL-0243"
+      ],
+      "source_ids": [
+        "SRC-0187"
+      ],
+      "study_type": "国际多中心、单盲、随机假手术对照试验",
+      "research_stage": "临床试验",
+      "population_or_model": "使用一至三种降压药且血压未控制的成人",
+      "sample_size": 337,
+      "intervention": "射频肾动脉去神经，206 人",
+      "comparator": "假手术，131 人",
+      "outcomes": [
+        "六个月 24 小时动态收缩压",
+        "诊室血压",
+        "药物负担",
+        "安全性"
+      ],
+      "findings": "六个月 24 小时动态收缩压变化为 -6.5 对 -4.5 mmHg，组间差 -1.9 mmHg，95% CI -4.4 至 0.5，P=0.12，主要比较未显著。",
+      "limitations": "用药变化和依从性复杂；阴性主要终点不能被次要或后期观察结果覆盖，研究由器械公司资助。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0125.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0126",
+      "title": "SPYRAL HTN-ON MED 24 个月观察到血压差但受揭盲、交叉与缺失限制",
+      "claim": "同一 SPYRAL 试验 24 个月分析观察到动态和诊室收缩压差，但可用动态血压仅 176 对 33 人且六个月后已揭盲并允许交叉。",
+      "relation_ids": [
+        "REL-0243"
+      ],
+      "source_ids": [
+        "SRC-0188"
+      ],
+      "study_type": "随机试验揭盲后的 24 个月延长观察",
+      "research_stage": "临床试验",
+      "population_or_model": "SPYRAL HTN-ON MED 随机队列的可随访成人",
+      "sample_size": "原随机 337 人；24 个月动态血压可用 176 对 33 人",
+      "intervention": "射频肾动脉去神经加降压药",
+      "comparator": "原假手术组继续药物；部分可交叉接受去神经",
+      "outcomes": [
+        "24 小时动态收缩压",
+        "诊室收缩压",
+        "用药",
+        "长期安全"
+      ],
+      "findings": "24 个月动态收缩压变化为 -12.1 对 -7.0 mmHg，调整后差 -5.7 mmHg，P=0.039；诊室收缩压差 -8.7 mmHg。",
+      "limitations": "六个月后揭盲和交叉、对照组样本锐减及非随机缺失严重削弱因果解释；这是 EVD-0125 同一试验延长，不是独立验证。",
+      "confidence": "low",
+      "content_ref": "evidence/EVD-0126.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0127",
+      "title": "SYNB1891 临床前研究显示局部 STING 激活与动物抗肿瘤信号",
+      "claim": "工程化大肠杆菌 Nissle 在临床前模型中产生 STING 激动剂并诱导局部免疫和动物抗肿瘤信号。",
+      "relation_ids": [
+        "REL-0247"
+      ],
+      "source_ids": [
+        "SRC-0189"
+      ],
+      "study_type": "工程菌体外、人抗原呈递细胞与小鼠肿瘤临床前研究",
+      "research_stage": "临床前研究",
+      "population_or_model": "工程菌、体外免疫细胞和小鼠肿瘤模型",
+      "sample_size": "多组体外和动物实验，非人体样本量",
+      "intervention": "工程化 E. coli Nissle 产生环二核苷酸",
+      "comparator": "未工程化或对照菌株及对照处理",
+      "outcomes": [
+        "STING 激活",
+        "细胞因子",
+        "肿瘤生长",
+        "免疫记忆"
+      ],
+      "findings": "研究观察到工程菌在预设条件下产生 STING 激动分子、激活抗原呈递细胞并在小鼠模型产生抗肿瘤免疫信号。",
+      "limitations": "体外和动物结果不能预测人体可耐受剂量、感染风险、肿瘤反应或生存；研究与产品开发公司有关。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0127.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0128",
+      "title": "SYNB1891 首次人体 I 期研究显示可检测靶点激活但未证明疗效",
+      "claim": "32 人 I 期研究支持 SYNB1891 病灶内给药的早期安全和药效学可行性，但仅 4 例疾病稳定且无随机对照。",
+      "relation_ids": [
+        "REL-0247"
+      ],
+      "source_ids": [
+        "SRC-0190"
+      ],
+      "study_type": "开放标签、多中心、剂量递增 I 期研究",
+      "research_stage": "早期人体研究",
+      "population_or_model": "标准治疗后进展或无标准选择的晚期转移性实体瘤或淋巴瘤成人",
+      "sample_size": 32,
+      "intervention": "SYNB1891 单药 24 人或联合 atezolizumab 8 人",
+      "comparator": "无同期对照",
+      "outcomes": [
+        "剂量限制毒性",
+        "细胞因子释放综合征",
+        "感染与菌株清除",
+        "药效学",
+        "肿瘤反应"
+      ],
+      "findings": "单药组出现 5 例细胞因子释放综合征，最高剂量有 1 例剂量限制毒性；未报告相关感染，检测到 STING 通路相关药效学变化，4 人最佳反应为疾病稳定。",
+      "limitations": "样本小、肿瘤类型异质、无随机对照且以安全为主；疾病稳定不能证明抗肿瘤疗效，作者中有公司雇员。",
+      "confidence": "low",
+      "content_ref": "evidence/EVD-0128.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0129",
+      "title": "SYNB1891 注册研究已因商业原因终止",
+      "claim": "ClinicalTrials.gov 当前记录显示 NCT04167137 入组 32 人并于 2021 年完成，后标记为因商业原因终止。",
+      "relation_ids": [
+        "REL-0247"
+      ],
+      "source_ids": [
+        "SRC-0191"
+      ],
+      "study_type": "临床试验注册状态核验",
+      "research_stage": "早期人体研究",
+      "population_or_model": "SYNB1891 单药或联合 atezolizumab 的 I 期参与者",
+      "sample_size": 32,
+      "intervention": "SYNB1891 病灶内注射",
+      "comparator": "非比较性剂量递增设计",
+      "outcomes": [
+        "招募状态",
+        "终止原因",
+        "实际入组",
+        "完成日期"
+      ],
+      "findings": "注册记录为 Terminated，原因写明 Business reasons；实际入组 32 人，主要完成和研究完成日期均为 2021 年 12 月 9 日。",
+      "limitations": "商业原因终止不等于因安全或无效终止，也不能反向证明安全或有效；该路径应作为历史早期人体证据而非活跃或获批疗法。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0129.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0130",
+      "title": "NCT04786262 以多部分开放标签设计评估 zimislecel 与长期随访",
+      "claim": "注册研究采用单组开放标签、多部分递增与扩展设计，经门静脉输注 zimislecel 并配合系统免疫抑制，随访最长可达 5 年。",
+      "relation_ids": [
+        "REL-0250"
+      ],
+      "source_ids": [
+        "SRC-0193"
+      ],
+      "study_type": "临床试验注册与方案设计",
+      "research_stage": "临床试验",
+      "population_or_model": "长期 1 型糖尿病、严重低血糖和低血糖感知受损的成人",
+      "sample_size": "多部分滚动入组，注册记录随研究更新",
+      "intervention": "半剂量或全剂量 zimislecel 门静脉单次输注并使用免疫抑制",
+      "comparator": "无同期对照",
+      "outcomes": [
+        "安全性",
+        "严重低血糖",
+        "HbA1c",
+        "C 肽",
+        "胰岛素独立",
+        "长期随访"
+      ],
+      "findings": "方案将早期安全、严重低血糖与血糖控制、胰岛素使用和移植物功能作为主要或次要评价，并安排多年随访。",
+      "limitations": "注册状态与计划终点不是结果；开放标签单组设计易受选择、共同干预和时间趋势影响，且所有受试者接受免疫抑制。",
+      "confidence": "high",
+      "content_ref": "evidence/EVD-0130.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0131",
+      "title": "zimislecel 14 人中期研究观察到 C 肽恢复和 10 人一年胰岛素独立",
+      "claim": "14 人开放标签中期分析中所有人出现 C 肽；12 名全剂量者均无严重低血糖并达到 HbA1c 目标，10 人在 365 日无需外源胰岛素。",
+      "relation_ids": [
+        "REL-0250"
+      ],
+      "source_ids": [
+        "SRC-0192"
+      ],
+      "study_type": "开放标签、单组 I 至 II 期研究的非预设中期分析",
+      "research_stage": "早期人体研究",
+      "population_or_model": "长期 1 型糖尿病且有严重低血糖和低血糖感知受损的成人",
+      "sample_size": 14,
+      "intervention": "zimislecel 门静脉输注并使用无糖皮质激素免疫抑制",
+      "comparator": "无同期对照",
+      "outcomes": [
+        "C 肽",
+        "严重低血糖",
+        "HbA1c",
+        "目标范围时间",
+        "胰岛素独立",
+        "严重不良事件与死亡"
+      ],
+      "findings": "14 人均检测到移植物功能相关 C 肽；12 名全剂量者在 90 至 365 日无严重低血糖且 HbA1c 低于 7%，10 人在 365 日无需外源胰岛素。3 人发生中性粒细胞减少，研究期间发生 2 例死亡。",
+      "limitations": "样本极小、无对照、仅约一年且所有分析均为非预设中期分析；免疫抑制是关键共同干预和风险来源，两例死亡需保留原始归因语境；研究由 Vertex 资助。",
+      "confidence": "low",
+      "content_ref": "evidence/EVD-0131.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "id": "EVD-0132",
+      "title": "2026 年第二季度公司披露称 zimislecel 研究继续入组和给药",
+      "claim": "Vertex 在 SEC 存档的 2026 年第二季度披露中称，zimislecel I/II/III 期研究继续入组和给药，更新后的时间表仍待公布。",
+      "relation_ids": [
+        "REL-0250"
+      ],
+      "source_ids": [
+        "SRC-0194"
+      ],
+      "study_type": "企业向 SEC 提交的研发状态披露",
+      "research_stage": "临床试验",
+      "population_or_model": "zimislecel I/II/III 期研究项目",
+      "sample_size": "公司披露未在该段给出当前完整样本量",
+      "intervention": "zimislecel 临床开发",
+      "comparator": "不适用",
+      "outcomes": [
+        "项目状态",
+        "入组与给药",
+        "时间表"
+      ],
+      "findings": "截至该披露，研究继续入组和给药；公司预计在 2026 年稍后提供 zimislecel 项目的更新时间表。",
+      "limitations": "这是企业项目状态，不是同行评议临床结果、注册记录或监管批准；不能据此称产品已完成关键验证、已申报或已获批。",
+      "confidence": "medium",
+      "content_ref": "evidence/EVD-0132.md",
+      "review_status": "source-checked",
+      "expert_review_status": "not-performed",
+      "publication_status": "public",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
     }
   ]
 }

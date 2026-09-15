@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2.0",
   "kind": "navigation_groups",
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-15",
   "items": [
     {
       "id": "NAV-0001",
@@ -55,12 +55,7 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": [
-        "DOM-0001", "DOM-0004", "DOM-0005", "DOM-0006", "DOM-0008",
-        "CAP-0001", "CAP-0002", "CAP-0003", "CAP-0004", "CAP-0005", "CAP-0006", "CAP-0007", "CAP-0008", "CAP-0009", "CAP-0010", "CAP-0011", "CAP-0012", "CAP-0013", "CAP-0014", "CAP-0015", "CAP-0016",
-        "CAP-0037",
-        "TEC-0001", "TEC-0002", "TEC-0003", "TEC-0004", "TEC-0005", "TEC-0006", "TEC-0007", "TEC-0008", "TEC-0009", "TEC-0010", "TEC-0011", "TEC-0012", "TEC-0013", "TEC-0014", "TEC-0015", "TEC-0016", "TEC-0017", "TEC-0018", "TEC-0019"
-      ],
+      "primary_node_ids": ["DOM-0001", "DOM-0004", "DOM-0005", "DOM-0006", "DOM-0008", "CAP-0001", "CAP-0002", "CAP-0003", "CAP-0004", "CAP-0005", "CAP-0006", "CAP-0007", "CAP-0008", "CAP-0009", "CAP-0010", "CAP-0011", "CAP-0012", "CAP-0013", "CAP-0014", "CAP-0015", "CAP-0016", "CAP-0037", "TEC-0001", "TEC-0002", "TEC-0003", "TEC-0004", "TEC-0005", "TEC-0006", "TEC-0007", "TEC-0008", "TEC-0009", "TEC-0010", "TEC-0011", "TEC-0012", "TEC-0013", "TEC-0014", "TEC-0015", "TEC-0016", "TEC-0017", "TEC-0018", "TEC-0019", "TEC-0037"],
       "cross_node_ids": ["CAP-0026", "CAP-0027", "CAP-0028", "TEC-0026", "TEC-0027", "TEC-0028"],
       "planned_items": [],
       "status": "active"
@@ -73,7 +68,7 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": ["DOM-0009", "DOM-0010", "DOM-0015", "CAP-0017", "CAP-0018", "CAP-0021", "CAP-0028", "CAP-0029", "CAP-0030", "CAP-0031", "CAP-0032", "TEC-0020", "TEC-0025", "TEC-0028", "TEC-0029", "TEC-0030", "CAP-0038", "TEC-0033"],
+      "primary_node_ids": ["DOM-0009", "DOM-0010", "DOM-0015", "CAP-0017", "CAP-0018", "CAP-0021", "CAP-0028", "CAP-0029", "CAP-0030", "CAP-0031", "CAP-0032", "TEC-0020", "TEC-0025", "TEC-0028", "TEC-0029", "TEC-0030", "CAP-0038", "TEC-0033", "CAP-0045", "TEC-0041"],
       "cross_node_ids": ["CAP-0020", "TEC-0022"],
       "planned_items": [],
       "status": "active"
@@ -86,11 +81,7 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": [
-        "DOM-0007", "DOM-0011", "DOM-0012", "DOM-0013", "DOM-0014",
-        "CAP-0019", "CAP-0020", "CAP-0022", "CAP-0023", "CAP-0024", "CAP-0025", "CAP-0026", "CAP-0027",
-        "TEC-0021", "TEC-0022", "TEC-0023", "TEC-0024", "TEC-0026", "TEC-0027"
-      ],
+      "primary_node_ids": ["DOM-0007", "DOM-0011", "DOM-0012", "DOM-0013", "DOM-0014", "CAP-0019", "CAP-0020", "CAP-0022", "CAP-0023", "CAP-0024", "CAP-0025", "CAP-0026", "CAP-0027", "TEC-0021", "TEC-0022", "TEC-0023", "TEC-0024", "TEC-0026", "TEC-0027", "CAP-0042", "TEC-0038", "CAP-0043", "TEC-0039", "CAP-0044", "TEC-0040"],
       "cross_node_ids": ["CAP-0021", "CAP-0028"],
       "planned_items": [],
       "status": "active"
@@ -103,7 +94,7 @@
       "axis": "science",
       "parent_id": "NAV-0001",
       "child_group_ids": [],
-      "primary_node_ids": ["DOM-0017", "DOM-0018", "DOM-0019", "CAP-0033", "CAP-0034", "CAP-0035", "CAP-0036", "TEC-0031", "TEC-0032", "CAP-0039", "TEC-0034", "CAP-0040", "TEC-0035", "CAP-0041", "TEC-0036"],
+      "primary_node_ids": ["DOM-0017", "DOM-0018", "DOM-0019", "CAP-0033", "CAP-0034", "CAP-0035", "CAP-0036", "TEC-0031", "TEC-0032", "CAP-0039", "TEC-0034", "CAP-0040", "TEC-0035", "CAP-0041", "TEC-0036", "CAP-0046", "TEC-0042", "TEC-0043"],
       "cross_node_ids": ["CAP-0022", "CAP-0024", "CAP-0025", "TEC-0023", "TEC-0024", "TEC-0027"],
       "planned_items": [],
       "status": "active"
@@ -157,20 +148,20 @@
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0008", "DIS-0012", "CLP-0009", "CLP-0012"],
+      "primary_node_ids": ["DIS-0008", "DIS-0012", "CLP-0009", "CLP-0012", "CLP-0030", "DIS-0034", "CLP-0031"],
       "cross_node_ids": [],
       "planned_items": [],
       "status": "active"
     },
     {
       "id": "NAV-0024",
-      "name": "代谢性疾病与糖尿病足",
-      "description": "覆盖糖尿病足溃疡及其创面闭合、感染和复发问题。",
+      "name": "代谢性疾病与糖尿病",
+      "description": "覆盖 1 型糖尿病、超重或肥胖相关心血管风险、糖尿病足溃疡及其治疗与长期结局问题。",
       "level": 1,
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0009", "CLP-0010"],
+      "primary_node_ids": ["DIS-0009", "CLP-0010", "DIS-0030", "CLP-0027", "DIS-0033", "CLP-0033"],
       "cross_node_ids": ["DIS-0010"],
       "planned_items": [],
       "status": "active"
@@ -209,7 +200,7 @@
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0015", "DIS-0016", "DIS-0021", "DIS-0022", "CLP-0014", "CLP-0018", "CLP-0019", "DIS-0026", "CLP-0023", "DIS-0029", "CLP-0026"],
+      "primary_node_ids": ["DIS-0015", "DIS-0016", "DIS-0021", "DIS-0022", "CLP-0014", "CLP-0018", "CLP-0019", "DIS-0026", "CLP-0023", "DIS-0029", "CLP-0026", "DIS-0035", "CLP-0032"],
       "cross_node_ids": ["TEC-0021", "TEC-0025"],
       "planned_items": [],
       "status": "active"
@@ -222,7 +213,7 @@
       "axis": "medicine",
       "parent_id": "NAV-0002",
       "child_group_ids": [],
-      "primary_node_ids": ["DIS-0018", "DIS-0019", "DIS-0020", "DIS-0024", "CLP-0016", "CLP-0017", "CLP-0021", "DIS-0028", "CLP-0025"],
+      "primary_node_ids": ["DIS-0018", "DIS-0019", "DIS-0020", "DIS-0024", "CLP-0016", "CLP-0017", "CLP-0021", "DIS-0028", "CLP-0025", "DIS-0031", "CLP-0028", "DIS-0032", "CLP-0029"],
       "cross_node_ids": ["TEC-0023", "TEC-0024"],
       "planned_items": [],
       "status": "active"

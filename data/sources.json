@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2.0",
   "kind": "sources",
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-15",
   "items": [
     {
       "id": "SRC-0001",
@@ -2204,7 +2204,7 @@
       "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-expands-pluvictos-metastatic-castration-resistant-prostate-cancer-indication",
       "access_note": "FDA 2025 年扩展适应证页面已核验，用于当前人群、PSMA PET 筛选、PSMAfore 疗效及标签风险。",
       "status": "source-checked",
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-15"
     },
     {
       "id": "SRC-0157",
@@ -2250,7 +2250,7 @@
       "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/207356s025lbl.pdf",
       "access_note": "FDA 2026 当前标签已核验；提取有限人群、加速批准、临床获益未确立及呼吸不良反应黑框警告。",
       "status": "source-checked",
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-15"
     },
     {
       "id": "SRC-0160",
@@ -2296,7 +2296,7 @@
       "url": "https://www.fda.gov/vaccines-blood-biologics/omisirge",
       "access_note": "FDA 当前产品页及其公开说明书入口已核验；本批仅使用血液恶性肿瘤脐带血移植适应证及移植相关风险。",
       "status": "source-checked",
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-15"
     },
     {
       "id": "SRC-0163",
@@ -2342,7 +2342,7 @@
       "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/imlygic",
       "access_note": "FDA 当前产品页及 2023 说明书已核验；提取局部适应证、总生存与内脏转移限制、活病毒处理风险。",
       "status": "source-checked",
-      "verified_at": "2026-09-14"
+      "verified_at": "2026-09-15"
     },
     {
       "id": "SRC-0166",
@@ -2375,6 +2375,412 @@
       "access_note": "PubMed 摘要与公开全文元数据已核验；提取 692 人随机、PFS、OS、缓解和安全性阴性结果。",
       "status": "source-checked",
       "verified_at": "2026-09-14"
+    },
+    {
+      "id": "SRC-0168",
+      "title": "Control-IQ Technology 510(k) Summary (K232382)",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2023,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "K232382",
+      "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K232382.pdf",
+      "access_note": "FDA 510(k) 文件已核验；提取兼容设备、自动增减或暂停基础胰岛素、自动校正及 2 岁以上 1 型糖尿病适用范围。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0169",
+      "title": "Six-Month Randomized, Multicenter Trial of Closed-Loop Control in Type 1 Diabetes",
+      "authors": [
+        "Sue A Brown et al."
+      ],
+      "institution": "International Diabetes Closed-Loop Trial Research Group",
+      "year": 2019,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa1907863",
+      "registry_id": "NCT03563313",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31618560/",
+      "access_note": "PubMed 摘要已核验；提取 168 人、6 个月、目标范围时间、HbA1c、低血糖及急性安全事件。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0170",
+      "title": "Trial of Hybrid Closed-Loop Control in Young Children with Type 1 Diabetes",
+      "authors": [
+        "R Paul Wadwa et al."
+      ],
+      "institution": "Pediatric Artificial Pancreas Trial investigators",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa2210834",
+      "registry_id": "NCT04796779",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36920756/",
+      "access_note": "PubMed 摘要已核验；提取 102 名 2 至不足 6 岁儿童、13 周目标范围时间及严重低血糖和酮症酸中毒。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0171",
+      "title": "Real-World Use of Control-IQ Technology Is Associated with a Lower Rate of Severe Hypoglycemia and Diabetic Ketoacidosis Than Historical Data: Results of the Control-IQ Observational (CLIO) Prospective Study",
+      "authors": [
+        "Rishi Graham et al."
+      ],
+      "institution": "Control-IQ Observational Study investigators",
+      "year": 2024,
+      "source_type": "原始研究",
+      "doi": "10.1089/dia.2023.0341",
+      "registry_id": "NCT04503174",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37782904/",
+      "access_note": "PubMed 摘要与公开全文元数据已核验；提取 3157 人入组、2998 人完成及与历史 T1D Exchange 数据的急性事件比较。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0172",
+      "title": "FDA approves blinatumomab as consolidation for CD19-positive Philadelphia chromosome-negative B-cell precursor acute lymphoblastic leukemia",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2024,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": null,
+      "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-blinatumomab-consolidation-cd19-positive-philadelphia-chromosome-negative-b-cell",
+      "access_note": "FDA 当前批准页已核验；提取成人与 1 月龄以上儿童巩固期适应证、E1910 和 Study 20120215 的 5 年结果与常见不良反应。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0173",
+      "title": "Blinatumomab for MRD-Negative Acute Lymphoblastic Leukemia in Adults",
+      "authors": [
+        "Mark R Litzow et al."
+      ],
+      "institution": "ECOG-ACRIN E1910 investigators",
+      "year": 2024,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa2312948",
+      "registry_id": "NCT02003222",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39047240/",
+      "access_note": "PubMed 摘要已核验；提取 224 名 MRD 阴性成人随机、3 年 OS/RFS 及较多神经精神事件。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0174",
+      "title": "Effect of Blinatumomab vs Chemotherapy on Event-Free Survival Among Children With High-risk First-Relapse B-Cell Acute Lymphoblastic Leukemia",
+      "authors": [
+        "Franco Locatelli et al."
+      ],
+      "institution": "International randomized phase 3 study",
+      "year": 2021,
+      "source_type": "原始研究",
+      "doi": "10.1001/jama.2021.0987",
+      "registry_id": "NCT02393859",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33651091/",
+      "access_note": "PubMed 摘要已核验；提取 108 人随机、事件、MRD 缓解、死亡与严重不良事件。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0175",
+      "title": "Effect of Postreinduction Therapy Consolidation With Blinatumomab vs Chemotherapy on Disease-Free Survival in First Relapse B-ALL",
+      "authors": [
+        "Patrick A Brown et al."
+      ],
+      "institution": "Children's Oncology Group AALL1331",
+      "year": 2021,
+      "source_type": "原始研究",
+      "doi": "10.1001/jama.2021.0669",
+      "registry_id": "NCT02101853",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33651090/",
+      "access_note": "PubMed 摘要已核验；提取 208 人随机、主要终点未达预设显著性、OS 与感染毒性，并记录提前终止造成的效能限制。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0176",
+      "title": "HEMGENIX (etranacogene dezaparvovec-drlb) prescribing information, revised 04/2026",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2026,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "STN 125772",
+      "url": "https://www.fda.gov/media/163467/download",
+      "access_note": "FDA 2026 年 4 月现行说明书已核验；提取成人标签条件、治疗前检测、输注反应、肝毒性与肝细胞癌风险监测。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0177",
+      "title": "Gene Therapy with Etranacogene Dezaparvovec for Hemophilia B",
+      "authors": [
+        "Steven W Pipe et al."
+      ],
+      "institution": "HOPE-B investigators",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa2211644",
+      "registry_id": "NCT03569891",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36812434/",
+      "access_note": "PubMed 摘要已核验；提取 54 人单臂自身导入期比较、18 个月 ABR、FIX 活性、预防停用与企业资助。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0178",
+      "title": "Etranacogene dezaparvovec gene therapy for haemophilia B (HOPE-B): 24-month post-hoc efficacy and safety data from a single-arm, multicentre, phase 3 trial",
+      "authors": [
+        "Michiel Coppens et al."
+      ],
+      "institution": "HOPE-B investigators",
+      "year": 2024,
+      "source_type": "原始研究",
+      "doi": "10.1016/S2352-3026(24)00006-1",
+      "registry_id": "NCT03569891",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38437857/",
+      "access_note": "PubMed 摘要已核验；提取同一 54 人队列 24 个月 ABR、FIX 活性和预防停用；不作为独立重复验证。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0179",
+      "title": "Final Analysis of a Study of Etranacogene Dezaparvovec for Hemophilia B",
+      "authors": [
+        "Steven W Pipe et al."
+      ],
+      "institution": "HOPE-B investigators",
+      "year": 2026,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa2514332",
+      "registry_id": "NCT03569891",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41358585/",
+      "access_note": "PubMed 摘要已核验；提取同一 54 人队列 5 年 ABR、FIX 活性与外源 FIX 使用；记录企业资助和无同期对照。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0180",
+      "title": "FDA approves first treatment to reduce risk of serious heart problems specifically in adults with obesity or overweight",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2024,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": null,
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-treatment-reduce-risk-serious-heart-problems-specifically-adults-obesity-or",
+      "access_note": "FDA 批准公告已核验；提取已有心血管疾病且超重或肥胖成人的风险降低适应证、生活方式配合及 SELECT 事件比例。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0181",
+      "title": "Semaglutide and Cardiovascular Outcomes in Obesity without Diabetes",
+      "authors": [
+        "A Michael Lincoff et al."
+      ],
+      "institution": "SELECT investigators",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa2307563",
+      "registry_id": "NCT03574597",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37952131/",
+      "access_note": "PubMed 摘要已核验；提取 17604 人随机、MACE、随访和不良反应停药。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0182",
+      "title": "Semaglutide and cardiovascular outcomes in patients with obesity and prevalent heart failure: a prespecified analysis of SELECT",
+      "authors": [
+        "John Deanfield et al."
+      ],
+      "institution": "SELECT investigators",
+      "year": 2024,
+      "source_type": "原始研究",
+      "doi": "10.1016/S0140-6736(24)01498-3",
+      "registry_id": "NCT03574597",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39181597/",
+      "access_note": "PubMed 摘要已核验；提取 4286 名基线有心衰者的预设分析、MACE 与心衰复合终点，并标记同一 SELECT 队列和企业资助。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0183",
+      "title": "Paradise Ultrasound Renal Denervation System – P220023",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2023,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "P220023",
+      "url": "https://www.fda.gov/medical-devices/recently-approved-devices/paradise-ultrasound-renal-denervation-system-p220023",
+      "access_note": "FDA 器械批准页已核验；提取超声能量机制、作为生活方式与药物辅助治疗的适用范围及实施边界。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0184",
+      "title": "SYMPlicity Spyral Renal Denervation System – P220026",
+      "authors": [],
+      "institution": "U.S. Food and Drug Administration",
+      "year": 2023,
+      "source_type": "监管资料",
+      "doi": null,
+      "registry_id": "P220026",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=P220026",
+      "access_note": "FDA PMA 当前数据库页已核验；提取射频肾动脉去神经批准状态，并记录后续补充审评历史需持续维护。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0185",
+      "title": "Endovascular Ultrasound Renal Denervation to Treat Hypertension: RADIANCE II Randomized Clinical Trial",
+      "authors": [],
+      "institution": "RADIANCE II investigators",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": "10.1001/jama.2023.0713",
+      "registry_id": "NCT03614260",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36853250/",
+      "access_note": "PubMed 摘要已核验；提取 224 人停药条件下随机、2 个月日间动态收缩压和主要安全事件。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0186",
+      "title": "Ultrasound renal denervation for hypertension resistant to a triple medication pill: RADIANCE-HTN TRIO",
+      "authors": [],
+      "institution": "RADIANCE-HTN TRIO investigators",
+      "year": 2021,
+      "source_type": "原始研究",
+      "doi": "10.1016/S0140-6736(21)00788-1",
+      "registry_id": "NCT02649426",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34010611/",
+      "access_note": "PubMed 摘要已核验；提取 136 人标准三联药背景、2 个月日间动态收缩压及短期限制。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0187",
+      "title": "Long-term efficacy and safety of renal denervation in the presence of antihypertensive drugs: SPYRAL HTN-ON MED",
+      "authors": [],
+      "institution": "SPYRAL HTN-ON MED investigators",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": null,
+      "registry_id": "NCT02439775",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37914510/",
+      "access_note": "PubMed 摘要已核验；提取 337 人随机、6 个月 24 小时动态收缩压主要比较未显著及药物混杂。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0188",
+      "title": "Twenty-four month blood pressure reduction after renal denervation: SPYRAL HTN-ON MED",
+      "authors": [],
+      "institution": "SPYRAL HTN-ON MED investigators",
+      "year": 2025,
+      "source_type": "原始研究",
+      "doi": null,
+      "registry_id": "NCT02439775",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40391448/",
+      "access_note": "PubMed 摘要已核验；提取同一 337 人试验 24 个月观察结果、揭盲交叉和仅 176 对 33 人有动态血压数据的限制。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0189",
+      "title": "Immunotherapy with engineered bacteria by targeting the STING pathway for anti-tumor immunity",
+      "authors": [
+        "Daniel S Leventhal et al."
+      ],
+      "institution": "Synlogic",
+      "year": 2020,
+      "source_type": "原始研究",
+      "doi": "10.1038/s41467-020-16602-0",
+      "registry_id": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32483165/",
+      "access_note": "PubMed 摘要与开放全文已核验；提取工程菌、环二核苷酸、STING 激活与动物模型；明确不作为人体疗效证据。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0190",
+      "title": "Phase I Study of SYNB1891, an Engineered E. coli Nissle Strain Expressing STING Agonist, with and without Atezolizumab",
+      "authors": [
+        "Jason J Luke et al."
+      ],
+      "institution": "Multicenter phase 1 study",
+      "year": 2023,
+      "source_type": "原始研究",
+      "doi": "10.1158/1078-0432.CCR-23-0118",
+      "registry_id": "NCT04167137",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37227176/",
+      "access_note": "PubMed 摘要已核验；提取 32 人、单药与联合队列、安全、菌株清除、药效学和 4 例疾病稳定。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0191",
+      "title": "Safety and Tolerability of SYNB1891 Injection Alone or in Combination With Atezolizumab",
+      "authors": [],
+      "institution": "ClinicalTrials.gov",
+      "year": 2024,
+      "source_type": "临床试验注册",
+      "doi": null,
+      "registry_id": "NCT04167137",
+      "url": "https://clinicaltrials.gov/study/NCT04167137",
+      "access_note": "ClinicalTrials.gov 当前记录已核验；实际入组 32、I 期、2021 年完成，2024 年更新为因商业原因终止。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0192",
+      "title": "Stem Cell-Derived, Fully Differentiated Islets for Type 1 Diabetes",
+      "authors": [
+        "Trevor W Reichman et al."
+      ],
+      "institution": "VX-880-101 FORWARD Study Group",
+      "year": 2025,
+      "source_type": "原始研究",
+      "doi": "10.1056/NEJMoa2506549",
+      "registry_id": "NCT04786262",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40544428/",
+      "access_note": "PubMed 摘要已核验；提取 14 人开放标签中期结果、12 名全剂量者的严重低血糖与胰岛素独立、免疫抑制、严重事件及两例死亡。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0193",
+      "title": "A Study to Evaluate the Safety, Tolerability, and Efficacy of VX-880 in Participants With Type 1 Diabetes",
+      "authors": [],
+      "institution": "ClinicalTrials.gov",
+      "year": 2026,
+      "source_type": "临床试验注册",
+      "doi": null,
+      "registry_id": "NCT04786262",
+      "url": "https://clinicaltrials.gov/study/NCT04786262",
+      "access_note": "ClinicalTrials.gov 当前记录已核验；提取多部分、单组开放标签、门静脉输注、免疫抑制与最长 5 年随访设计。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
+    },
+    {
+      "id": "SRC-0194",
+      "title": "Vertex Pharmaceuticals Reports Second-Quarter 2026 Financial Results",
+      "authors": [],
+      "institution": "Vertex Pharmaceuticals Incorporated / U.S. Securities and Exchange Commission",
+      "year": 2026,
+      "source_type": "机构资料",
+      "doi": null,
+      "registry_id": null,
+      "url": "https://www.sec.gov/Archives/edgar/data/875320/000087532026000256/ex-991_q22026.htm",
+      "access_note": "SEC 存档的 2026 年第二季度公司披露已核验；公司称 I/II/III 期研究继续入组和给药，时间表待更新；该材料不是独立临床结果或监管批准。",
+      "status": "source-checked",
+      "verified_at": "2026-09-15"
     }
   ]
 }

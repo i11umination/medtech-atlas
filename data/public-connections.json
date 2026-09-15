@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2.0",
   "kind": "public_connections",
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-15",
   "items": [
     {
       "node_id": "DOM-0001",
@@ -2142,6 +2142,432 @@
       "review_status": "source-checked",
       "curation_method": "machine-assisted",
       "last_verified": "2026-09-14"
+    },
+    {
+      "node_id": "TEC-0037",
+      "paragraphs": [
+        "一种把连续葡萄糖监测、可互操作胰岛素泵和预测算法组合起来的自动胰岛素递送系统。",
+        "随机试验在成人、青少年和幼儿中显示目标范围时间改善，真实世界研究补充了使用中的急性事件观察。",
+        "获批和平均控糖改善不表示设备可独立运行；餐前操作、传感器与输注器故障、低血糖和酮症酸中毒仍需管理。"
+      ],
+      "source_ids": [
+        "SRC-0168",
+        "SRC-0169",
+        "SRC-0170",
+        "SRC-0171"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "DIS-0030",
+      "paragraphs": [
+        "一种因自身免疫破坏胰岛 β 细胞而需要持续外源胰岛素管理的慢性疾病。",
+        "本批次从两条不同路径连接该疾病：自动胰岛素递送优化日常控制，干细胞来源胰岛移植探索恢复内源性功能。",
+        "两条路径的人群与风险完全不同；早期细胞移植证据不能取代成熟胰岛素治疗，也不代表适用于一般 1 型糖尿病患者。"
+      ],
+      "source_ids": [
+        "SRC-0168",
+        "SRC-0169",
+        "SRC-0170",
+        "SRC-0171",
+        "SRC-0192",
+        "SRC-0193",
+        "SRC-0194"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CLP-0027",
+      "paragraphs": [
+        "如何根据持续变化的葡萄糖水平自动调节胰岛素，同时增加目标范围时间并减少低血糖。",
+        "Control-IQ 使用预测反馈控制调整基础输注和部分校正，但仍需要兼容设备、参数设置与使用者参与。",
+        "随机证据支持平均目标范围时间改善，幼儿试验仍有严重低血糖和酮症酸中毒；真实世界历史比较存在偏倚。"
+      ],
+      "source_ids": [
+        "SRC-0168",
+        "SRC-0169",
+        "SRC-0170",
+        "SRC-0171"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CAP-0042",
+      "paragraphs": [
+        "用单一双特异性分子同时接合 T 细胞 CD3 和 B 系细胞 CD19，把免疫效应重定向至靶细胞。",
+        "blinatumomab 将这项能力用于特定 B 细胞前体急性淋巴细胞白血病的巩固和其他获批治疗阶段。",
+        "靶点接合不等于所有风险层均获相同生存获益；细胞因子释放、神经毒性、感染与长时间输注必须管理。"
+      ],
+      "source_ids": [
+        "SRC-0172",
+        "SRC-0173",
+        "SRC-0174",
+        "SRC-0175"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "TEC-0038",
+      "paragraphs": [
+        "一种连续输注的 CD19/CD3 双特异性 T 细胞接合剂，可重定向 T 细胞攻击 CD19 阳性 B 系细胞。",
+        "FDA 已批准其用于 1 月龄以上 CD19 阳性、Ph 阴性 BCP-ALL 的多阶段化疗巩固期。",
+        "成人初诊缓解与儿童复发研究设计不同；AALL1331 高中危队列主要 DFS 未达预设显著性，不能只呈现正向次要结果。"
+      ],
+      "source_ids": [
+        "SRC-0172",
+        "SRC-0173",
+        "SRC-0174",
+        "SRC-0175"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "DIS-0031",
+      "paragraphs": [
+        "指表达 CD19 且不具有费城染色体的 B 细胞前体急性淋巴细胞白血病。",
+        "CD19 提供免疫靶点，Ph 阴性状态、治疗阶段、MRD 和复发风险共同限定 blinatumomab 巩固证据。",
+        "成人初诊缓解、儿童高危首次复发和其他风险层不能互相替代；年龄与移植计划也会改变风险。"
+      ],
+      "source_ids": [
+        "SRC-0172",
+        "SRC-0173",
+        "SRC-0174",
+        "SRC-0175"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CLP-0028",
+      "paragraphs": [
+        "如何在巩固期更彻底清除残留白血病并降低复发，同时避免进一步强化化疗和免疫毒性。",
+        "blinatumomab 以 CD19/CD3 接合替代或加入部分化疗，试验使用 OS、DFS、MRD 和严重感染评价净获益。",
+        "不同试验结论并非完全一致；提前停止、次要终点和不同风险分层都要求逐项解释。"
+      ],
+      "source_ids": [
+        "SRC-0172",
+        "SRC-0173",
+        "SRC-0174",
+        "SRC-0175"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CAP-0043",
+      "paragraphs": [
+        "用腺相关病毒把治疗性表达盒递送到肝细胞，使人体持续产生缺失或不足的蛋白。",
+        "HEMGENIX 使用 AAV5 递送高活性凝血因子 IX 变体，尝试一次给药减少长期替代治疗和出血。",
+        "体内表达需要处理既存免疫、肝毒性、转氨酶升高、载体相关不确定性和多年耐久性。"
+      ],
+      "source_ids": [
+        "SRC-0176",
+        "SRC-0177",
+        "SRC-0178",
+        "SRC-0179"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "TEC-0039",
+      "paragraphs": [
+        "一种单次静脉输注、以 AAV5 向肝脏递送凝血因子 IX Padua 表达盒的成人血友病 B 基因治疗。",
+        "HOPE-B 从 18 个月延长到 5 年的同一 54 人队列显示较低出血率、持续 FIX 活性和大幅减少外源 FIX 使用。",
+        "所有随访来自单臂自身导入期比较，不是多次独立验证；说明书要求严密肝脏监测并披露潜在致癌风险。"
+      ],
+      "source_ids": [
+        "SRC-0176",
+        "SRC-0177",
+        "SRC-0178",
+        "SRC-0179"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "DIS-0032",
+      "paragraphs": [
+        "一种由凝血因子 IX 缺乏引起的遗传性凝血障碍，中重度患者可发生自发和创伤后出血。",
+        "常规 FIX 预防降低出血但需要反复给药，体内基因转移试图形成更持续的内源性 FIX。",
+        "HEMGENIX 标签限于符合既往预防或严重出血条件的成人；抑制物、肝病和既存免疫会影响适用性。"
+      ],
+      "source_ids": [
+        "SRC-0176",
+        "SRC-0177",
+        "SRC-0178",
+        "SRC-0179"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CLP-0029",
+      "paragraphs": [
+        "如何长期减少血友病 B 出血和外源 FIX 使用，同时控制肝脏、免疫和载体相关风险。",
+        "HEMGENIX 的关键试验以患者自身给药前导入期为比较，并用多年连续随访观察表达耐久性。",
+        "五年结果仍来自 54 人单臂队列，规模不足以排除少见晚期风险；监管说明书要求长期监测。"
+      ],
+      "source_ids": [
+        "SRC-0176",
+        "SRC-0177",
+        "SRC-0178",
+        "SRC-0179"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CAP-0044",
+      "paragraphs": [
+        "通过延长肽类受体激动剂作用时间和逐步增加剂量，实现每周给药并改善耐受性。",
+        "司美格鲁肽 2.4 mg 用这项药理与制剂能力影响食欲和体重，并在 SELECT 中接受心血管结局检验。",
+        "代谢机制或体重下降不能自动证明心血管事件获益；不良反应停药、禁忌和产品剂量差异需独立处理。"
+      ],
+      "source_ids": [
+        "SRC-0180",
+        "SRC-0181",
+        "SRC-0182"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "TEC-0040",
+      "paragraphs": [
+        "一种每周皮下注射的 GLP-1 受体激动剂剂量方案，在生活方式干预基础上用于特定肥胖相关风险。",
+        "SELECT 在无糖尿病且已有心血管疾病的超重或肥胖成人中显示 MACE 从 8.0% 降至 6.5%。",
+        "试验人群属于二级预防，因不良事件永久停药明显更多；同一试验的心衰亚组不是独立重复验证。"
+      ],
+      "source_ids": [
+        "SRC-0180",
+        "SRC-0181",
+        "SRC-0182"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "DIS-0033",
+      "paragraphs": [
+        "指 BMI 达超重或肥胖范围，并已经发生动脉粥样硬化性心血管疾病的成人风险状态。",
+        "SELECT 将这一人群作为心血管二级预防入口，而非仅以减重幅度评价司美格鲁肽。",
+        "关键试验排除糖尿病，不可外推到一级预防、单纯减重或不同 GLP-1 产品和剂量。"
+      ],
+      "source_ids": [
+        "SRC-0180",
+        "SRC-0181",
+        "SRC-0182"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CLP-0030",
+      "paragraphs": [
+        "如何在无糖尿病的超重或肥胖心血管病患者中减少再次发生心梗、卒中或心血管死亡。",
+        "SELECT 使用临床事件而非仅体重或代谢替代指标检验司美格鲁肽 2.4 mg 的二级预防价值。",
+        "MACE 相对风险下降伴随较高不良反应停药；心衰结果来自同一队列的预设亚组。"
+      ],
+      "source_ids": [
+        "SRC-0180",
+        "SRC-0181",
+        "SRC-0182"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CAP-0045",
+      "paragraphs": [
+        "经肾动脉内导管以超声或射频能量作用于周围交感神经，尝试产生持续的神经调节与降压效应。",
+        "Paradise 和 Symplicity Spyral 采用不同能量和导管设计，均被定位为生活方式与药物之外的辅助选择。",
+        "能量递送不能确认每位患者去神经完整，也不能由短期血压下降推定长期心血管事件减少。"
+      ],
+      "source_ids": [
+        "SRC-0183",
+        "SRC-0184",
+        "SRC-0185",
+        "SRC-0186",
+        "SRC-0187",
+        "SRC-0188"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "TEC-0041",
+      "paragraphs": [
+        "一类经导管在肾动脉内递送超声或射频能量的介入系统，用于调节肾交感神经。",
+        "FDA 已分别批准 Paradise 与 Symplicity Spyral；多个假手术对照试验显示幅度不一的短期动态血压变化。",
+        "SPYRAL ON MED 六个月主要比较未显著，24 个月结果又受揭盲、交叉和大量缺失限制；尚无确定患者重要心血管终点。"
+      ],
+      "source_ids": [
+        "SRC-0183",
+        "SRC-0184",
+        "SRC-0185",
+        "SRC-0186",
+        "SRC-0187",
+        "SRC-0188"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "DIS-0034",
+      "paragraphs": [
+        "指经过生活方式和一种或多种降压药治疗后，血压仍高于目标的高血压状态。",
+        "肾动脉去神经被作为辅助选项研究，但不同试验分别要求停药、固定三联药或一至三种药物背景。",
+        "在考虑器械前需排除继发性高血压、白大衣效应和假性耐药，并核验用药依从性。"
+      ],
+      "source_ids": [
+        "SRC-0183",
+        "SRC-0184",
+        "SRC-0185",
+        "SRC-0186",
+        "SRC-0187",
+        "SRC-0188"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CLP-0031",
+      "paragraphs": [
+        "如何通过肾交感神经调节获得持续降压，并证明这种变化最终减少心血管与肾脏不良结局。",
+        "假手术对照试验可降低程序与期待偏倚，但用药变化、揭盲和交叉使长期比较逐渐复杂。",
+        "现有证据主要是毫米汞柱级血压终点，结果不完全一致，不能替代心梗、卒中、肾衰或死亡数据。"
+      ],
+      "source_ids": [
+        "SRC-0183",
+        "SRC-0184",
+        "SRC-0185",
+        "SRC-0186",
+        "SRC-0187",
+        "SRC-0188"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CAP-0046",
+      "paragraphs": [
+        "将活菌改造成可在预设环境产生效应分子的治疗载体，并结合局部给药、清除和生物安全控制。",
+        "SYNB1891 以工程化大肠杆菌 Nissle 在肿瘤内产生 STING 激动剂，尝试形成局部免疫激活。",
+        "动物机制不能预测人体感染、扩散、细胞因子反应或疗效；活菌产品的制造与环境控制也必须单独验证。"
+      ],
+      "source_ids": [
+        "SRC-0189",
+        "SRC-0190",
+        "SRC-0191"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "TEC-0042",
+      "paragraphs": [
+        "一种工程化大肠杆菌 Nissle 活菌候选产品，经病灶内注射产生 STING 激动分子。",
+        "临床前研究显示免疫信号，32 人首次人体研究观察到药效学靶点激活和有限疾病稳定。",
+        "产品未获批准，试验已因商业原因终止；I 期无对照、肿瘤异质，4 例疾病稳定不是疗效证明。"
+      ],
+      "source_ids": [
+        "SRC-0189",
+        "SRC-0190",
+        "SRC-0191"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "DIS-0035",
+      "paragraphs": [
+        "概括 SYNB1891 I 期研究纳入的、标准治疗后进展或缺少标准选择的多种晚期实体瘤与淋巴瘤。",
+        "宽泛入口适合早期安全和剂量探索，却不支持针对某一癌种形成确定疗效结论。",
+        "不同肿瘤的免疫微环境、可注射病灶、既往治疗和自然病程差异很大。"
+      ],
+      "source_ids": [
+        "SRC-0189",
+        "SRC-0190",
+        "SRC-0191"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CLP-0032",
+      "paragraphs": [
+        "如何把工程活菌安全地递送至肿瘤内，证明确实激活靶通路，并进一步验证临床获益。",
+        "SYNB1891 首次人体研究主要回答安全、耐受、清除和药效学，而不是确定缩瘤或生存效果。",
+        "细胞因子释放综合征、最高剂量 DLT、无对照和项目商业终止都必须与机制信号同时呈现。"
+      ],
+      "source_ids": [
+        "SRC-0189",
+        "SRC-0190",
+        "SRC-0191"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "TEC-0043",
+      "paragraphs": [
+        "一种由多能干细胞制备的成熟异基因胰岛细胞候选产品，经门静脉输注并配合系统免疫抑制。",
+        "14 人早期研究观察到 C 肽恢复；12 名全剂量者一年无严重低血糖，10 人无需外源胰岛素。",
+        "产品未获批准，结果为非预设开放标签中期分析；所有人接受免疫抑制，发生严重不良事件和两例死亡。"
+      ],
+      "source_ids": [
+        "SRC-0192",
+        "SRC-0193",
+        "SRC-0194"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
+    },
+    {
+      "node_id": "CLP-0033",
+      "paragraphs": [
+        "如何为反复严重低血糖的 1 型糖尿病患者恢复内源性胰岛功能，同时控制异基因移植和免疫抑制代价。",
+        "zimislecel 把干细胞分化、细胞制造、门静脉输注和长期免疫抑制组合成一条在研细胞替代路径。",
+        "一年中期信号来自 14 人无对照研究，不能称为治愈或标准治疗；两例死亡与免疫抑制风险必须保留。"
+      ],
+      "source_ids": [
+        "SRC-0192",
+        "SRC-0193",
+        "SRC-0194"
+      ],
+      "review_status": "source-checked",
+      "curation_method": "machine-assisted",
+      "last_verified": "2026-09-15"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.2.0",
   "kind": "node-summaries",
-  "updated_at": "2026-09-14",
+  "updated_at": "2026-09-15",
   "items": [
     { "node_id": "DOM-0001", "content_ref": "node-summaries/DOM-0001.md", "source_ids": ["SRC-0031", "SRC-0030"], "review_status": "source-checked", "last_verified": "2026-09-13" },
     { "node_id": "DOM-0004", "content_ref": "node-summaries/DOM-0004.md", "source_ids": ["SRC-0033"], "review_status": "source-checked", "last_verified": "2026-09-13" },
@@ -176,6 +176,31 @@
     {"node_id":"CAP-0041","content_ref":"node-summaries/CAP-0041.md","source_ids":["SRC-0165","SRC-0166","SRC-0167"],"review_status":"source-checked","last_verified":"2026-09-14"},
     {"node_id":"TEC-0036","content_ref":"node-summaries/TEC-0036.md","source_ids":["SRC-0165","SRC-0166","SRC-0167"],"review_status":"source-checked","last_verified":"2026-09-14"},
     {"node_id":"DIS-0029","content_ref":"node-summaries/DIS-0029.md","source_ids":["SRC-0165","SRC-0166","SRC-0167"],"review_status":"source-checked","last_verified":"2026-09-14"},
-    {"node_id":"CLP-0026","content_ref":"node-summaries/CLP-0026.md","source_ids":["SRC-0165","SRC-0166","SRC-0167"],"review_status":"source-checked","last_verified":"2026-09-14"}
+    {"node_id":"CLP-0026","content_ref":"node-summaries/CLP-0026.md","source_ids":["SRC-0165","SRC-0166","SRC-0167"],"review_status":"source-checked","last_verified":"2026-09-14"},
+    {"node_id":"TEC-0037","content_ref":"node-summaries/TEC-0037.md","source_ids":["SRC-0168","SRC-0169","SRC-0170","SRC-0171"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"DIS-0030","content_ref":"node-summaries/DIS-0030.md","source_ids":["SRC-0168","SRC-0169","SRC-0170","SRC-0171","SRC-0192","SRC-0193","SRC-0194"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CLP-0027","content_ref":"node-summaries/CLP-0027.md","source_ids":["SRC-0168","SRC-0169","SRC-0170","SRC-0171"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CAP-0042","content_ref":"node-summaries/CAP-0042.md","source_ids":["SRC-0172","SRC-0173","SRC-0174","SRC-0175"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"TEC-0038","content_ref":"node-summaries/TEC-0038.md","source_ids":["SRC-0172","SRC-0173","SRC-0174","SRC-0175"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"DIS-0031","content_ref":"node-summaries/DIS-0031.md","source_ids":["SRC-0172","SRC-0173","SRC-0174","SRC-0175"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CLP-0028","content_ref":"node-summaries/CLP-0028.md","source_ids":["SRC-0172","SRC-0173","SRC-0174","SRC-0175"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CAP-0043","content_ref":"node-summaries/CAP-0043.md","source_ids":["SRC-0176","SRC-0177","SRC-0178","SRC-0179"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"TEC-0039","content_ref":"node-summaries/TEC-0039.md","source_ids":["SRC-0176","SRC-0177","SRC-0178","SRC-0179"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"DIS-0032","content_ref":"node-summaries/DIS-0032.md","source_ids":["SRC-0176","SRC-0177","SRC-0178","SRC-0179"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CLP-0029","content_ref":"node-summaries/CLP-0029.md","source_ids":["SRC-0176","SRC-0177","SRC-0178","SRC-0179"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CAP-0044","content_ref":"node-summaries/CAP-0044.md","source_ids":["SRC-0180","SRC-0181","SRC-0182"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"TEC-0040","content_ref":"node-summaries/TEC-0040.md","source_ids":["SRC-0180","SRC-0181","SRC-0182"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"DIS-0033","content_ref":"node-summaries/DIS-0033.md","source_ids":["SRC-0180","SRC-0181","SRC-0182"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CLP-0030","content_ref":"node-summaries/CLP-0030.md","source_ids":["SRC-0180","SRC-0181","SRC-0182"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CAP-0045","content_ref":"node-summaries/CAP-0045.md","source_ids":["SRC-0183","SRC-0184","SRC-0185","SRC-0186","SRC-0187","SRC-0188"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"TEC-0041","content_ref":"node-summaries/TEC-0041.md","source_ids":["SRC-0183","SRC-0184","SRC-0185","SRC-0186","SRC-0187","SRC-0188"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"DIS-0034","content_ref":"node-summaries/DIS-0034.md","source_ids":["SRC-0183","SRC-0184","SRC-0185","SRC-0186","SRC-0187","SRC-0188"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CLP-0031","content_ref":"node-summaries/CLP-0031.md","source_ids":["SRC-0183","SRC-0184","SRC-0185","SRC-0186","SRC-0187","SRC-0188"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CAP-0046","content_ref":"node-summaries/CAP-0046.md","source_ids":["SRC-0189","SRC-0190","SRC-0191"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"TEC-0042","content_ref":"node-summaries/TEC-0042.md","source_ids":["SRC-0189","SRC-0190","SRC-0191"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"DIS-0035","content_ref":"node-summaries/DIS-0035.md","source_ids":["SRC-0189","SRC-0190","SRC-0191"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CLP-0032","content_ref":"node-summaries/CLP-0032.md","source_ids":["SRC-0189","SRC-0190","SRC-0191"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"TEC-0043","content_ref":"node-summaries/TEC-0043.md","source_ids":["SRC-0192","SRC-0193","SRC-0194"],"review_status":"source-checked","last_verified":"2026-09-15"},
+    {"node_id":"CLP-0033","content_ref":"node-summaries/CLP-0033.md","source_ids":["SRC-0192","SRC-0193","SRC-0194"],"review_status":"source-checked","last_verified":"2026-09-15"}
   ]
 }
